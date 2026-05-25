@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DXF File Viewer</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Open a .dxf file">
+      <svg
+        class="dropzone-glyph"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M14 6h16l8 8v22a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V10a4 4 0 0 1 4-4z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M30 6v8h8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24 22v12m-5-5 5 5 5-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <p id="dropzoneText" class="dropzone-text">Click or drop a .dxf</p>
+      <p id="status" class="status hidden">Opening viewer…</p>
+      <p id="error" class="error" role="alert"></p>
+    </main>
+    <input id="fileInput" class="hidden-input" type="file" accept=".dxf" />
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>

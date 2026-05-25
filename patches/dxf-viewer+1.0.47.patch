@@ -1,0 +1,129 @@
+diff --git a/node_modules/dxf-viewer/src/DxfViewer.js b/node_modules/dxf-viewer/src/DxfViewer.js
+index e9acf7c..42e191b 100644
+--- a/node_modules/dxf-viewer/src/DxfViewer.js
++++ b/node_modules/dxf-viewer/src/DxfViewer.js
+@@ -201,6 +201,14 @@ export class DxfViewer {
+         }
+         this.defaultLayer = this.layers.get("0") ?? new Layer("0", "0", 0)
+ 
++        /* Attach per-layer groups so visibility toggles cost O(1) instead of O(objects). */
++        for (const layer of this.layers.values()) {
++            this.scene.add(layer.group)
++        }
++        if (!this.layers.has(this.defaultLayer.name)) {
++            this.scene.add(this.defaultLayer.group)
++        }
++
+         /* Load all blocks on the first pass. */
+         for (const batch of scene.batches) {
+             if (batch.key.blockName !== null &&
+@@ -274,12 +282,76 @@ export class DxfViewer {
+         if (!layer) {
+             return
+         }
+-        for (const obj of layer.objects) {
+-            obj.visible = show
++        layer.group.visible = show
++        this.Render()
++    }
++
++    /**
++     * Bulk visibility update for many layers in one frame.
++     * @param visibilityMap {Map<string, boolean> | Iterable<[string, boolean]>}
++     */
++    SetLayersVisibility(visibilityMap) {
++        this._EnsureRenderer()
++        for (const [name, visible] of visibilityMap) {
++            const layer = this.layers.get(name)
++            if (layer) {
++                layer.group.visible = visible
++            }
+         }
+         this.Render()
+     }
+ 
++    /**
++     * Update the renderer clear color and re-transform every cached material color
++     * so colorCorrection / blackWhiteInversion stay consistent. No DXF re-parse.
++     * @param color {three.Color}
++     * @param alpha {number=}
++     */
++    SetClearColor(color, alpha) {
++        this._EnsureRenderer()
++        const a = alpha === undefined ? this.options.clearAlpha : alpha
++        this.options.clearColor = color
++        this.options.clearAlpha = a
++        this.clearColor = color.getHex()
++        this.renderer.setClearColor(color, a)
++        this._RefreshMaterialColors()
++        this.Render()
++    }
++
++    /**
++     * Toggle colorCorrection on the live viewer. Material colors update in place.
++     * @param enable {boolean}
++     */
++    SetColorCorrection(enable) {
++        this._EnsureRenderer()
++        this.options.colorCorrection = Boolean(enable)
++        this._RefreshMaterialColors()
++        this.Render()
++    }
++
++    /**
++     * Toggle blackWhiteInversion on the live viewer. Material colors update in place.
++     * @param enable {boolean}
++     */
++    SetBlackWhiteInversion(enable) {
++        this._EnsureRenderer()
++        this.options.blackWhiteInversion = Boolean(enable)
++        this._RefreshMaterialColors()
++        this.Render()
++    }
++
++    _RefreshMaterialColors() {
++        if (!this.materials) {
++            return
++        }
++        this.materials.each(({key, material}) => {
++            const transformed = this._TransformColor(key.color)
++            if (material.uniforms && material.uniforms.color) {
++                material.uniforms.color.value.set(transformed)
++            }
++        })
++    }
++
+     /** Reset the viewer state. */
+     Clear() {
+         this._EnsureRenderer()
+@@ -490,9 +562,9 @@ export class DxfViewer {
+         const objects = new Batch(this, scene, batch).CreateObjects()
+ 
+         for (const obj of objects) {
+-            this.scene.add(obj)
+             const layer = obj._dxfViewerLayer ?? this.defaultLayer
+             layer.PushObject(obj)
++            layer.group.add(obj)
+         }
+     }
+ 
+@@ -953,6 +1025,8 @@ class Layer {
+         this.displayName = displayName
+         this.color = color
+         this.objects = []
++        this.group = new three.Group()
++        this.group.matrixAutoUpdate = false
+     }
+ 
+     PushObject(obj) {
+@@ -964,6 +1038,10 @@ class Layer {
+             obj.geometry.dispose()
+         }
+         this.objects = null
++        if (this.group.parent) {
++            this.group.parent.remove(this.group)
++        }
++        this.group.clear()
+     }
+ }
+ 

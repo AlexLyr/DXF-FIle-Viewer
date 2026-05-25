@@ -269,7 +269,9 @@ async function loadFromBuffer(
     clearColor: new Color(isDark ? 0x262a32 : 0xf6f7f9),
     autoResize: true,
     colorCorrection: true,
-    blackWhiteInversion: !isDark,
+    // Always on — the lib gates by clearColor luminance internally:
+    // light bg → invert pure white → black; dark bg → invert pure black → white.
+    blackWhiteInversion: true,
   });
 
   try {
@@ -717,8 +719,9 @@ function toggleTheme(): void {
 
   const isDark = theme === "dark";
   const clearColor = new Color(isDark ? 0x262a32 : 0xf6f7f9);
+  // SetClearColor re-runs _TransformColor for every cached material → BWI stays
+  // active and direction flips automatically with the new bg luminance.
   viewer.SetClearColor(clearColor);
-  viewer.SetBlackWhiteInversion(!isDark);
   refreshLayerSwatches(viewer);
 }
 

@@ -1,5 +1,5 @@
 diff --git a/node_modules/dxf-viewer/src/DxfViewer.js b/node_modules/dxf-viewer/src/DxfViewer.js
-index e9acf7c..42e191b 100644
+index e9acf7c..77a5a81 100644
 --- a/node_modules/dxf-viewer/src/DxfViewer.js
 +++ b/node_modules/dxf-viewer/src/DxfViewer.js
 @@ -201,6 +201,14 @@ export class DxfViewer {
@@ -107,7 +107,35 @@ index e9acf7c..42e191b 100644
          }
      }
  
-@@ -953,6 +1025,8 @@ class Layer {
+@@ -666,20 +738,22 @@ export class DxfViewer {
+             return color
+         }
+         const fgLum = Luminance(color)
+-        const MIN_TARGET_RATIO = 1.5
++        const MIN_TARGET_RATIO = 3.0
+         const contrast = ContrastRatio(color, this.clearColor)
+         const diff = contrast >= 1 ? contrast : 1 / contrast
+         if (diff < MIN_TARGET_RATIO) {
+             let targetLum
+             if (bkgLum > 0.5) {
+-                targetLum = bkgLum / 2
++                targetLum = Math.min(bkgLum / 2, 0.35)
+             } else {
+-                targetLum = bkgLum * 2
++                /* For very dark backgrounds bkgLum*2 is still very dark; clamp to a
++                 * mid-luminance floor so dark entities become readable. */
++                targetLum = Math.max(bkgLum * 2, 0.55)
+             }
+             if (targetLum > fgLum) {
+-                color = Lighten(color, targetLum / fgLum)
++                color = Lighten(color, targetLum / Math.max(fgLum, 1e-3))
+             } else {
+-                color = Darken(color, fgLum / targetLum)
++                color = Darken(color, fgLum / Math.max(targetLum, 1e-3))
+             }
+         }
+         return color
+@@ -953,6 +1027,8 @@ class Layer {
          this.displayName = displayName
          this.color = color
          this.objects = []
@@ -116,7 +144,7 @@ index e9acf7c..42e191b 100644
      }
  
      PushObject(obj) {
-@@ -964,6 +1038,10 @@ class Layer {
+@@ -964,6 +1040,10 @@ class Layer {
              obj.geometry.dispose()
          }
          this.objects = null

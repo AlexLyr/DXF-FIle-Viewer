@@ -1,236 +1,367 @@
-import { DxfViewer, type LayerInfo } from "dxf-viewer";
-import { Color, Vector3 } from "three";
+import { DxfViewer } from "dxf-viewer";
+import { Color } from "three";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
+import { computeFileKey } from "../lib/fileKey";
 import { claimPending, purgeStalePending, savePending } from "../lib/pendingFiles";
-import {
-  getRecentBuffer,
-  listRecent,
-  removeRecent,
-  saveRecent,
-  type RecentFile,
-} from "../lib/recentFiles";
+import { getRecentBuffer, listRecent, removeRecent, saveRecent, type RecentFile } from "../lib/recentFiles";
 import DxfWorkerFactory from "../worker/dxf.worker.ts?worker";
 
+import { dom } from "./dom";
+import { state } from "./state";
+import { getViewerCanvas } from "./types";
+import {
+  applyColorMode,
+  DARK_CC_PARAMS,
+  DARK_PALETTE,
+  getClearColor,
+  LIGHT_CC_PARAMS,
+  LIGHT_PALETTE,
+  refreshLayerSwatches,
+  toHexColor,
+  toggleTheme,
+} from "./colors";
+import { applyCoordsVisibility, attachCoordReadout, detachCoordReadout, fitToDrawing, getWorldFromPointer, getWorldPerPixel, worldToScreen } from "./coords";
+import { clearMeasure, handleMeasureClick, handleMeasureMove, hideSnapMarker, renderMeasureOverlay, toggleMeasureMode } from "./measure";
+import { clearFindResults, gotoFindHit, runFindQuery, toggleFindBar } from "./find";
+import { addBookmarkFromCurrentView, renderBookmarks } from "./bookmarksUi";
+import { enterCompareMode, exitCompareMode, swapCompareLayers, syncCompareFromMain } from "./compare";
+import { applyLayerFilter, renderLayers } from "./layers";
+import { handleGlobalKeydown } from "./keyboard";
+import {
+  applyMinimapVisibility,
+  captureMinimapPreviewNow,
+  panFromMinimap,
+  scheduleMinimapPreviewRefresh,
+  updateMinimapFromViewer,
+} from "./minimapUtils";
+import { hideEntityTooltip, refreshEntityTooltipPosition, showEntityTooltip } from "./hover";
+import { buildSnapIndex } from "./snap";
+import { findNearestSnap } from "./spatialIndex";
+import { setScreenshotEnabled, takeScreenshot } from "./screenshot";
+
 const MAX_BYTES = 50 * 1024 * 1024;
-type Theme = "light" | "dark";
-
-type LayerEntry = {
-  info: LayerInfo;
-  row: HTMLLIElement;
-  checkbox: HTMLInputElement;
-  nameNode: HTMLSpanElement;
-  swatch: HTMLSpanElement;
-};
-
-const fileNameNode = mustGet<HTMLSpanElement>("#fileName");
-const fileSizeNode = mustGet<HTMLSpanElement>("#fileSize");
-const themeToggleButton = mustGet<HTMLButtonElement>("#themeToggle");
-const openAnotherButton = mustGet<HTMLButtonElement>("#openAnother");
-const fitButton = mustGet<HTMLButtonElement>("#fit");
-const sidebarToggle = mustGet<HTMLButtonElement>("#sidebarToggle");
-const layersList = mustGet<HTMLUListElement>("#layers");
-const layersEmpty = mustGet<HTMLParagraphElement>("#layersEmpty");
-const layerSearch = mustGet<HTMLInputElement>("#layerSearch");
-const canvasHost = mustGet<HTMLDivElement>("#canvasHost");
-const dropOverlay = mustGet<HTMLDivElement>("#dropOverlay");
-const overlay = mustGet<HTMLDivElement>("#overlay");
-const overlayText = mustGet<HTMLParagraphElement>("#overlayText");
-const overlaySpinner = mustGet<HTMLDivElement>("#overlaySpinner");
-const overlayAction = mustGet<HTMLButtonElement>("#overlayAction");
-const fileInput = mustGet<HTMLInputElement>("#fileInput");
-const contentSection = mustGet<HTMLElement>(".content");
-const coordReadout = mustGet<HTMLDivElement>("#coordReadout");
-const coordX = mustGet<HTMLSpanElement>("#coordX");
-const coordY = mustGet<HTMLSpanElement>("#coordY");
-const recentToggle = mustGet<HTMLButtonElement>("#recentToggle");
-const recentMenu = mustGet<HTMLDivElement>("#recentMenu");
-const recentList = mustGet<HTMLUListElement>("#recentList");
-const recentEmpty = mustGet<HTMLParagraphElement>("#recentEmpty");
-
-let viewer: DxfViewer | null = null;
-let currentBlobUrl: string | null = null;
-let currentBuffer: ArrayBuffer | null = null;
-let currentName = "";
-let currentSize = 0;
-let theme: Theme = readStoredTheme();
-let layerEntries: LayerEntry[] = [];
-let soloLayer: string | null = null;
-let hoverPreviewRestore: Map<string, boolean> | null = null;
-let coordCanvas: HTMLCanvasElement | null = null;
-let coordHandlers: { move: (e: MouseEvent) => void; leave: () => void } | null =
-  null;
-let renderRaf = 0;
+const HOVER_TOOLTIP_DELAY_MS = 450;
+const HOVER_TOOLTIP_STILL_PX = 6;
 
 bindUi();
 void bootstrap();
 
-function scheduleRender(instance: DxfViewer): void {
-  if (renderRaf) return;
-  renderRaf = requestAnimationFrame(() => {
-    renderRaf = 0;
-    instance.Render();
-  });
-}
-
 function bindUi(): void {
-  applyThemeClass();
+  state.applyThemeClass();
+  state.initMinimap();
+  applyColorMode();
 
-  themeToggleButton.addEventListener("click", () => {
-    toggleTheme();
+  dom.themeToggle.addEventListener("click", () => toggleTheme());
+  dom.measureToggle.addEventListener("click", () => toggleMeasureMode());
+  dom.findToggle.addEventListener("click", () => toggleFindBar(true));
+  dom.printBtn.addEventListener("click", () => window.print());
+  dom.screenshotBtn.addEventListener("click", () => void takeScreenshot());
+  dom.minimapToggle.addEventListener("click", () => {
+    state.minimapVisible = !state.minimapVisible;
+    state.persistMinimapVisible(state.minimapVisible);
+    applyMinimapVisibility();
   });
-  openAnotherButton.addEventListener("click", () => fileInput.click());
-  overlayAction.addEventListener("click", () => fileInput.click());
+  dom.coordsToggle.addEventListener("click", () => {
+    state.coordsVisible = !state.coordsVisible;
+    state.persistCoordsVisible(state.coordsVisible);
+    applyCoordsVisibility();
+  });
+  dom.colorModeToggle.addEventListener("click", () => {
+    state.colorMode = state.colorMode === "original" ? "theme" : "original";
+    state.persistColorMode(state.colorMode);
+    applyColorMode();
+    if (state.viewer) refreshLayerSwatches(state.viewer);
+  });
+  setScreenshotEnabled(false);
 
-  fileInput.addEventListener("change", () => {
-    const next = fileInput.files?.[0];
-    fileInput.value = "";
-    if (next) {
-      void openInNewTab(next);
+  dom.bookmarkAdd.addEventListener("click", () => void addBookmarkFromCurrentView());
+  dom.compareSwap.addEventListener("click", () => swapCompareLayers());
+  dom.compareExit.addEventListener("click", () => exitCompareMode());
+
+  dom.findInput.addEventListener("input", () => {
+    if (state.findDebounce) window.clearTimeout(state.findDebounce);
+    state.findDebounce = window.setTimeout(() => runFindQuery(dom.findInput.value), 200);
+  });
+  dom.findNext.addEventListener("click", () => gotoFindHit(state.textHitIndex + 1));
+  dom.findPrev.addEventListener("click", () => gotoFindHit(state.textHitIndex - 1));
+  dom.findClose.addEventListener("click", () => toggleFindBar(false));
+
+  dom.openAnother.addEventListener("click", () => dom.fileInput.click());
+  dom.overlayAction.addEventListener("click", () => dom.fileInput.click());
+
+  dom.fileInput.addEventListener("change", () => {
+    const next = dom.fileInput.files?.[0];
+    dom.fileInput.value = "";
+    if (next) void openInNewTab(next);
+  });
+
+  dom.fit.addEventListener("click", () => {
+    if (state.viewer) fitToDrawing(state.viewer);
+  });
+
+  dom.canvasHost.addEventListener("mousemove", handleCanvasMouseMove);
+  dom.canvasHost.addEventListener("mouseleave", () => {
+    if (state.hoverTooltipTimer) {
+      window.clearTimeout(state.hoverTooltipTimer);
+      state.hoverTooltipTimer = 0;
     }
+    state.hoverPointerClient = null;
+    hideSnapMarker();
+    hideEntityTooltip();
   });
+  dom.canvasHost.addEventListener("click", handleCanvasClick);
 
-  fitButton.addEventListener("click", () => {
-    if (viewer) {
-      fitToDrawing(viewer);
-    }
-  });
+  window.addEventListener("keydown", handleGlobalKeydown);
 
-  sidebarToggle.addEventListener("click", () => {
-    const isCollapsed = contentSection.classList.toggle("collapsed");
-    sidebarToggle.setAttribute("aria-expanded", String(!isCollapsed));
+  dom.sidebarToggle.addEventListener("click", () => {
+    const isCollapsed = dom.content.classList.toggle("collapsed");
+    dom.viewer.classList.toggle("sidebar-collapsed", isCollapsed);
+    dom.sidebarToggle.setAttribute("aria-expanded", String(!isCollapsed));
   });
+  dom.viewer.classList.toggle("sidebar-collapsed", dom.content.classList.contains("collapsed"));
 
-  layerSearch.addEventListener("input", () => {
-    applyLayerFilter(layerSearch.value);
-  });
+  dom.layerSearch.addEventListener("input", () => applyLayerFilter(dom.layerSearch.value));
 
   window.addEventListener("resize", () => {
-    // do not auto-fit on resize, only re-render
-    if (viewer) scheduleRender(viewer);
+    if (state.viewer) state.scheduleRender();
   });
 
-  let dragDepth = 0;
-  window.addEventListener("dragenter", (event) => {
-    if (!hasFiles(event)) {
-      return;
+  setupDragDrop();
+  setupRecentMenu();
+  setupMinimap();
+  setupPrintHandlers();
+  applyMinimapVisibility();
+  applyCoordsVisibility();
+
+  window.addEventListener("beforeunload", cleanupViewer);
+}
+
+function handleCanvasMouseMove(event: MouseEvent): void {
+  const world = getWorldFromPointer(event);
+  if (!world) return;
+  state.mouseWorld = world;
+
+  if (state.measureActive) {
+    let snapCoord: { x: number; y: number } | null = null;
+    const snapDisabled = event.altKey;
+
+    if (state.snapGrid && !snapDisabled) {
+      const worldPerPixel = getWorldPerPixel();
+      if (worldPerPixel !== null) {
+        const snap = findNearestSnap(state.snapGrid, world.x, world.y, worldPerPixel * 4);
+        if (snap) {
+          state.activeSnap = { x: snap.x, y: snap.y, kind: snap.kind };
+          snapCoord = { x: snap.x, y: snap.y };
+          const s = worldToScreen(snap.x, snap.y);
+          if (s) {
+            dom.snapMarker.className = `snap-marker ${snap.kind}`;
+            dom.snapMarker.style.left = `${s.x}px`;
+            dom.snapMarker.style.top = `${s.y}px`;
+            dom.snapMarker.classList.remove("hidden");
+          }
+        } else {
+          hideSnapMarker();
+        }
+      } else {
+        hideSnapMarker();
+      }
+    } else {
+      state.activeSnap = null;
+      hideSnapMarker();
     }
+
+    const coord = snapCoord ?? world;
+    handleMeasureMove(coord.x, coord.y);
+  }
+
+  if (state.hoverTooltipTimer) window.clearTimeout(state.hoverTooltipTimer);
+  state.hoverPointerClient = { x: event.clientX, y: event.clientY };
+  const anchorX = event.clientX;
+  const anchorY = event.clientY;
+  state.hoverTooltipTimer = window.setTimeout(() => {
+    state.hoverTooltipTimer = 0;
+    const current = state.hoverPointerClient;
+    if (!current) return;
+    const dx = current.x - anchorX;
+    const dy = current.y - anchorY;
+    if (dx * dx + dy * dy > HOVER_TOOLTIP_STILL_PX * HOVER_TOOLTIP_STILL_PX) return;
+    showEntityTooltip(event);
+  }, HOVER_TOOLTIP_DELAY_MS);
+}
+
+function handleCanvasClick(event: MouseEvent): void {
+  if (!state.viewer || !state.measureActive) return;
+  const world = getWorldFromPointer(event);
+  if (!world) return;
+  const useSnap = !event.altKey && state.activeSnap !== null;
+  const coord = useSnap ? state.activeSnap! : world;
+  handleMeasureClick(coord.x, coord.y);
+}
+
+function setupDragDrop(): void {
+  let dragDepth = 0;
+
+  window.addEventListener("dragenter", (event) => {
+    if (!hasFiles(event)) return;
     event.preventDefault();
     dragDepth += 1;
-    dropOverlay.classList.remove("hidden");
+    dom.dropOverlay.classList.remove("hidden");
   });
+
   window.addEventListener("dragover", (event) => {
-    if (!hasFiles(event)) {
-      return;
-    }
+    if (!hasFiles(event)) return;
     event.preventDefault();
   });
+
   window.addEventListener("dragleave", (event) => {
-    if (!hasFiles(event)) {
-      return;
-    }
+    if (!hasFiles(event)) return;
     dragDepth = Math.max(0, dragDepth - 1);
-    if (dragDepth === 0) {
-      dropOverlay.classList.add("hidden");
-    }
+    if (dragDepth === 0) dom.dropOverlay.classList.add("hidden");
   });
+
   window.addEventListener("drop", (event) => {
     if (!hasFiles(event)) return;
     event.preventDefault();
     dragDepth = 0;
-    dropOverlay.classList.add("hidden");
+    dom.dropOverlay.classList.add("hidden");
     const file = event.dataTransfer?.files?.[0];
     if (file) {
+      if (state.viewer) {
+        const shouldCompare = window.confirm(
+          "Compare this file with current drawing?\nPress Cancel to open in a new tab.",
+        );
+        if (shouldCompare) {
+          void file.arrayBuffer().then((buffer) => enterCompareMode(file.name, buffer));
+          return;
+        }
+      }
       void openInNewTab(file);
     }
   });
+}
 
-  window.addEventListener("beforeunload", () => {
-    cleanupViewer();
-  });
-
-  recentToggle.addEventListener("click", async (event) => {
+function setupRecentMenu(): void {
+  dom.recentToggle.addEventListener("click", async (event) => {
     event.stopPropagation();
-    const isOpen = !recentMenu.classList.contains("hidden");
+    const isOpen = !dom.recentMenu.classList.contains("hidden");
     if (isOpen) {
-      recentMenu.classList.add("hidden");
-      recentToggle.setAttribute("aria-expanded", "false");
+      dom.recentMenu.classList.add("hidden");
+      dom.recentToggle.setAttribute("aria-expanded", "false");
       return;
     }
     await renderRecent();
-    recentMenu.classList.remove("hidden");
-    recentToggle.setAttribute("aria-expanded", "true");
+    dom.recentMenu.classList.remove("hidden");
+    dom.recentToggle.setAttribute("aria-expanded", "true");
   });
 
   document.addEventListener("click", (event) => {
-    if (recentMenu.classList.contains("hidden")) return;
-    if (event.target instanceof Node && recentMenu.contains(event.target)) return;
-    if (event.target === recentToggle) return;
-    recentMenu.classList.add("hidden");
-    recentToggle.setAttribute("aria-expanded", "false");
+    if (dom.recentMenu.classList.contains("hidden")) return;
+    if (event.target instanceof Node && dom.recentMenu.contains(event.target)) return;
+    if (event.target === dom.recentToggle) return;
+    dom.recentMenu.classList.add("hidden");
+    dom.recentToggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function setupMinimap(): void {
+  dom.minimapCanvas.addEventListener("mousedown", (event) => {
+    state.minimapDrag = true;
+    panFromMinimap(event);
+  });
+  window.addEventListener("mousemove", (event) => {
+    if (!state.minimapDrag) return;
+    panFromMinimap(event);
+  });
+  window.addEventListener("mouseup", () => {
+    state.minimapDrag = false;
+  });
+}
+
+function setupPrintHandlers(): void {
+  const clearPrintSnapshot = () => {
+    if (state.printSnapshot) {
+      state.printSnapshot.remove();
+      state.printSnapshot = null;
+    }
+  };
+
+  window.addEventListener("beforeprint", () => {
+    if (state.isPrinting || !state.viewer) return;
+    const canvas = getViewerCanvas(state.viewer);
+    if (!canvas) return;
+    try {
+      state.viewer.Render();
+      const dataUrl = canvas.toDataURL("image/png");
+      clearPrintSnapshot();
+      const snapshot = document.createElement("img");
+      snapshot.className = "print-snapshot";
+      snapshot.alt = "DXF print snapshot";
+      snapshot.src = dataUrl;
+      dom.canvasHost.append(snapshot);
+      state.printSnapshot = snapshot;
+      dom.viewer.classList.add("printing");
+      state.isPrinting = true;
+    } catch {
+      clearPrintSnapshot();
+      dom.viewer.classList.remove("printing");
+      state.isPrinting = false;
+    }
+  });
+
+  window.addEventListener("afterprint", () => {
+    if (!state.isPrinting) return;
+    clearPrintSnapshot();
+    dom.viewer.classList.remove("printing");
+    state.isPrinting = false;
   });
 }
 
 async function bootstrap(): Promise<void> {
   void purgeStalePending();
-  const fileId = new URLSearchParams(window.location.search).get("id");
+  const params = new URLSearchParams(window.location.search);
+  const fileId = params.get("id");
+  const themeParam = params.get("theme");
+
+  if (themeParam === "dark" || themeParam === "light") {
+    state.theme = themeParam;
+    state.persistTheme(state.theme);
+    state.applyThemeClass();
+  }
+
   if (!fileId) {
-    showOverlay("Drop a .dxf file here\nor click Open another", {
-      loading: false,
-      showAction: true,
-    });
+    showOverlay("Drop a .dxf file here\nor click Open another", { loading: false, showAction: true });
     return;
   }
 
   showOverlay("Loading drawing…", { loading: true, showAction: false });
 
   const pendingFile = await claimPending(fileId);
-
   if (!pendingFile) {
-    showOverlay(
-      "Could not open this drawing.\nThe file may have expired.",
-      { loading: false, showAction: true },
-    );
+    showOverlay("Could not open this drawing.\nThe file may have expired.", { loading: false, showAction: true });
     return;
   }
 
   await loadFromBuffer(pendingFile.buffer, pendingFile.name, pendingFile.size);
 }
 
-async function openInNewTab(
-  file: File | { name: string; size: number; buffer: ArrayBuffer },
-): Promise<void> {
+async function openInNewTab(file: File | { name: string; size: number; buffer: ArrayBuffer }): Promise<void> {
   const name = "name" in file ? file.name : "(unknown)";
   if (name && !name.toLowerCase().endsWith(".dxf")) {
-    showOverlay(
-      "Could not read file.\nPlease choose a valid .dxf file.",
-      { loading: false, showAction: true },
-    );
+    showOverlay("Could not read file.\nPlease choose a valid .dxf file.", { loading: false, showAction: true });
     return;
   }
   const buffer = file instanceof File ? await file.arrayBuffer() : file.buffer;
   if (buffer.byteLength > MAX_BYTES) {
-    showOverlay(
-      "File is too large.\nThe viewer supports drawings up to 50 MB.",
-      { loading: false, showAction: true },
-    );
+    showOverlay("File is too large.\nThe viewer supports drawings up to 50 MB.", { loading: false, showAction: true });
     return;
   }
   const fileId = crypto.randomUUID();
-  await savePending({
-    id: fileId,
-    name,
-    size: buffer.byteLength,
-    buffer,
-    createdAt: Date.now(),
-  });
+  await savePending({ id: fileId, name, size: buffer.byteLength, buffer, createdAt: Date.now() });
   const tabUrl = chrome.runtime.getURL(`src/viewer/viewer.html?id=${fileId}`);
   await createTabSafely(tabUrl);
 }
 
 async function createTabSafely(url: string): Promise<void> {
-  // Some Chromium-based browsers block chrome.tabs.create on the first session
-  // after install ("Onboarding tab should not be opened at startup"). Retry a
-  // few times, then fall back to window.open.
   let lastError: unknown = null;
   for (let attempt = 0; attempt < 3; attempt += 1) {
     try {
@@ -242,86 +373,106 @@ async function createTabSafely(url: string): Promise<void> {
     }
   }
   const fallback = window.open(url, "_blank");
-  if (!fallback) {
-    throw lastError ?? new Error("Failed to open viewer tab");
-  }
+  if (!fallback) throw lastError ?? new Error("Failed to open viewer tab");
 }
 
-async function loadFromBuffer(
-  buffer: ArrayBuffer,
-  name: string,
-  size: number,
-): Promise<void> {
+async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): Promise<void> {
   cleanupViewer();
-  if (buffer !== currentBuffer) {
-    currentBuffer = buffer;
-  }
-  currentName = name;
-  currentSize = size;
+  state.minimapPreviewReady = false;
+  state.minimapPreviewDirty = true;
+  state.minimap?.setPreview(null);
+  if (buffer !== state.currentBuffer) state.currentBuffer = buffer;
+  state.currentName = name;
+  state.currentSize = size;
 
   setHeader(name, size);
 
   const blob = new Blob([buffer], { type: "application/dxf" });
-  currentBlobUrl = URL.createObjectURL(blob);
+  state.currentBlobUrl = URL.createObjectURL(blob);
 
-  const isDark = theme === "dark";
-  viewer = new DxfViewer(canvasHost, {
+  const isDark = state.theme === "dark";
+  state.viewer = new DxfViewer(dom.canvasHost, {
     clearColor: new Color(isDark ? 0x262a32 : 0xf6f7f9),
     autoResize: true,
+    retainParsedDxf: true,
     colorCorrection: true,
-    // Always on — the lib gates by clearColor luminance internally:
-    // light bg → invert pure white → black; dark bg → invert pure black → white.
     blackWhiteInversion: true,
+    colorCorrectionParams: isDark ? DARK_CC_PARAMS : LIGHT_CC_PARAMS,
+    colorPalette: isDark ? DARK_PALETTE : LIGHT_PALETTE,
   });
 
   try {
-    await viewer.Load({
-      url: currentBlobUrl,
+    state.currentFileKey = await computeFileKey(buffer);
+    await state.viewer.Load({
+      url: state.currentBlobUrl,
       fonts: [RobotoUrl],
       progressCbk: handleProgress,
-      workerFactory: DxfWorkerFactory,
+      workerFactory: () => new DxfWorkerFactory(),
     });
+    // Eager preview: Load() ends with fit-to-all render, before user interaction starts.
+    captureMinimapPreviewNow({ force: true });
 
-    renderLayers(viewer);
+    renderLayers(state.viewer);
+    setScreenshotEnabled(true);
+    await renderBookmarks();
+    buildSnapIndex(state.viewer);
+    attachViewerSubscriptions(state.viewer);
+    applyColorMode();
     hideOverlay();
     void saveRecent(name, size, buffer);
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        if (viewer) {
-          fitToDrawing(viewer);
-          attachCoordReadout(viewer);
+        if (state.viewer) {
+          fitToDrawing(state.viewer);
+          attachCoordReadout(state.viewer);
         }
       });
     });
     setTimeout(() => {
-      if (viewer) fitToDrawing(viewer);
+      if (state.viewer) {
+        fitToDrawing(state.viewer);
+        scheduleMinimapPreviewRefresh({ immediate: true, force: true });
+      }
     }, 150);
+    applyMinimapVisibility();
+    updateMinimapFromViewer();
   } catch (error) {
     console.error(error);
-    if (currentBlobUrl) {
-      URL.revokeObjectURL(currentBlobUrl);
-      currentBlobUrl = null;
+    if (state.currentBlobUrl) {
+      URL.revokeObjectURL(state.currentBlobUrl);
+      state.currentBlobUrl = null;
     }
-    showOverlay(
-      "Could not open this drawing.\nThe file may be corrupted or unsupported.",
-      { loading: false, showAction: true },
-    );
+    showOverlay("Could not open this drawing.\nThe file may be corrupted or unsupported.", {
+      loading: false,
+      showAction: true,
+    });
+    setScreenshotEnabled(false);
   }
+}
+
+function attachViewerSubscriptions(instance: DxfViewer): void {
+  instance.Subscribe("viewChanged", () => {
+    renderMeasureOverlay();
+    updateMinimapFromViewer();
+    refreshEntityTooltipPosition();
+    if (state.compareViewer) syncCompareFromMain();
+  });
 }
 
 async function renderRecent(): Promise<void> {
   const items = await listRecent();
-  recentList.innerHTML = "";
+  dom.recentList.innerHTML = "";
   if (items.length === 0) {
-    recentEmpty.classList.remove("hidden");
+    dom.recentEmpty.classList.remove("hidden");
     return;
   }
-  recentEmpty.classList.add("hidden");
+  dom.recentEmpty.classList.add("hidden");
   let activeMarked = false;
   for (const item of items) {
     const isCurrent = !activeMarked && isCurrentRecent(item);
     if (isCurrent) activeMarked = true;
-    recentList.append(buildRecentRow(item, isCurrent));
+    dom.recentList.append(buildRecentRow(item, isCurrent));
   }
 }
 
@@ -364,24 +515,37 @@ function buildRecentRow(item: RecentFile, isCurrent: boolean): HTMLLIElement {
     await renderRecent();
   });
 
+  const compare = document.createElement("button");
+  compare.type = "button";
+  compare.className = "recent-remove";
+  compare.title = "Compare with current";
+  compare.setAttribute("aria-label", "Compare with current");
+  compare.textContent = "⇄";
+  compare.style.opacity = "1";
+  compare.addEventListener("click", async (event) => {
+    event.stopPropagation();
+    if (isCurrent) return;
+    const record = await getRecentBuffer(item.id);
+    if (!record) return;
+    await enterCompareMode(record.name, record.buffer);
+    dom.recentMenu.classList.add("hidden");
+    dom.recentToggle.setAttribute("aria-expanded", "false");
+  });
+
   li.addEventListener("click", async () => {
     const record = await getRecentBuffer(item.id);
     if (!record) return;
-    recentMenu.classList.add("hidden");
-    recentToggle.setAttribute("aria-expanded", "false");
-    await openInNewTab({
-      name: record.name,
-      size: record.size,
-      buffer: record.buffer,
-    });
+    dom.recentMenu.classList.add("hidden");
+    dom.recentToggle.setAttribute("aria-expanded", "false");
+    await openInNewTab({ name: record.name, size: record.size, buffer: record.buffer });
   });
 
-  li.append(info, remove);
+  li.append(info, compare, remove);
   return li;
 }
 
 function isCurrentRecent(item: RecentFile): boolean {
-  return currentName !== "" && item.name === currentName && item.size === currentSize;
+  return state.currentName !== "" && item.name === state.currentName && item.size === state.currentSize;
 }
 
 function relativeTime(timestamp: number): string {
@@ -395,14 +559,9 @@ function relativeTime(timestamp: number): string {
   return `${day}d ago`;
 }
 
-function handleProgress(
-  phase: "font" | "fetch" | "parse" | "prepare",
-  processed: number,
-  total: number,
-): void {
+function handleProgress(phase: "font" | "fetch" | "parse" | "prepare", processed: number, total: number): void {
   const label = phaseLabel(phase);
-  const percent =
-    total > 0 ? ` ${Math.min(100, Math.round((processed / total) * 100))}%` : "";
+  const percent = total > 0 ? ` ${Math.min(100, Math.round((processed / total) * 100))}%` : "";
   showOverlay(`${label}${percent}`, { loading: true, showAction: false });
 }
 
@@ -424,261 +583,73 @@ function phaseLabel(phase: "font" | "fetch" | "parse" | "prepare"): string {
 }
 
 function setHeader(name: string, size: number): void {
-  fileNameNode.textContent = name;
-  fileNameNode.title = name;
-  fileSizeNode.textContent = `· ${formatMb(size)} MB`;
+  dom.fileName.textContent = name;
+  dom.fileName.title = name;
+  dom.fileSize.textContent = `· ${formatMb(size)} MB`;
 }
 
-function renderLayers(instance: DxfViewer): void {
-  layersList.innerHTML = "";
-  layerEntries = [];
-  soloLayer = null;
-  layerSearch.value = "";
-
-  const layers = Array.from(instance.GetLayers() ?? []);
-  if (layers.length === 0) {
-    layersEmpty.classList.remove("hidden");
-    return;
-  }
-
-  layersEmpty.classList.add("hidden");
-  for (const info of layers) {
-    layerEntries.push(createLayerEntry(instance, info));
-  }
-}
-
-function createLayerEntry(
-  instance: DxfViewer,
-  info: LayerInfo,
-): LayerEntry {
-  const row = document.createElement("li");
-  row.className = "layer-row";
-  row.dataset.layerName = info.name;
-
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.checked = true;
-  checkbox.title = "Toggle layer";
-  checkbox.addEventListener("change", () => {
-    if (soloLayer) {
-      clearSolo();
-    }
-    instance.ShowLayer(info.name, checkbox.checked);
-    scheduleRender(instance);
-  });
-
-  const swatch = document.createElement("span");
-  swatch.className = "layer-color";
-  swatch.style.backgroundColor = toHexColor(info.color);
-
-  const nameNode = document.createElement("span");
-  nameNode.className = "layer-name";
-  nameNode.textContent = info.displayName || info.name;
-  nameNode.title = info.displayName || info.name;
-
-  const soloButton = document.createElement("button");
-  soloButton.type = "button";
-  soloButton.className = "solo-btn";
-  soloButton.title = "Show only this layer";
-  soloButton.setAttribute("aria-label", "Show only this layer");
-  soloButton.innerHTML = soloIconSvg();
-  soloButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    toggleSolo(instance, info.name);
-  });
-
-  let hoverTimer = 0;
-  let hoverActive = false;
-
-  function startPreview() {
-    if (soloLayer || hoverActive) return;
-    const restore = new Map<string, boolean>();
-    const next = new Map<string, boolean>();
-    for (const e of layerEntries) {
-      restore.set(e.info.name, e.checkbox.checked);
-      next.set(e.info.name, e.info.name === info.name);
-    }
-    hoverPreviewRestore = restore;
-    hoverActive = true;
-    instance.SetLayersVisibility(next);
-    row.classList.add("preview-active");
-  }
-
-  function endPreview() {
-    if (!hoverActive) return;
-    hoverActive = false;
-    if (hoverPreviewRestore) {
-      instance.SetLayersVisibility(hoverPreviewRestore);
-      hoverPreviewRestore = null;
-    }
-    row.classList.remove("preview-active");
-  }
-
-  row.addEventListener("mouseenter", () => {
-    if (hoverTimer) window.clearTimeout(hoverTimer);
-    hoverTimer = window.setTimeout(startPreview, 200);
-  });
-  row.addEventListener("mouseleave", () => {
-    if (hoverTimer) {
-      window.clearTimeout(hoverTimer);
-      hoverTimer = 0;
-    }
-    endPreview();
-  });
-
-  row.addEventListener("click", (event) => {
-    const target = event.target as HTMLElement;
-    // Ignore clicks on checkbox or solo button — they have own handlers
-    if (target.closest("input, .solo-btn")) return;
-    endPreview();
-    if (hoverPreviewRestore) {
-      hoverPreviewRestore = null;
-    }
-    toggleSolo(instance, info.name);
-  });
-
-  row.append(checkbox, swatch, nameNode, soloButton);
-  layersList.append(row);
-  return { info, row, checkbox, nameNode, swatch };
-}
-
-function toggleSolo(instance: DxfViewer, layerName: string): void {
-  hoverPreviewRestore = null;
-  if (soloLayer === layerName) {
-    clearSolo();
-    const allOn = new Map<string, boolean>();
-    for (const entry of layerEntries) {
-      entry.checkbox.checked = true;
-      allOn.set(entry.info.name, true);
-    }
-    instance.SetLayersVisibility(allOn);
-    return;
-  }
-
-  soloLayer = layerName;
-  const onlyOne = new Map<string, boolean>();
-  for (const entry of layerEntries) {
-    const isTarget = entry.info.name === layerName;
-    entry.checkbox.checked = isTarget;
-    entry.row.classList.toggle("solo-active", isTarget);
-    onlyOne.set(entry.info.name, isTarget);
-  }
-  instance.SetLayersVisibility(onlyOne);
-}
-
-function clearSolo(): void {
-  hoverPreviewRestore = null;
-  soloLayer = null;
-  for (const entry of layerEntries) {
-    entry.row.classList.remove("solo-active");
-  }
-}
-
-function applyLayerFilter(query: string): void {
-  const trimmed = query.trim().toLowerCase();
-  for (const entry of layerEntries) {
-    const haystack = (
-      entry.info.displayName || entry.info.name
-    ).toLowerCase();
-    const matches = trimmed === "" || haystack.includes(trimmed);
-    entry.row.classList.toggle("hidden", !matches);
-  }
-}
-
-function fitToDrawing(instance: DxfViewer): void {
-  const bounds = instance.GetBounds();
-  if (!bounds) return;
-  const w = canvasHost.clientWidth;
-  const h = canvasHost.clientHeight;
-  if (w <= 0 || h <= 0) return;
-  const dx = bounds.maxX - bounds.minX;
-  const dy = bounds.maxY - bounds.minY;
-  if (!Number.isFinite(dx) || !Number.isFinite(dy) || dx <= 0 || dy <= 0) {
-    return;
-  }
-  const span = Math.max(dx, dy);
-  const padding = Math.max(span * 0.05, 1);
-  instance.FitView(bounds.minX, bounds.maxX, bounds.minY, bounds.maxY, padding);
-}
-
-function attachCoordReadout(instance: DxfViewer): void {
-  detachCoordReadout();
-  const getCanvas = (instance as unknown as { GetCanvas?: () => HTMLCanvasElement })
-    .GetCanvas;
-  const canvas = typeof getCanvas === "function" ? getCanvas.call(instance) : null;
-  if (!(canvas instanceof HTMLCanvasElement)) return;
-  const camera = (instance as unknown as { camera?: unknown }).camera;
-  if (!camera) return;
-
-  const v = new Vector3();
-
-  const move = (e: MouseEvent) => {
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width <= 0 || rect.height <= 0) return;
-    const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-    v.set(ndcX, ndcY, 0);
-    v.unproject(camera as never);
-    coordX.textContent = `X: ${v.x.toFixed(2)}`;
-    coordY.textContent = `Y: ${v.y.toFixed(2)}`;
-    coordReadout.classList.remove("hidden");
-  };
-  const leave = () => {
-    coordReadout.classList.add("hidden");
-  };
-
-  canvas.addEventListener("mousemove", move);
-  canvas.addEventListener("mouseleave", leave);
-  coordCanvas = canvas;
-  coordHandlers = { move, leave };
-}
-
-function detachCoordReadout(): void {
-  if (coordCanvas && coordHandlers) {
-    coordCanvas.removeEventListener("mousemove", coordHandlers.move);
-    coordCanvas.removeEventListener("mouseleave", coordHandlers.leave);
-  }
-  coordCanvas = null;
-  coordHandlers = null;
-  coordReadout.classList.add("hidden");
-}
-
-function toHexColor(color: number): string {
-  if (!Number.isFinite(color) || color < 0) {
-    return "#9aa3b2";
-  }
-  return `#${(color & 0xffffff).toString(16).padStart(6, "0")}`;
-}
-
-function showOverlay(
-  text: string,
-  options: { loading: boolean; showAction: boolean },
-): void {
-  overlay.classList.remove("hidden");
-  overlayText.textContent = text;
-  overlaySpinner.classList.toggle("hidden", !options.loading);
-  overlayAction.classList.toggle("hidden", !options.showAction);
+function showOverlay(text: string, options: { loading: boolean; showAction: boolean }): void {
+  dom.overlay.classList.remove("hidden");
+  dom.overlayText.textContent = text;
+  dom.overlaySpinner.classList.toggle("hidden", !options.loading);
+  dom.overlayAction.classList.toggle("hidden", !options.showAction);
 }
 
 function hideOverlay(): void {
-  overlay.classList.add("hidden");
+  dom.overlay.classList.add("hidden");
 }
 
 function cleanupViewer(): void {
+  if (state.hoverTooltipTimer) {
+    window.clearTimeout(state.hoverTooltipTimer);
+    state.hoverTooltipTimer = 0;
+  }
+  state.hoverPointerClient = null;
   detachCoordReadout();
-  if (renderRaf) {
-    cancelAnimationFrame(renderRaf);
-    renderRaf = 0;
+  exitCompareMode();
+  clearMeasure();
+  clearFindResults();
+  hideEntityTooltip();
+  hideSnapMarker();
+  if (state.printSnapshot) {
+    state.printSnapshot.remove();
+    state.printSnapshot = null;
   }
-  if (currentBlobUrl) {
-    URL.revokeObjectURL(currentBlobUrl);
-    currentBlobUrl = null;
+  dom.viewer.classList.remove("printing");
+  state.isPrinting = false;
+  dom.compareBar.classList.add("hidden");
+
+  if (state.renderRaf) {
+    cancelAnimationFrame(state.renderRaf);
+    state.renderRaf = 0;
   }
-  if (viewer) {
-    viewer.Destroy();
-    viewer = null;
+  if (state.currentBlobUrl) {
+    URL.revokeObjectURL(state.currentBlobUrl);
+    state.currentBlobUrl = null;
   }
-  canvasHost.querySelectorAll("canvas").forEach((c) => c.remove());
+  if (state.viewer) {
+    state.viewer.Destroy();
+    state.viewer = null;
+  }
+
+  dom.canvasHost.querySelectorAll("canvas").forEach((c) => c.remove());
+  if (state.minimap && !dom.canvasHost.contains(dom.minimapCanvas)) {
+    dom.canvasHost.append(dom.minimapCanvas);
+  }
+  if (state.minimap) {
+    state.minimap.setPreview(null);
+    state.minimap.setEnabled(false);
+    state.minimapPreviewReady = false;
+    state.minimapPreviewDirty = true;
+  }
+  if (state.minimapPreviewTimer) {
+    window.clearTimeout(state.minimapPreviewTimer);
+    state.minimapPreviewTimer = 0;
+  }
+
+  state.currentFileKey = null;
+  state.snapGrid = null;
+  setScreenshotEnabled(false);
 }
 
 function formatMb(bytes: number): string {
@@ -687,73 +658,4 @@ function formatMb(bytes: number): string {
 
 function hasFiles(event: DragEvent): boolean {
   return Array.from(event.dataTransfer?.types ?? []).includes("Files");
-}
-
-function readStoredTheme(): Theme {
-  try {
-    const v = window.localStorage.getItem("dxf-theme");
-    return v === "dark" ? "dark" : "light";
-  } catch {
-    return "light";
-  }
-}
-
-function persistTheme(t: Theme): void {
-  try {
-    window.localStorage.setItem("dxf-theme", t);
-  } catch {
-    // ignore storage failures
-  }
-}
-
-function applyThemeClass(): void {
-  document.documentElement.classList.toggle("theme-dark", theme === "dark");
-  document.documentElement.classList.toggle("theme-light", theme === "light");
-}
-
-function toggleTheme(): void {
-  theme = theme === "dark" ? "light" : "dark";
-  persistTheme(theme);
-  applyThemeClass();
-  if (!viewer) return;
-
-  const isDark = theme === "dark";
-  const clearColor = new Color(isDark ? 0x262a32 : 0xf6f7f9);
-  // SetClearColor re-runs _TransformColor for every cached material → BWI stays
-  // active and direction flips automatically with the new bg luminance.
-  viewer.SetClearColor(clearColor);
-  refreshLayerSwatches(viewer);
-}
-
-function refreshLayerSwatches(instance: DxfViewer): void {
-  const updated = Array.from(instance.GetLayers() ?? []);
-  const byName = new Map<string, LayerInfo>();
-  for (const info of updated) {
-    byName.set(info.name, info);
-  }
-  for (const entry of layerEntries) {
-    const fresh = byName.get(entry.info.name);
-    if (fresh) {
-      entry.info = fresh;
-      entry.swatch.style.backgroundColor = toHexColor(fresh.color);
-    }
-  }
-}
-
-function soloIconSvg(): string {
-  return `
-<svg viewBox="0 0 16 16" aria-hidden="true">
-  <path d="M1.5 8s2.5-4.5 6.5-4.5S14.5 8 14.5 8s-2.5 4.5-6.5 4.5S1.5 8 1.5 8z"
-    fill="none" stroke="currentColor" stroke-width="1.4"
-    stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="8" cy="8" r="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/>
-</svg>`.trim();
-}
-
-function mustGet<T extends Element>(selector: string): T {
-  const node = document.querySelector<T>(selector);
-  if (!node) {
-    throw new Error(`Viewer element missing: ${selector}`);
-  }
-  return node;
 }

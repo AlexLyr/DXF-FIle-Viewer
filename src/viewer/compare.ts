@@ -67,6 +67,7 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
 
 export function syncCompareFromMain(): void {
   if (!state.viewer || !state.compareViewer || state.isSyncingCompare) return;
+  if (!state.compareOnTop) return;
   const sourceCam = (state.viewer as ViewerWithInternals).camera;
   const targetCam = (state.compareViewer as ViewerWithInternals).camera;
   if (!sourceCam || !targetCam) return;
@@ -89,10 +90,13 @@ export function syncCompareFromMain(): void {
 export function swapCompareLayers(): void {
   if (!state.compareViewer || !state.compareHost) return;
   state.compareOnTop = !state.compareOnTop;
-  state.compareHost.style.display = state.compareOnTop ? "block" : "none";
+  state.compareHost.style.visibility = state.compareOnTop ? "visible" : "hidden";
   dom.compareLabel.textContent = state.compareOnTop
     ? `Comparing: ${state.compareName} vs ${state.currentName}`
     : "Overlay hidden";
+  if (state.compareOnTop) {
+    syncCompareFromMain();
+  }
 }
 
 export function exitCompareMode(): void {

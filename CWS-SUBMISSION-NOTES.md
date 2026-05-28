@@ -11,11 +11,11 @@ Before uploading, confirm:
 
 - [ ] `npm run build` completes with no warnings
 - [ ] `dist/manifest.json` contains the updated `version` (`1.0.0`)
-- [ ] `dist/manifest.json` icons are present (`16`, `48`, `128`)
+- [ ] `dist/manifest.json` icons are present (`16`, `48`, `96`, `128`)
 - [ ] `dist.zip` rebuilt from the latest `dist/`
 - [ ] No source maps or `.env` files inside `dist.zip`
 - [ ] Privacy policy hosted at a publicly reachable URL (GitHub Pages / Gist / Notion)
-- [ ] Three icons replaced with the final brand artwork (not placeholders)
+- [x] Three icons replaced with the final brand artwork (not placeholders)
 - [ ] At least 3 screenshots prepared at 1280×800
 - [ ] Promo tile prepared at 440×280
 
@@ -187,10 +187,8 @@ For every category, select **No, this extension does not collect**:
 
 ### Privacy policy URL
 
-Replace this placeholder with the real public URL once hosted:
-
 ```
-https://<your-host>/privacy-policy
+https://gist.github.com/AlexLyr/6ed770e249d0dbe614610dfaba0799a1
 ```
 
 Recommended hosting options (any one works):
@@ -205,9 +203,9 @@ Recommended hosting options (any one works):
 
 | Asset | Spec | Status |
 |---|---|---|
-| Final icon 16×16 PNG | transparent, brand colours | TODO |
-| Final icon 48×48 PNG | transparent, brand colours | TODO |
-| Final icon 128×128 PNG | transparent, brand colours | TODO |
+| Final icon 16×16 PNG | transparent, brand colours | Done |
+| Final icon 48×48 PNG | transparent, brand colours | Done |
+| Final icon 128×128 PNG | transparent, brand colours | Done |
 | Screenshot 1: popup with drop zone | 1280×800 PNG | TODO |
 | Screenshot 2: viewer + layers panel + drawing | 1280×800 PNG | TODO |
 | Screenshot 3: viewer on dark theme | 1280×800 PNG | TODO |
@@ -233,4 +231,3 @@ After approval, monitor:
 
 - Reviews and crash reports tab
 - Console.developer dashboard for any policy notes from the review team
-https://gist.github.com/AlexLyr/6ed770e249d0dbe614610dfaba0799a1 - privacy notes

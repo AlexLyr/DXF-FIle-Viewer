@@ -17,6 +17,7 @@ declare module "three" {
     z: number;
     constructor(x?: number, y?: number, z?: number);
     set(x: number, y: number, z: number): this;
+    project(camera: unknown): this;
     unproject(camera: unknown): this;
   }
 

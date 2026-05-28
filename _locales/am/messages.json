@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "መጋጠሚያዎች ቀያይር" },
   "viewerToolColors": { "message": "ዋናውን የDXF ቀለሞች አሳይ (O)" },
   "viewerToolTheme": { "message": "ገጽታ ቀያይር" },
+  "viewerToolLanguage": { "message": "ቋንቋ" },
   "viewerSidebarCollapse": { "message": "የንብርብሮች ፓነልን ሰብስብ" },
   "viewerRecentEmpty": { "message": "የቅርብ ጊዜ ፋይሎች የሉም" },
   "viewerLayerFilter": { "message": "ንብርብሮችን አጣራ" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "በኋላ ተመልሰው ለመዝለል የአሁኑን ማጉላት እና ቦታ ያስቀምጡ።" },
   "viewerBookmarksEmpty": { "message": "እስካሁን የተቀመጡ እይታዎች የሉም" },
   "viewerFindPlaceholder": { "message": "በስዕል ውስጥ ጽሑፍ ያግኙ" },
+  "viewerLanguageSearchPlaceholder": { "message": "ቋንቋዎችን ይፈልጉ..." },
 
   "viewerCompareLabel": { "message": "ስዕሎችን በማነጻጸር ላይ" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "ተደራቢ ቀያይር" },
   "viewerCompareExit": { "message": "ውጣ" },
   "viewerCompareError": { "message": "ለማነጻጸሪያ ፋይሉን መጫን አልተቻለም" },
   "viewerDropToOpen": { "message": "በአዲስ ትር ለመክፈት ይጣሉ" },

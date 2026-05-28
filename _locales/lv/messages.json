@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Pārslēgt koordinātas" },
   "viewerToolColors": { "message": "Rādīt oriģinālās DXF krāsas (O)" },
   "viewerToolTheme": { "message": "Pārslēgt motīvu" },
+  "viewerToolLanguage": { "message": "Valoda" },
   "viewerSidebarCollapse": { "message": "Sakļaut slāņu paneli" },
   "viewerRecentEmpty": { "message": "Nav neseno failu" },
   "viewerLayerFilter": { "message": "Filtrēt slāņus" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Saglabājiet pašreizējo tālummaiņu un pozīciju, lai atgrieztos vēlāk." },
   "viewerBookmarksEmpty": { "message": "Vēl nav saglabātu skatu" },
   "viewerFindPlaceholder": { "message": "Atrast tekstu zīmējumā" },
+  "viewerLanguageSearchPlaceholder": { "message": "Meklēt valodas..." },
 
   "viewerCompareLabel": { "message": "Zīmējumu salīdzināšana" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Pārslēgt pārklājumu" },
   "viewerCompareExit": { "message": "Iziet" },
   "viewerCompareError": { "message": "Nevarēja ielādēt failu salīdzināšanai" },
   "viewerDropToOpen": { "message": "Nometiet, lai atvērtu jaunā cilnē" },

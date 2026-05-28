@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Prepnúť súradnice" },
   "viewerToolColors": { "message": "Zobraziť pôvodné farby DXF (O)" },
   "viewerToolTheme": { "message": "Prepnúť tému" },
+  "viewerToolLanguage": { "message": "Jazyk" },
   "viewerSidebarCollapse": { "message": "Zbaliť panel vrstiev" },
   "viewerRecentEmpty": { "message": "Žiadne posledné súbory" },
   "viewerLayerFilter": { "message": "Filtrovať vrstvy" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Uložte aktuálnu polohu a priblíženie, aby ste sa neskôr mohli vrátiť." },
   "viewerBookmarksEmpty": { "message": "Zatiaľ žiadne uložené pohľady" },
   "viewerFindPlaceholder": { "message": "Hľadať text vo výkrese" },
+  "viewerLanguageSearchPlaceholder": { "message": "Hľadať jazyky..." },
 
   "viewerCompareLabel": { "message": "Porovnávanie výkresov" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Prepnúť prekrytie" },
   "viewerCompareExit": { "message": "Zatvoriť" },
   "viewerCompareError": { "message": "Nepodarilo sa načítať súbor na porovnanie" },
   "viewerDropToOpen": { "message": "Pustite na otvorenie v novej karte" },

@@ -118,6 +118,10 @@ body {
   pointer-events: auto;
 }
 
+.language-wrap {
+  position: relative;
+}
+
 .tool-separator {
   width: 1px;
   height: 18px;
@@ -241,6 +245,73 @@ body {
 
 .recent-wrap {
   position: relative;
+}
+
+.language-menu {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  width: 260px;
+  max-height: 360px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0 0 0 / 30%);
+}
+
+.language-search {
+  margin-bottom: 8px;
+}
+
+.language-list {
+  margin: 0;
+  max-height: 296px;
+  overflow-y: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.language-item:hover,
+.language-item:focus-visible {
+  background: rgba(79 141 255 / 12%);
+}
+
+.language-label {
+  overflow: hidden;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lang-native {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.lang-english {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.lang-check {
+  min-width: 14px;
+  color: var(--accent-strong);
+  font-size: 12px;
+  text-align: right;
 }
 
 .recent-menu {
@@ -591,6 +662,47 @@ html.theme-light .theme-moon {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.compare-visibility-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.compare-visibility-btn.active {
+  border-color: var(--accent);
+  background: rgba(79 141 255 / 14%);
+}
+
+.compare-visibility-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.compare-opacity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  padding: 0 8px;
+  height: 30px;
+}
+
+.compare-opacity-control:has(.compare-opacity-input:disabled) {
+  opacity: 0.5;
+}
+
+.compare-opacity-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.compare-opacity-input {
+  width: 90px;
+  accent-color: var(--accent);
 }
 
 .measure-overlay {

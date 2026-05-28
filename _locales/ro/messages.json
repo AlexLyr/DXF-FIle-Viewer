@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Comută coordonatele" },
   "viewerToolColors": { "message": "Afișează culorile DXF originale (O)" },
   "viewerToolTheme": { "message": "Comută tema" },
+  "viewerToolLanguage": { "message": "Limbă" },
   "viewerSidebarCollapse": { "message": "Restrânge panoul de straturi" },
   "viewerRecentEmpty": { "message": "Niciun fișier recent" },
   "viewerLayerFilter": { "message": "Filtrează straturile" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Salvează zoom-ul și poziția curentă pentru a reveni mai târziu." },
   "viewerBookmarksEmpty": { "message": "Nicio vedere salvată încă" },
   "viewerFindPlaceholder": { "message": "Caută text în desen" },
+  "viewerLanguageSearchPlaceholder": { "message": "Căutați limbi..." },
 
   "viewerCompareLabel": { "message": "Comparare desene" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Comută suprapunerea" },
   "viewerCompareExit": { "message": "Ieșire" },
   "viewerCompareError": { "message": "Nu s-a putut încărca fișierul pentru comparare" },
   "viewerDropToOpen": { "message": "Trage pentru a deschide într-un tab nou" },

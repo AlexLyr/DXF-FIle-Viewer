@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "I-toggle ang coordinates" },
   "viewerToolColors": { "message": "Ipakita ang orihinal na mga kulay ng DXF (O)" },
   "viewerToolTheme": { "message": "I-toggle ang tema" },
+  "viewerToolLanguage": { "message": "Wika" },
   "viewerSidebarCollapse": { "message": "I-collapse ang panel ng mga layer" },
   "viewerRecentEmpty": { "message": "Walang kamakailang file" },
   "viewerLayerFilter": { "message": "I-filter ang mga layer" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "I-save ang kasalukuyang zoom at posisyon upang makabalik dito sa ibang pagkakataon." },
   "viewerBookmarksEmpty": { "message": "Wala pang naka-save na view" },
   "viewerFindPlaceholder": { "message": "Maghanap ng teksto sa guhit" },
+  "viewerLanguageSearchPlaceholder": { "message": "Maghanap ng mga wika..." },
 
   "viewerCompareLabel": { "message": "Paghahambing ng mga guhit" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "I-toggle ang overlay" },
   "viewerCompareExit": { "message": "Lumabas" },
   "viewerCompareError": { "message": "Hindi ma-load ang file para sa paghahambing" },
   "viewerDropToOpen": { "message": "I-drop upang buksan sa bagong tab" },

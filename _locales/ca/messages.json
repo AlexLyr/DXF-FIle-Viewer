@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Commuta les coordenades" },
   "viewerToolColors": { "message": "Mostra els colors DXF originals (O)" },
   "viewerToolTheme": { "message": "Commuta el tema" },
+  "viewerToolLanguage": { "message": "Idioma" },
   "viewerSidebarCollapse": { "message": "Replega el panell de capes" },
   "viewerRecentEmpty": { "message": "Cap fitxer recent" },
   "viewerLayerFilter": { "message": "Filtra capes" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Deseu el zoom i la posició actuals per tornar-hi més tard." },
   "viewerBookmarksEmpty": { "message": "Encara no hi ha vistes desades" },
   "viewerFindPlaceholder": { "message": "Cerca text al dibuix" },
+  "viewerLanguageSearchPlaceholder": { "message": "Cerca idiomes..." },
 
   "viewerCompareLabel": { "message": "Comparant dibuixos" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Commuta la superposició" },
   "viewerCompareExit": { "message": "Surt" },
   "viewerCompareError": { "message": "No s'ha pogut carregar el fitxer per a la comparació" },
   "viewerDropToOpen": { "message": "Deixa caure per obrir en una pestanya nova" },

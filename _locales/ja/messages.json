@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXFファイルビューア"
+    "message": "DXF Viewer - DXFファイルを開く"
   },
   "shortDesc": {
     "message": "DXFファイルビューアを使用して、オンラインで.dxfファイルを開いて表示します — ブラウザ内で動作する高速なAutoCAD互換のDXFビューワーです。"
@@ -29,6 +29,7 @@
   "viewerToolCoords": { "message": "座標を切り替えます" },
   "viewerToolColors": { "message": "DXFの元の色を表示します (O)" },
   "viewerToolTheme": { "message": "テーマを切り替えます" },
+  "viewerToolLanguage": { "message": "言語" },
   "viewerSidebarCollapse": { "message": "レイヤーパネルを折りたたみます" },
   "viewerRecentEmpty": { "message": "最近のファイルはありません" },
   "viewerLayerFilter": { "message": "レイヤーの絞り込み" },
@@ -38,6 +39,7 @@
   "viewerBookmarksHelp": { "message": "現在のズームと位置を保存して、後で戻ることができます。" },
   "viewerBookmarksEmpty": { "message": "保存したビューはまだありません" },
   "viewerFindPlaceholder": { "message": "図面内のテキストを検索" },
+  "viewerLanguageSearchPlaceholder": { "message": "言語を検索..." },
 
   "viewerCompareLabel": { "message": "図面を比較しています" },
   "viewerCompareNamed": {
@@ -47,7 +49,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "オーバーレイを切り替えます" },
   "viewerCompareExit": { "message": "終了" },
   "viewerCompareError": { "message": "比較用のファイルを読み込めませんでした" },
   "viewerDropToOpen": { "message": "ドロップして新しいタブで開きます" },

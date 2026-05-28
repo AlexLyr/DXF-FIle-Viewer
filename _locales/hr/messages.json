@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Prikaži/sakrij koordinate" },
   "viewerToolColors": { "message": "Prikaži izvorne DXF boje (O)" },
   "viewerToolTheme": { "message": "Promijeni temu" },
+  "viewerToolLanguage": { "message": "Jezik" },
   "viewerSidebarCollapse": { "message": "Sažmi panel slojeva" },
   "viewerRecentEmpty": { "message": "Nema nedavnih datoteka" },
   "viewerLayerFilter": { "message": "Filtriraj slojeve" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Spremite trenutni zum i položaj za kasniji povratak." },
   "viewerBookmarksEmpty": { "message": "Još nema spremljenih pogleda" },
   "viewerFindPlaceholder": { "message": "Pronađi tekst u crtežu" },
+  "viewerLanguageSearchPlaceholder": { "message": "Pretraži jezike..." },
 
   "viewerCompareLabel": { "message": "Usporedba crteža" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Prikaži/sakrij preklapanje" },
   "viewerCompareExit": { "message": "Izlaz" },
   "viewerCompareError": { "message": "Nije moguće učitati datoteku za usporedbu" },
   "viewerDropToOpen": { "message": "Ispustite za otvaranje u novoj kartici" },

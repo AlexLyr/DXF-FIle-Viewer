@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "Visionneuse de fichiers DXF"
+    "message": "DXF Viewer - Ouvrir fichier DXF"
   },
   "shortDesc": {
     "message": "Utilisez la Visionneuse de fichiers DXF pour ouvrir et visualiser des fichiers .dxf en ligne — visionneuse DXF rapide compatible avec AutoCAD dans votre navigateur."
@@ -29,6 +29,7 @@
   "viewerToolCoords": { "message": "Afficher/masquer les coordonnées" },
   "viewerToolColors": { "message": "Afficher les couleurs DXF d'origine (O)" },
   "viewerToolTheme": { "message": "Changer de thème" },
+  "viewerToolLanguage": { "message": "Langue" },
   "viewerSidebarCollapse": { "message": "Réduire le panneau des calques" },
   "viewerRecentEmpty": { "message": "Aucun fichier récent" },
   "viewerLayerFilter": { "message": "Filtrer les calques" },
@@ -38,6 +39,7 @@
   "viewerBookmarksHelp": { "message": "Enregistrez le zoom et la position actuels pour y revenir plus tard." },
   "viewerBookmarksEmpty": { "message": "Aucune vue enregistrée" },
   "viewerFindPlaceholder": { "message": "Rechercher du texte dans le dessin" },
+  "viewerLanguageSearchPlaceholder": { "message": "Rechercher des langues..." },
 
   "viewerCompareLabel": { "message": "Comparaison de dessins" },
   "viewerCompareNamed": {
@@ -47,7 +49,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Afficher/masquer la superposition" },
   "viewerCompareExit": { "message": "Quitter" },
   "viewerCompareError": { "message": "Impossible de charger le fichier pour la comparaison" },
   "viewerDropToOpen": { "message": "Déposez pour ouvrir dans un nouvel onglet" },

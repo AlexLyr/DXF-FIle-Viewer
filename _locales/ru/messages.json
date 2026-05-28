@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Переключить координаты" },
   "viewerToolColors": { "message": "Показать исходные цвета DXF (O)" },
   "viewerToolTheme": { "message": "Переключить тему" },
+  "viewerToolLanguage": { "message": "Язык" },
   "viewerSidebarCollapse": { "message": "Свернуть панель слоёв" },
   "viewerRecentEmpty": { "message": "Нет недавних файлов" },
   "viewerLayerFilter": { "message": "Фильтр слоёв" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Сохраните текущий масштаб и положение, чтобы вернуться позже." },
   "viewerBookmarksEmpty": { "message": "Нет сохранённых видов" },
   "viewerFindPlaceholder": { "message": "Найти текст в чертеже" },
+  "viewerLanguageSearchPlaceholder": { "message": "Поиск языков..." },
 
   "viewerCompareLabel": { "message": "Сравнение чертежей" },
   "viewerCompareNamed": {
@@ -46,8 +48,10 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Переключить наложение" },
   "viewerCompareExit": { "message": "Выйти" },
+  "viewerCompareShowBase": { "message": "База" },
+  "viewerCompareShowCompare": { "message": "Слой сравнения" },
+  "viewerCompareOpacity": { "message": "Прозрачность" },
   "viewerCompareError": { "message": "Не удалось загрузить файл для сравнения" },
   "viewerDropToOpen": { "message": "Отпустите, чтобы открыть в новой вкладке" },
   "viewerOverlayDropHint": { "message": "Перетащите файл .dxf сюда\nили нажмите «Открыть другой файл»" },

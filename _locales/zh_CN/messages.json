@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "切换坐标" },
   "viewerToolColors": { "message": "显示原始 DXF 颜色 (O)" },
   "viewerToolTheme": { "message": "切换主题" },
+  "viewerToolLanguage": { "message": "语言" },
   "viewerSidebarCollapse": { "message": "折叠图层面板" },
   "viewerRecentEmpty": { "message": "没有最近的文件" },
   "viewerLayerFilter": { "message": "筛选图层" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "保存当前缩放和位置，以便稍后跳转。" },
   "viewerBookmarksEmpty": { "message": "尚无保存的视图" },
   "viewerFindPlaceholder": { "message": "在图纸中查找文本" },
+  "viewerLanguageSearchPlaceholder": { "message": "搜索语言..." },
 
   "viewerCompareLabel": { "message": "正在比较图纸" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "切换叠加" },
   "viewerCompareExit": { "message": "退出" },
   "viewerCompareError": { "message": "无法加载比较文件" },
   "viewerDropToOpen": { "message": "拖放以在新标签页中打开" },

@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXF-bestandsviewer"
+    "message": "DXF Viewer - DXF-bestand openen"
   },
   "shortDesc": {
     "message": "Gebruik de DXF-bestandsviewer om .dxf-bestanden online te openen en te bekijken — snelle AutoCAD-compatibele DXF-viewer in uw browser."
@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Coördinaten in-/uitschakelen" },
   "viewerToolColors": { "message": "Originele DXF-kleuren tonen (O)" },
   "viewerToolTheme": { "message": "Thema wisselen" },
+  "viewerToolLanguage": { "message": "Taal" },
   "viewerSidebarCollapse": { "message": "Lagenpaneel inklappen" },
   "viewerRecentEmpty": { "message": "Geen recente bestanden" },
   "viewerLayerFilter": { "message": "Lagen filteren" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Sla huidige zoom en positie op om later terug te springen." },
   "viewerBookmarksEmpty": { "message": "Nog geen opgeslagen weergaven" },
   "viewerFindPlaceholder": { "message": "Tekst zoeken in tekening" },
+  "viewerLanguageSearchPlaceholder": { "message": "Talen zoeken..." },
 
   "viewerCompareLabel": { "message": "Tekeningen vergelijken" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Overlay in-/uitschakelen" },
   "viewerCompareExit": { "message": "Sluiten" },
   "viewerCompareError": { "message": "Kan bestand niet laden voor vergelijking" },
   "viewerDropToOpen": { "message": "Sleep om te openen in een nieuw tabblad" },

@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Koordináták be/ki" },
   "viewerToolColors": { "message": "Eredeti DXF színek megjelenítése (O)" },
   "viewerToolTheme": { "message": "Téma váltása" },
+  "viewerToolLanguage": { "message": "Nyelv" },
   "viewerSidebarCollapse": { "message": "Rétegek panel összecsukása" },
   "viewerRecentEmpty": { "message": "Nincsenek legutóbbi fájlok" },
   "viewerLayerFilter": { "message": "Rétegek szűrése" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Mentse el az aktuális nagyítást és pozíciót, hogy később visszaugorhasson." },
   "viewerBookmarksEmpty": { "message": "Még nincsenek mentett nézetek" },
   "viewerFindPlaceholder": { "message": "Szöveg keresése a rajzban" },
+  "viewerLanguageSearchPlaceholder": { "message": "Nyelvek keresése..." },
 
   "viewerCompareLabel": { "message": "Rajzok összehasonlítása" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Átfedés be/ki" },
   "viewerCompareExit": { "message": "Kilépés" },
   "viewerCompareError": { "message": "Nem sikerült betölteni a fájlt az összehasonlításhoz" },
   "viewerDropToOpen": { "message": "Ejtse ide az új lapon való megnyitáshoz" },

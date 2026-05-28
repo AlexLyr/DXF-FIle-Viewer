@@ -30,6 +30,7 @@
   "viewerToolCoords": { "message": "కోఆర్డినేట్‌లను టోగుల్ చేయండి" },
   "viewerToolColors": { "message": "అసలు DXF రంగులను చూపించండి (O)" },
   "viewerToolTheme": { "message": "థీమ్‌ను టోగుల్ చేయండి" },
+  "viewerToolLanguage": { "message": "భాష" },
   "viewerSidebarCollapse": { "message": "లేయర్‌ల ప్యానెల్‌ను కుదించండి" },
   "viewerRecentEmpty": { "message": "ఇటీవలి ఫైల్‌లు లేవు" },
   "viewerLayerFilter": { "message": "లేయర్‌లను ఫిల్టర్ చేయండి" },
@@ -39,6 +40,7 @@
   "viewerBookmarksHelp": { "message": "తర్వాత తిరిగి రావడానికి ప్రస్తుత జూమ్ మరియు స్థానాన్ని సేవ్ చేయండి." },
   "viewerBookmarksEmpty": { "message": "ఇంకా సేవ్ చేసిన వ్యూలు లేవు" },
   "viewerFindPlaceholder": { "message": "డ్రాయింగ్‌లో టెక్స్ట్‌ను కనుగొనండి" },
+  "viewerLanguageSearchPlaceholder": { "message": "భాషలను వెతకండి..." },
   "viewerCompareLabel": { "message": "డ్రాయింగ్‌లను పోలుస్తోంది" },
   "viewerCompareNamed": {
     "message": "పోలిక: $1 vs $2",
@@ -47,7 +49,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "ఓవర్‌లేను టోగుల్ చేయండి" },
   "viewerCompareExit": { "message": "నిష్క్రమించు" },
   "viewerCompareError": { "message": "పోలిక కోసం ఫైల్‌ను లోడ్ చేయలేకపోయింది" },
   "viewerDropToOpen": { "message": "కొత్త ట్యాబ్‌లో తెరవడానికి డ్రాప్ చేయండి" },

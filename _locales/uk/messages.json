@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Перемкнути координати" },
   "viewerToolColors": { "message": "Показати оригінальні кольори DXF (O)" },
   "viewerToolTheme": { "message": "Перемкнути тему" },
+  "viewerToolLanguage": { "message": "Мова" },
   "viewerSidebarCollapse": { "message": "Згорнути панель шарів" },
   "viewerRecentEmpty": { "message": "Немає останніх файлів" },
   "viewerLayerFilter": { "message": "Фільтрувати шари" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Збережіть поточний масштаб і позицію, щоб повернутися пізніше." },
   "viewerBookmarksEmpty": { "message": "Збережених видів ще немає" },
   "viewerFindPlaceholder": { "message": "Знайти текст у кресленні" },
+  "viewerLanguageSearchPlaceholder": { "message": "Пошук мов..." },
 
   "viewerCompareLabel": { "message": "Порівняння креслень" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Перемкнути накладання" },
   "viewerCompareExit": { "message": "Вийти" },
   "viewerCompareError": { "message": "Не вдалося завантажити файл для порівняння" },
   "viewerDropToOpen": { "message": "Перетягніть, щоб відкрити у новій вкладці" },

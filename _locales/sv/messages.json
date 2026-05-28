@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXF-filvisare"
+    "message": "DXF Viewer - Öppna DXF-fil"
   },
   "shortDesc": {
     "message": "Använd DXF-filvisare för att öppna och visa .dxf-filer online — snabb AutoCAD-kompatibel DXF-visare i din webbläsare."
@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Växla koordinater" },
   "viewerToolColors": { "message": "Visa ursprungliga DXF-färger (O)" },
   "viewerToolTheme": { "message": "Växla tema" },
+  "viewerToolLanguage": { "message": "Språk" },
   "viewerSidebarCollapse": { "message": "Dölj lagerpanelen" },
   "viewerRecentEmpty": { "message": "Inga senaste filer" },
   "viewerLayerFilter": { "message": "Filtrera lager" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Spara aktuell zoom och position för att hoppa tillbaka senare." },
   "viewerBookmarksEmpty": { "message": "Inga sparade vyer ännu" },
   "viewerFindPlaceholder": { "message": "Sök text i ritning" },
+  "viewerLanguageSearchPlaceholder": { "message": "Sök språk..." },
 
   "viewerCompareLabel": { "message": "Jämför ritningar" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Växla överlagring" },
   "viewerCompareExit": { "message": "Avsluta" },
   "viewerCompareError": { "message": "Kunde inte ladda fil för jämförelse" },
   "viewerDropToOpen": { "message": "Släpp för att öppna i en ny flik" },

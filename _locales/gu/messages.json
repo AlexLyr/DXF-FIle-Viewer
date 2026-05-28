@@ -27,6 +27,7 @@
   "viewerToolCoords": { "message": "Toggle coordinates" },
   "viewerToolColors": { "message": "Show original DXF colors (O)" },
   "viewerToolTheme": { "message": "Toggle theme" },
+  "viewerToolLanguage": { "message": "ભાષા" },
   "viewerSidebarCollapse": { "message": "Collapse layers panel" },
   "viewerRecentEmpty": { "message": "No recent files" },
   "viewerLayerFilter": { "message": "Filter layers" },
@@ -36,6 +37,7 @@
   "viewerBookmarksHelp": { "message": "Save current zoom and position to jump back later." },
   "viewerBookmarksEmpty": { "message": "No saved views yet" },
   "viewerFindPlaceholder": { "message": "Find text in drawing" },
+  "viewerLanguageSearchPlaceholder": { "message": "ભાષાઓ શોધો..." },
   "viewerCompareLabel": { "message": "Comparing drawings" },
   "viewerCompareNamed": {
     "message": "Comparing: $1 vs $2",
@@ -44,7 +46,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Toggle overlay" },
   "viewerCompareExit": { "message": "Exit" },
   "viewerCompareError": { "message": "Could not load file for comparison" },
   "viewerDropToOpen": { "message": "Drop to open in a new tab" },

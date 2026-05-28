@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "ஆயத்தொலைவுகளை நிலைமாற்று" },
   "viewerToolColors": { "message": "அசல் DXF வண்ணங்களைக் காட்டு (O)" },
   "viewerToolTheme": { "message": "தீமை நிலைமாற்று" },
+  "viewerToolLanguage": { "message": "மொழி" },
   "viewerSidebarCollapse": { "message": "அடுக்குகள் பலகத்தைச் சுருக்கு" },
   "viewerRecentEmpty": { "message": "சமீபத்திய கோப்புகள் இல்லை" },
   "viewerLayerFilter": { "message": "அடுக்குகளை வடிகட்டு" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "பின்னர் திரும்பிச் செல்ல தற்போதைய பெரிதாக்கலையும் நிலையையும் சேமிக்கவும்." },
   "viewerBookmarksEmpty": { "message": "சேமித்த காட்சிகள் எதுவும் இல்லை" },
   "viewerFindPlaceholder": { "message": "வரைபடத்தில் உரையைக் கண்டுபிடி" },
+  "viewerLanguageSearchPlaceholder": { "message": "மொழிகளைத் தேடவும்..." },
 
   "viewerCompareLabel": { "message": "வரைபடங்களை ஒப்பிடுகிறது" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "மேலடுக்கை நிலைமாற்று" },
   "viewerCompareExit": { "message": "வெளியேறு" },
   "viewerCompareError": { "message": "ஒப்பிடுவதற்குக் கோப்பை ஏற்ற முடியவில்லை" },
   "viewerDropToOpen": { "message": "புதிய தாவலில் திறக்க இடவும்" },

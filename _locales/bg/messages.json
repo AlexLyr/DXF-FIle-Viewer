@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Превключване на координати" },
   "viewerToolColors": { "message": "Показване на оригиналните DXF цветове (O)" },
   "viewerToolTheme": { "message": "Превключване на темата" },
+  "viewerToolLanguage": { "message": "Език" },
   "viewerSidebarCollapse": { "message": "Свиване на панела със слоеве" },
   "viewerRecentEmpty": { "message": "Няма последни файлове" },
   "viewerLayerFilter": { "message": "Филтриране на слоеве" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Запазете текущото увеличение и позиция, за да се върнете по-късно." },
   "viewerBookmarksEmpty": { "message": "Все още няма запазени изгледи" },
   "viewerFindPlaceholder": { "message": "Търсене на текст в чертежа" },
+  "viewerLanguageSearchPlaceholder": { "message": "Търсене на езици..." },
 
   "viewerCompareLabel": { "message": "Сравняване на чертежи" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Превключване на наслагването" },
   "viewerCompareExit": { "message": "Изход" },
   "viewerCompareError": { "message": "Файлът за сравнение не можа да бъде зареден" },
   "viewerDropToOpen": { "message": "Пуснете, за да отворите в нов раздел" },

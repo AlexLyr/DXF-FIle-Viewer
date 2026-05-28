@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Bật/tắt tọa độ" },
   "viewerToolColors": { "message": "Hiển thị màu DXF gốc (O)" },
   "viewerToolTheme": { "message": "Chuyển đổi chủ đề" },
+  "viewerToolLanguage": { "message": "Ngôn ngữ" },
   "viewerSidebarCollapse": { "message": "Thu gọn bảng lớp" },
   "viewerRecentEmpty": { "message": "Không có tệp gần đây" },
   "viewerLayerFilter": { "message": "Lọc lớp" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Lưu vị trí phóng to hiện tại để quay lại sau." },
   "viewerBookmarksEmpty": { "message": "Chưa có góc nhìn đã lưu" },
   "viewerFindPlaceholder": { "message": "Tìm văn bản trong bản vẽ" },
+  "viewerLanguageSearchPlaceholder": { "message": "Tìm kiếm ngôn ngữ..." },
 
   "viewerCompareLabel": { "message": "Đang so sánh bản vẽ" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Bật/tắt lớp phủ" },
   "viewerCompareExit": { "message": "Thoát" },
   "viewerCompareError": { "message": "Không thể tải tệp để so sánh" },
   "viewerDropToOpen": { "message": "Thả để mở trong tab mới" },

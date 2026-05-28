@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Rodyti / slėpti koordinates" },
   "viewerToolColors": { "message": "Rodyti originalias DXF spalvas (O)" },
   "viewerToolTheme": { "message": "Perjungti temą" },
+  "viewerToolLanguage": { "message": "Kalba" },
   "viewerSidebarCollapse": { "message": "Suskleisti sluoksnių skydelį" },
   "viewerRecentEmpty": { "message": "Nėra paskutinių failų" },
   "viewerLayerFilter": { "message": "Filtruoti sluoksnius" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Išsaugokite dabartinį mastelį ir padėtį, kad vėliau galėtumėte grįžti." },
   "viewerBookmarksEmpty": { "message": "Kol kas nėra išsaugotų vaizdų" },
   "viewerFindPlaceholder": { "message": "Rasti tekstą brėžinyje" },
+  "viewerLanguageSearchPlaceholder": { "message": "Ieškoti kalbų..." },
 
   "viewerCompareLabel": { "message": "Brėžinių palyginimas" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Rodyti / slėpti perdangą" },
   "viewerCompareExit": { "message": "Išeiti" },
   "viewerCompareError": { "message": "Nepavyko įkelti failo palyginimui" },
   "viewerDropToOpen": { "message": "Numeskite, kad atidarytumėte naujame skirtuke" },

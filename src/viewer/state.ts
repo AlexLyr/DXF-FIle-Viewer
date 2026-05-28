@@ -97,7 +97,6 @@ class ViewerState {
   compareName = "";
   isSyncingCompare = false;
   compareHost: HTMLDivElement | null = null;
-  compareOnTop = false;
 
   persistTheme(t: Theme): void {
     try {

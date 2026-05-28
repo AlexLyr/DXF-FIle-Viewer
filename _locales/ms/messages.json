@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Togol koordinat" },
   "viewerToolColors": { "message": "Tunjukkan warna DXF asal (O)" },
   "viewerToolTheme": { "message": "Togol tema" },
+  "viewerToolLanguage": { "message": "Bahasa" },
   "viewerSidebarCollapse": { "message": "Kecilkan panel lapisan" },
   "viewerRecentEmpty": { "message": "Tiada fail terkini" },
   "viewerLayerFilter": { "message": "Tapis lapisan" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Simpan zum dan kedudukan semasa untuk kembali kemudian." },
   "viewerBookmarksEmpty": { "message": "Belum ada paparan tersimpan" },
   "viewerFindPlaceholder": { "message": "Cari teks dalam lukisan" },
+  "viewerLanguageSearchPlaceholder": { "message": "Cari bahasa..." },
 
   "viewerCompareLabel": { "message": "Membandingkan lukisan" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Togol tindanan" },
   "viewerCompareExit": { "message": "Keluar" },
   "viewerCompareError": { "message": "Tidak dapat memuatkan fail untuk perbandingan" },
   "viewerDropToOpen": { "message": "Lepaskan untuk membuka dalam tab baharu" },

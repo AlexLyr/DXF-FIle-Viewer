@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Badilisha viwianishi" },
   "viewerToolColors": { "message": "Onyesha rangi asili za DXF (O)" },
   "viewerToolTheme": { "message": "Badilisha mandhari" },
+  "viewerToolLanguage": { "message": "Lugha" },
   "viewerSidebarCollapse": { "message": "Kunja paneli ya tabaka" },
   "viewerRecentEmpty": { "message": "Hakuna faili za hivi karibuni" },
   "viewerLayerFilter": { "message": "Chuja tabaka" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Hifadhi ukuzaji na nafasi ya sasa ili kurudi baadaye." },
   "viewerBookmarksEmpty": { "message": "Hakuna maoni yaliyohifadhiwa bado" },
   "viewerFindPlaceholder": { "message": "Tafuta maandishi kwenye mchoro" },
+  "viewerLanguageSearchPlaceholder": { "message": "Tafuta lugha..." },
 
   "viewerCompareLabel": { "message": "Inalinganisha michoro" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Badilisha tabaka la juu" },
   "viewerCompareExit": { "message": "Ondoka" },
   "viewerCompareError": { "message": "Imeshindwa kupakia faili kwa ulinganisho" },
   "viewerDropToOpen": { "message": "Achia ili kufungua kwenye kichupo kipya" },

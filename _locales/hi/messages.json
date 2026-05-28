@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "निर्देशांक टॉगल करें" },
   "viewerToolColors": { "message": "मूल DXF रंग दिखाएँ (O)" },
   "viewerToolTheme": { "message": "थीम टॉगल करें" },
+  "viewerToolLanguage": { "message": "भाषा" },
   "viewerSidebarCollapse": { "message": "लेयर पैनल संक्षिप्त करें" },
   "viewerRecentEmpty": { "message": "कोई हालिया फ़ाइलें नहीं" },
   "viewerLayerFilter": { "message": "लेयर फ़िल्टर करें" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "बाद में वापस आने के लिए वर्तमान ज़ूम और स्थिति सहेजें।" },
   "viewerBookmarksEmpty": { "message": "अभी तक कोई सहेजा गया व्यू नहीं" },
   "viewerFindPlaceholder": { "message": "ड्राइंग में टेक्स्ट खोजें" },
+  "viewerLanguageSearchPlaceholder": { "message": "भाषाएँ खोजें..." },
 
   "viewerCompareLabel": { "message": "ड्राइंग की तुलना" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "ओवरले टॉगल करें" },
   "viewerCompareExit": { "message": "बाहर निकलें" },
   "viewerCompareError": { "message": "तुलना के लिए फ़ाइल लोड नहीं हो सकी" },
   "viewerDropToOpen": { "message": "नए टैब में खोलने के लिए ड्रॉप करें" },

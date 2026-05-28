@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXF 파일 뷰어"
+    "message": "DXF Viewer - DXF 파일 열기"
   },
   "shortDesc": {
     "message": "DXF 파일 뷰어를 사용하여 .dxf 파일을 온라인으로 열고 보세요 — 브라우저에서 빠른 AutoCAD 호환 DXF 뷰어입니다."
@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "좌표 전환" },
   "viewerToolColors": { "message": "원본 DXF 색상 표시 (O)" },
   "viewerToolTheme": { "message": "테마 전환" },
+  "viewerToolLanguage": { "message": "언어" },
   "viewerSidebarCollapse": { "message": "레이어 패널 접기" },
   "viewerRecentEmpty": { "message": "최근 파일 없음" },
   "viewerLayerFilter": { "message": "레이어 필터" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "현재 확대/축소 및 위치를 저장하여 나중에 돌아갈 수 있습니다." },
   "viewerBookmarksEmpty": { "message": "저장된 뷰가 아직 없습니다" },
   "viewerFindPlaceholder": { "message": "도면에서 텍스트 찾기" },
+  "viewerLanguageSearchPlaceholder": { "message": "언어 검색..." },
 
   "viewerCompareLabel": { "message": "도면 비교 중" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "오버레이 전환" },
   "viewerCompareExit": { "message": "나가기" },
   "viewerCompareError": { "message": "비교용 파일을 불러올 수 없습니다" },
   "viewerDropToOpen": { "message": "드롭하여 새 탭에서 열기" },

@@ -3,11 +3,15 @@ import { Color } from "three";
 import { state } from "./state";
 import { dom } from "./dom";
 import { COMPARE_BASE_PALETTE } from "./colors";
-import type { ViewerWithInternals } from "./types";
+import { getViewerCanvas, type ViewerWithInternals } from "./types";
 import { showToast } from "./toast";
 import { t } from "../lib/i18n";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
 import DxfWorkerFactory from "../worker/dxf.worker.ts?worker";
+
+let isBaseVisible = true;
+let isCompareVisible = true;
+let compareOpacity = 100;
 
 export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promise<void> {
   if (!state.viewer) return;
@@ -22,7 +26,6 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
   baseHost.style.pointerEvents = "none";
   dom.canvasHost.prepend(baseHost);
   state.compareHost = baseHost;
-  state.compareOnTop = true;
 
   state.compareViewer = new DxfViewer(baseHost, {
     autoResize: true,
@@ -55,8 +58,9 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
     if (compareControls) {
       compareControls.enabled = false;
     }
+    applyCompareControlDefaults();
     dom.compareBar.classList.remove("hidden");
-    dom.compareLabel.textContent = t("viewerCompareNamed", name, state.currentName);
+    refreshCompareLabel();
     syncCompareFromMain();
   } catch {
     showToast(t("viewerCompareError"), { variant: "error" });
@@ -68,7 +72,7 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
 
 export function syncCompareFromMain(): void {
   if (!state.viewer || !state.compareViewer || state.isSyncingCompare) return;
-  if (!state.compareOnTop) return;
+  if (!isCompareVisible) return;
   const sourceCam = (state.viewer as ViewerWithInternals).camera;
   const targetCam = (state.compareViewer as ViewerWithInternals).camera;
   if (!sourceCam || !targetCam) return;
@@ -88,21 +92,28 @@ export function syncCompareFromMain(): void {
   }
 }
 
-export function swapCompareLayers(): void {
-  if (!state.compareViewer || !state.compareHost) return;
-  state.compareOnTop = !state.compareOnTop;
-  state.compareHost.style.visibility = state.compareOnTop ? "visible" : "hidden";
-  dom.compareLabel.textContent = state.compareOnTop
-    ? `Comparing: ${state.compareName} vs ${state.currentName}`
-    : "Overlay hidden";
-  if (state.compareOnTop) {
-    syncCompareFromMain();
-  }
+export function toggleCompareBaseVisibility(): void {
+  isBaseVisible = !isBaseVisible;
+  applyBaseVisibility();
+  applyControlsUiState();
+}
+
+export function toggleCompareOverlayVisibility(): void {
+  isCompareVisible = !isCompareVisible;
+  applyCompareVisibility();
+  applyControlsUiState();
+}
+
+export function setCompareOverlayOpacity(value: number): void {
+  compareOpacity = clampOpacity(value);
+  applyCompareOpacity();
+  applyControlsUiState();
 }
 
 export function exitCompareMode(): void {
+  applyCompareControlDefaults();
   dom.compareBar.classList.add("hidden");
-  dom.compareLabel.textContent = t("viewerCompareLabel");
+  refreshCompareLabel();
   if (state.compareViewer) {
     const host = state.compareHost;
     state.compareViewer.Destroy();
@@ -110,6 +121,68 @@ export function exitCompareMode(): void {
     if (host) host.remove();
   }
   state.compareHost = null;
-  state.compareOnTop = false;
   state.compareName = "";
+}
+
+export function refreshCompareLabel(): void {
+  if (!state.compareViewer) {
+    dom.compareLabel.textContent = t("viewerCompareLabel");
+    return;
+  }
+  dom.compareLabel.textContent = t("viewerCompareNamed", state.compareName, state.currentName);
+}
+
+function applyCompareControlDefaults(): void {
+  isBaseVisible = true;
+  isCompareVisible = true;
+  compareOpacity = 100;
+  applyBaseVisibility();
+  applyCompareVisibility();
+  applyCompareOpacity();
+  applyControlsUiState();
+}
+
+function applyBaseVisibility(): void {
+  const host = getMainViewerRoot();
+  if (!host) return;
+  host.style.visibility = isBaseVisible ? "visible" : "hidden";
+}
+
+function applyCompareVisibility(): void {
+  if (!state.compareHost) return;
+  state.compareHost.style.visibility = isCompareVisible ? "visible" : "hidden";
+  if (isCompareVisible) {
+    syncCompareFromMain();
+  }
+}
+
+function applyCompareOpacity(): void {
+  dom.compareOpacity.value = String(compareOpacity);
+  if (!state.compareHost) return;
+  state.compareHost.style.opacity = String(compareOpacity / 100);
+}
+
+function applyControlsUiState(): void {
+  dom.compareBaseToggle.classList.toggle("active", isBaseVisible);
+  dom.compareLayerToggle.classList.toggle("active", isCompareVisible);
+  dom.compareBaseToggle.setAttribute("aria-pressed", String(isBaseVisible));
+  dom.compareLayerToggle.setAttribute("aria-pressed", String(isCompareVisible));
+  dom.compareBaseIcon.textContent = isBaseVisible ? "👁" : "🙈";
+  dom.compareLayerIcon.textContent = isCompareVisible ? "👁" : "🙈";
+  dom.compareOpacity.disabled = !isBaseVisible && !isCompareVisible;
+}
+
+function getMainViewerRoot(): HTMLElement | null {
+  if (!state.viewer) return null;
+  const canvas = getViewerCanvas(state.viewer);
+  if (!canvas) return null;
+  if (canvas.parentElement && canvas.parentElement !== dom.canvasHost) {
+    return canvas.parentElement;
+  }
+  return canvas;
+}
+
+function clampOpacity(value: number): number {
+  if (!Number.isFinite(value)) return 100;
+  return Math.max(0, Math.min(100, Math.round(value)));
 }

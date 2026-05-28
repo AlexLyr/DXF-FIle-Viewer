@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "കോർഡിനേറ്റുകൾ ടോഗിൾ ചെയ്യുക" },
   "viewerToolColors": { "message": "യഥാർത്ഥ DXF നിറങ്ങൾ കാണിക്കുക (O)" },
   "viewerToolTheme": { "message": "തീം ടോഗിൾ ചെയ്യുക" },
+  "viewerToolLanguage": { "message": "ഭാഷ" },
   "viewerSidebarCollapse": { "message": "ലെയറുകളുടെ പാനൽ ചുരുക്കുക" },
   "viewerRecentEmpty": { "message": "സമീപകാല ഫയലുകൾ ഇല്ല" },
   "viewerLayerFilter": { "message": "ലെയറുകൾ ഫിൽട്ടർ ചെയ്യുക" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "പിന്നീട് തിരികെ പോകാൻ നിലവിലെ സൂമും സ്ഥാനവും സേവ് ചെയ്യുക." },
   "viewerBookmarksEmpty": { "message": "സേവ് ചെയ്ത കാഴ്ചകൾ ഇതുവരെ ഇല്ല" },
   "viewerFindPlaceholder": { "message": "ഡ്രോയിംഗിൽ ടെക്‌സ്‌റ്റ് കണ്ടെത്തുക" },
+  "viewerLanguageSearchPlaceholder": { "message": "ഭാഷകൾ തിരയുക..." },
 
   "viewerCompareLabel": { "message": "ഡ്രോയിംഗുകൾ താരതമ്യം ചെയ്യുന്നു" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "ഓവർലേ ടോഗിൾ ചെയ്യുക" },
   "viewerCompareExit": { "message": "പുറത്തുകടക്കുക" },
   "viewerCompareError": { "message": "താരതമ്യത്തിനായി ഫയൽ ലോഡ് ചെയ്യാനായില്ല" },
   "viewerDropToOpen": { "message": "പുതിയ ടാബിൽ തുറക്കാൻ ഇടുക" },

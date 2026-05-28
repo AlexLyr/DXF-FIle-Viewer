@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXF-Datei-Viewer",
+    "message": "DXF Viewer - DXF Datei öffnen",
     "description": "Extension name (CWS + Chrome)"
   },
   "shortDesc": {
@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Koordinaten ein-/ausblenden" },
   "viewerToolColors": { "message": "Original-DXF-Farben anzeigen (O)" },
   "viewerToolTheme": { "message": "Thema wechseln" },
+  "viewerToolLanguage": { "message": "Sprache" },
   "viewerSidebarCollapse": { "message": "Ebenenbedienfeld einklappen" },
   "viewerRecentEmpty": { "message": "Keine zuletzt geöffneten Dateien" },
   "viewerLayerFilter": { "message": "Ebenen filtern" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Speichern Sie den aktuellen Zoom und die Position, um später dorthin zurückzukehren." },
   "viewerBookmarksEmpty": { "message": "Noch keine gespeicherten Ansichten" },
   "viewerFindPlaceholder": { "message": "Text in Zeichnung suchen" },
+  "viewerLanguageSearchPlaceholder": { "message": "Sprachen suchen..." },
 
   "viewerCompareLabel": { "message": "Zeichnungen werden verglichen" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Überblendung ein-/ausblenden" },
   "viewerCompareExit": { "message": "Beenden" },
   "viewerCompareError": { "message": "Datei konnte nicht zum Vergleich geladen werden" },
   "viewerDropToOpen": { "message": "Ablegen, um in neuem Tab zu öffnen" },

@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Εναλλαγή συντεταγμένων" },
   "viewerToolColors": { "message": "Εμφάνιση αρχικών χρωμάτων DXF (O)" },
   "viewerToolTheme": { "message": "Εναλλαγή θέματος" },
+  "viewerToolLanguage": { "message": "Γλώσσα" },
   "viewerSidebarCollapse": { "message": "Σύμπτυξη πάνελ στρωμάτων" },
   "viewerRecentEmpty": { "message": "Δεν υπάρχουν πρόσφατα αρχεία" },
   "viewerLayerFilter": { "message": "Φιλτράρισμα στρωμάτων" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Αποθηκεύστε τρέχουσα εστίαση και θέση για επιστροφή αργότερα." },
   "viewerBookmarksEmpty": { "message": "Δεν υπάρχουν αποθηκευμένες προβολές" },
   "viewerFindPlaceholder": { "message": "Εύρεση κειμένου στο σχέδιο" },
+  "viewerLanguageSearchPlaceholder": { "message": "Αναζήτηση γλωσσών..." },
 
   "viewerCompareLabel": { "message": "Σύγκριση σχεδίων" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Εναλλαγή επικάλυψης" },
   "viewerCompareExit": { "message": "Έξοδος" },
   "viewerCompareError": { "message": "Δεν ήταν δυνατή η φόρτωση αρχείου για σύγκριση" },
   "viewerDropToOpen": { "message": "Αποθέστε για άνοιγμα σε νέα καρτέλα" },

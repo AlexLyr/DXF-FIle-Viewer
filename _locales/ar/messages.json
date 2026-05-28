@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "إظهار/إخفاء الإحداثيات" },
   "viewerToolColors": { "message": "عرض ألوان DXF الأصلية (O)" },
   "viewerToolTheme": { "message": "تبديل السمة" },
+  "viewerToolLanguage": { "message": "اللغة" },
   "viewerSidebarCollapse": { "message": "طي لوحة الطبقات" },
   "viewerRecentEmpty": { "message": "لا توجد ملفات أخيرة" },
   "viewerLayerFilter": { "message": "تصفية الطبقات" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "احفظ التكبير والموضع الحالي للعودة إليه لاحقًا." },
   "viewerBookmarksEmpty": { "message": "لا توجد عروض محفوظة بعد" },
   "viewerFindPlaceholder": { "message": "بحث عن نص في الرسم" },
+  "viewerLanguageSearchPlaceholder": { "message": "ابحث عن اللغات..." },
 
   "viewerCompareLabel": { "message": "مقارنة الرسومات" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "إظهار/إخفاء التراكب" },
   "viewerCompareExit": { "message": "خروج" },
   "viewerCompareError": { "message": "تعذّر تحميل الملف للمقارنة" },
   "viewerDropToOpen": { "message": "أسقط لفتح في علامة تبويب جديدة" },

@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXF-tiedoston katseluohjelma",
+    "message": "DXF Viewer - Avaa DXF-tiedosto",
     "description": "Extension name (CWS + Chrome)"
   },
   "shortDesc": {
@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Näytä/piilota koordinaatit" },
   "viewerToolColors": { "message": "Näytä alkuperäiset DXF-värit (O)" },
   "viewerToolTheme": { "message": "Vaihda teemaa" },
+  "viewerToolLanguage": { "message": "Kieli" },
   "viewerSidebarCollapse": { "message": "Pienennä kerrospaneeli" },
   "viewerRecentEmpty": { "message": "Ei viimeisimpiä tiedostoja" },
   "viewerLayerFilter": { "message": "Suodata kerroksia" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Tallenna nykyinen zoomaus ja sijainti palataksesi myöhemmin." },
   "viewerBookmarksEmpty": { "message": "Ei tallennettuja näkymiä" },
   "viewerFindPlaceholder": { "message": "Etsi tekstiä piirustuksesta" },
+  "viewerLanguageSearchPlaceholder": { "message": "Hae kieliä..." },
 
   "viewerCompareLabel": { "message": "Vertaillaan piirustuksia" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Näytä/piilota päällekkäisyys" },
   "viewerCompareExit": { "message": "Poistu" },
   "viewerCompareError": { "message": "Tiedostoa ei voitu ladata vertailua varten" },
   "viewerDropToOpen": { "message": "Pudota avataksesi uudessa välilehdessä" },

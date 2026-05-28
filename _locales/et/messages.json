@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Lülita koordinaadid" },
   "viewerToolColors": { "message": "Näita algupäraseid DXF värve (O)" },
   "viewerToolTheme": { "message": "Lülita teema" },
+  "viewerToolLanguage": { "message": "Keel" },
   "viewerSidebarCollapse": { "message": "Ahenda kihtide paneel" },
   "viewerRecentEmpty": { "message": "Hiljutisi faile pole" },
   "viewerLayerFilter": { "message": "Filtreeri kihte" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Salvesta praegune suurendus ja asukoht, et hiljem tagasi hüpata." },
   "viewerBookmarksEmpty": { "message": "Salvestatud vaateid pole veel" },
   "viewerFindPlaceholder": { "message": "Leia tekst jooniselt" },
+  "viewerLanguageSearchPlaceholder": { "message": "Otsi keeli..." },
 
   "viewerCompareLabel": { "message": "Jooniste võrdlemine" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Lülita ülekate" },
   "viewerCompareExit": { "message": "Välju" },
   "viewerCompareError": { "message": "Faili ei saanud võrdluseks laadida" },
   "viewerDropToOpen": { "message": "Lohista uuel vahelehel avamiseks" },

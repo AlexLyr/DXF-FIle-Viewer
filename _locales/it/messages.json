@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "Visualizzatore file DXF",
+    "message": "DXF Viewer - Aprire file DXF",
     "description": "Extension name (CWS + Chrome)"
   },
   "shortDesc": {
@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Attiva/disattiva coordinate" },
   "viewerToolColors": { "message": "Mostra i colori DXF originali (O)" },
   "viewerToolTheme": { "message": "Cambia tema" },
+  "viewerToolLanguage": { "message": "Lingua" },
   "viewerSidebarCollapse": { "message": "Comprimi pannello livelli" },
   "viewerRecentEmpty": { "message": "Nessun file recente" },
   "viewerLayerFilter": { "message": "Filtra livelli" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Salva lo zoom e la posizione correnti per tornare qui più tardi." },
   "viewerBookmarksEmpty": { "message": "Nessuna vista salvata" },
   "viewerFindPlaceholder": { "message": "Trova testo nel disegno" },
+  "viewerLanguageSearchPlaceholder": { "message": "Cerca lingue..." },
 
   "viewerCompareLabel": { "message": "Confronto disegni" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Attiva/disattiva sovrapposizione" },
   "viewerCompareExit": { "message": "Esci" },
   "viewerCompareError": { "message": "Impossibile caricare il file per il confronto" },
   "viewerDropToOpen": { "message": "Rilascia per aprire in una nuova scheda" },

@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Przełącz współrzędne" },
   "viewerToolColors": { "message": "Pokaż oryginalne kolory DXF (O)" },
   "viewerToolTheme": { "message": "Przełącz motyw" },
+  "viewerToolLanguage": { "message": "Język" },
   "viewerSidebarCollapse": { "message": "Zwiń panel warstw" },
   "viewerRecentEmpty": { "message": "Brak ostatnich plików" },
   "viewerLayerFilter": { "message": "Filtruj warstwy" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Zapisz bieżące powiększenie i pozycję, aby wrócić później." },
   "viewerBookmarksEmpty": { "message": "Brak zapisanych widoków" },
   "viewerFindPlaceholder": { "message": "Znajdź tekst na rysunku" },
+  "viewerLanguageSearchPlaceholder": { "message": "Szukaj języków..." },
 
   "viewerCompareLabel": { "message": "Porównywanie rysunków" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Przełącz nakładkę" },
   "viewerCompareExit": { "message": "Wyjdź" },
   "viewerCompareError": { "message": "Nie można załadować pliku do porównania" },
   "viewerDropToOpen": { "message": "Upuść, aby otworzyć w nowej karcie" },

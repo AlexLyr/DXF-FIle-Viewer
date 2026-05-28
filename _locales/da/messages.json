@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "DXF Filviser",
+    "message": "DXF Viewer - Åbn DXF-fil",
     "description": "Extension name (CWS + Chrome)"
   },
   "shortDesc": {
@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Slå koordinater til/fra" },
   "viewerToolColors": { "message": "Vis originale DXF-farver (O)" },
   "viewerToolTheme": { "message": "Skift tema" },
+  "viewerToolLanguage": { "message": "Sprog" },
   "viewerSidebarCollapse": { "message": "Skjul lagpanel" },
   "viewerRecentEmpty": { "message": "Ingen seneste filer" },
   "viewerLayerFilter": { "message": "Filtrér lag" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Gem nuværende zoom og position for at vende tilbage senere." },
   "viewerBookmarksEmpty": { "message": "Ingen gemte visninger endnu" },
   "viewerFindPlaceholder": { "message": "Find tekst i tegning" },
+  "viewerLanguageSearchPlaceholder": { "message": "Søg sprog..." },
 
   "viewerCompareLabel": { "message": "Sammenligner tegninger" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Slå overlay til/fra" },
   "viewerCompareExit": { "message": "Afslut" },
   "viewerCompareError": { "message": "Kunne ikke indlæse fil til sammenligning" },
   "viewerDropToOpen": { "message": "Slip for at åbne i en ny fane" },

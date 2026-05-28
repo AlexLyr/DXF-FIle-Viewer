@@ -27,6 +27,7 @@
   "viewerToolCoords": { "message": "ನಿರ್ದೇಶಾಂಕಗಳನ್ನು ಟಾಗಲ್ ಮಾಡಿ" },
   "viewerToolColors": { "message": "ಮೂಲ DXF ಬಣ್ಣಗಳನ್ನು ತೋರಿಸಿ (O)" },
   "viewerToolTheme": { "message": "ಥೀಮ್ ಟಾಗಲ್ ಮಾಡಿ" },
+  "viewerToolLanguage": { "message": "ಭಾಷೆ" },
   "viewerSidebarCollapse": { "message": "ಪದರಗಳ ಫಲಕವನ್ನು ಮುಚ್ಚಿ" },
   "viewerRecentEmpty": { "message": "ಇತ್ತೀಚಿನ ಫೈಲ್‌ಗಳಿಲ್ಲ" },
   "viewerLayerFilter": { "message": "ಪದರಗಳನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಿ" },
@@ -36,6 +37,7 @@
   "viewerBookmarksHelp": { "message": "ನಂತರ ಹಿಂತಿರುಗಲು ಪ್ರಸ್ತುತ ಜೂಮ್ ಮತ್ತು ಸ್ಥಾನವನ್ನು ಉಳಿಸಿ." },
   "viewerBookmarksEmpty": { "message": "ಇನ್ನೂ ಉಳಿಸಿದ ವೀಕ್ಷಣೆಗಳಿಲ್ಲ" },
   "viewerFindPlaceholder": { "message": "ರೇಖಾಚಿತ್ರದಲ್ಲಿ ಪಠ್ಯ ಹುಡುಕಿ" },
+  "viewerLanguageSearchPlaceholder": { "message": "ಭಾಷೆಗಳನ್ನು ಹುಡುಕಿ..." },
   "viewerCompareLabel": { "message": "ರೇಖಾಚಿತ್ರಗಳನ್ನು ಹೋಲಿಸಲಾಗುತ್ತಿದೆ" },
   "viewerCompareNamed": {
     "message": "ಹೋಲಿಕೆ: $1 vs $2",
@@ -44,7 +46,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "ಓವರ್‌ಲೇ ಟಾಗಲ್ ಮಾಡಿ" },
   "viewerCompareExit": { "message": "ನಿರ್ಗಮಿಸಿ" },
   "viewerCompareError": { "message": "ಹೋಲಿಕೆಗಾಗಿ ಫೈಲ್ ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ" },
   "viewerDropToOpen": { "message": "ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯಲು ಬಿಡಿ" },

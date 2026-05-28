@@ -120,6 +120,40 @@
               />
             </svg>
           </button>
+          <div class="language-wrap">
+            <button
+              id="languageToggle"
+              type="button"
+              class="ghost-icon-btn"
+              aria-label="Language"
+              data-i18n-aria-label="viewerToolLanguage"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="M10 3.2a6.8 6.8 0 1 0 0 13.6 6.8 6.8 0 0 0 0-13.6zM3.8 10h12.4M10 3.4c1.9 1.8 3.1 4.1 3.1 6.6S11.9 14.8 10 16.6M10 3.4C8.1 5.2 6.9 7.5 6.9 10s1.2 4.8 3.1 6.6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div id="languageMenu" class="language-menu hidden" role="listbox">
+              <input
+                id="languageSearch"
+                class="search-input language-search"
+                type="search"
+                placeholder="Search languages..."
+                data-i18n-placeholder="viewerLanguageSearchPlaceholder"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <ul id="languageList" class="language-list"></ul>
+            </div>
+          </div>
           <span class="tool-separator" aria-hidden="true"></span>
           <button
             id="printBtn"
@@ -327,7 +361,40 @@
           <div id="compareBar" class="compare-bar hidden">
             <span id="compareLabel" data-i18n="viewerCompareLabel">Comparing drawings</span>
             <div class="compare-actions">
-              <button id="compareSwap" type="button" class="ghost-btn" data-i18n="viewerCompareToggle">Toggle overlay</button>
+              <button
+                id="compareBaseToggle"
+                type="button"
+                class="ghost-btn compare-visibility-btn active"
+                aria-pressed="true"
+                data-i18n-aria-label="viewerCompareShowBase"
+                data-i18n-title="viewerCompareShowBase"
+              >
+                <span id="compareBaseIcon" class="compare-visibility-icon" aria-hidden="true">👁</span>
+                <span data-i18n="viewerCompareShowBase">Base</span>
+              </button>
+              <button
+                id="compareLayerToggle"
+                type="button"
+                class="ghost-btn compare-visibility-btn active"
+                aria-pressed="true"
+                data-i18n-aria-label="viewerCompareShowCompare"
+                data-i18n-title="viewerCompareShowCompare"
+              >
+                <span id="compareLayerIcon" class="compare-visibility-icon" aria-hidden="true">👁</span>
+                <span data-i18n="viewerCompareShowCompare">Compare</span>
+              </button>
+              <div class="compare-opacity-control">
+                <label for="compareOpacity" class="compare-opacity-label" data-i18n="viewerCompareOpacity">Opacity</label>
+                <input
+                  id="compareOpacity"
+                  class="compare-opacity-input"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="100"
+                  data-i18n-title="viewerCompareOpacity"
+                />
+              </div>
               <button id="compareExit" type="button" class="ghost-btn" data-i18n="viewerCompareExit">Exit</button>
             </div>
           </div>

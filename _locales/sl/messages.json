@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Preklopi koordinate" },
   "viewerToolColors": { "message": "Pokaži izvorne DXF barve (O)" },
   "viewerToolTheme": { "message": "Preklopi temo" },
+  "viewerToolLanguage": { "message": "Jezik" },
   "viewerSidebarCollapse": { "message": "Strni ploščo plasti" },
   "viewerRecentEmpty": { "message": "Ni nedavnih datotek" },
   "viewerLayerFilter": { "message": "Filtriraj plasti" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Shranite trenutno povečavo in položaj, da se pozneje vrnete." },
   "viewerBookmarksEmpty": { "message": "Še ni shranjenih pogledov" },
   "viewerFindPlaceholder": { "message": "Najdi besedilo v risbi" },
+  "viewerLanguageSearchPlaceholder": { "message": "Išči jezike..." },
 
   "viewerCompareLabel": { "message": "Primerjanje risb" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Preklopi prekrivanje" },
   "viewerCompareExit": { "message": "Izhod" },
   "viewerCompareError": { "message": "Datoteke za primerjavo ni mogoče naložiti" },
   "viewerDropToOpen": { "message": "Spustite za odpiranje v novem zavihku" },

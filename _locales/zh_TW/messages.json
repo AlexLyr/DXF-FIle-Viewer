@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "切換座標" },
   "viewerToolColors": { "message": "顯示原始 DXF 色彩 (O)" },
   "viewerToolTheme": { "message": "切換主題" },
+  "viewerToolLanguage": { "message": "語言" },
   "viewerSidebarCollapse": { "message": "收合圖層面板" },
   "viewerRecentEmpty": { "message": "沒有最近的檔案" },
   "viewerLayerFilter": { "message": "篩選圖層" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "儲存目前的縮放和位置，以便稍後返回。" },
   "viewerBookmarksEmpty": { "message": "尚無已儲存的視圖" },
   "viewerFindPlaceholder": { "message": "在繪圖中尋找文字" },
+  "viewerLanguageSearchPlaceholder": { "message": "搜尋語言..." },
 
   "viewerCompareLabel": { "message": "正在比較繪圖" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "切換疊加" },
   "viewerCompareExit": { "message": "退出" },
   "viewerCompareError": { "message": "無法載入檔案以進行比較" },
   "viewerDropToOpen": { "message": "拖放以在新分頁中開啟" },

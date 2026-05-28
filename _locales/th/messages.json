@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "สลับพิกัด" },
   "viewerToolColors": { "message": "แสดงสี DXF ดั้งเดิม (O)" },
   "viewerToolTheme": { "message": "สลับธีม" },
+  "viewerToolLanguage": { "message": "ภาษา" },
   "viewerSidebarCollapse": { "message": "ยุบแผงเลเยอร์" },
   "viewerRecentEmpty": { "message": "ไม่มีไฟล์ล่าสุด" },
   "viewerLayerFilter": { "message": "กรองเลเยอร์" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "บันทึกการซูมและตำแหน่งปัจจุบันเพื่อกลับมาดูภายหลัง" },
   "viewerBookmarksEmpty": { "message": "ยังไม่มีมุมมองที่บันทึกไว้" },
   "viewerFindPlaceholder": { "message": "ค้นหาข้อความในแบบร่าง" },
+  "viewerLanguageSearchPlaceholder": { "message": "ค้นหาภาษา..." },
 
   "viewerCompareLabel": { "message": "เปรียบเทียบแบบร่าง" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "สลับการซ้อนทับ" },
   "viewerCompareExit": { "message": "ออก" },
   "viewerCompareError": { "message": "ไม่สามารถโหลดไฟล์สำหรับเปรียบเทียบได้" },
   "viewerDropToOpen": { "message": "วางเพื่อเปิดในแท็บใหม่" },

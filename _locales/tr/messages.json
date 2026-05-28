@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "Koordinatları aç/kapat" },
   "viewerToolColors": { "message": "Orijinal DXF renklerini göster (O)" },
   "viewerToolTheme": { "message": "Temayı değiştir" },
+  "viewerToolLanguage": { "message": "Dil" },
   "viewerSidebarCollapse": { "message": "Katmanlar panelini daralt" },
   "viewerRecentEmpty": { "message": "Son dosya yok" },
   "viewerLayerFilter": { "message": "Katmanları filtrele" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "Daha sonra geri dönmek için mevcut yakınlaştırma ve konumu kaydedin." },
   "viewerBookmarksEmpty": { "message": "Henüz kayıtlı görünüm yok" },
   "viewerFindPlaceholder": { "message": "Çizimde metin bul" },
+  "viewerLanguageSearchPlaceholder": { "message": "Dilleri ara..." },
 
   "viewerCompareLabel": { "message": "Çizimler karşılaştırılıyor" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Bindirmeyi aç/kapat" },
   "viewerCompareExit": { "message": "Çıkış" },
   "viewerCompareError": { "message": "Karşılaştırma için dosya yüklenemedi" },
   "viewerDropToOpen": { "message": "Yeni sekmede açmak için bırakın" },

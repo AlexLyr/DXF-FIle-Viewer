@@ -32,6 +32,7 @@
   "viewerToolCoords": { "message": "কোঅর্ডিনেট টগল করুন" },
   "viewerToolColors": { "message": "আসল DXF রঙ দেখান (O)" },
   "viewerToolTheme": { "message": "থিম টগল করুন" },
+  "viewerToolLanguage": { "message": "ভাষা" },
   "viewerSidebarCollapse": { "message": "স্তর প্যানেল সংকুচিত করুন" },
   "viewerRecentEmpty": { "message": "কোনো সাম্প্রতিক ফাইল নেই" },
   "viewerLayerFilter": { "message": "স্তর ফিল্টার করুন" },
@@ -41,6 +42,7 @@
   "viewerBookmarksHelp": { "message": "পরে ফিরে আসতে বর্তমান জুম ও অবস্থান সংরক্ষণ করুন।" },
   "viewerBookmarksEmpty": { "message": "এখনো কোনো সংরক্ষিত ভিউ নেই" },
   "viewerFindPlaceholder": { "message": "অঙ্কনে টেক্সট খুঁজুন" },
+  "viewerLanguageSearchPlaceholder": { "message": "ভাষা খুঁজুন..." },
 
   "viewerCompareLabel": { "message": "অঙ্কন তুলনা করা হচ্ছে" },
   "viewerCompareNamed": {
@@ -50,7 +52,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "ওভারলে টগল করুন" },
   "viewerCompareExit": { "message": "বের হন" },
   "viewerCompareError": { "message": "তুলনার জন্য ফাইল লোড করা যায়নি" },
   "viewerDropToOpen": { "message": "নতুন ট্যাবে খুলতে ড্রপ করুন" },

@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "مختصات" },
   "viewerToolColors": { "message": "نمایش رنگ‌های اصلی DXF (O)" },
   "viewerToolTheme": { "message": "تغییر تم" },
+  "viewerToolLanguage": { "message": "زبان" },
   "viewerSidebarCollapse": { "message": "بستن پنل لایه‌ها" },
   "viewerRecentEmpty": { "message": "فایل اخیری وجود ندارد" },
   "viewerLayerFilter": { "message": "فیلتر لایه‌ها" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "بزرگنمایی و موقعیت فعلی را ذخیره کنید تا بعداً به آن بازگردید." },
   "viewerBookmarksEmpty": { "message": "هنوز نمایی ذخیره نشده" },
   "viewerFindPlaceholder": { "message": "جستجوی متن در نقشه" },
+  "viewerLanguageSearchPlaceholder": { "message": "جستجوی زبان‌ها..." },
 
   "viewerCompareLabel": { "message": "مقایسه نقشه‌ها" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "تغییر هم‌پوشانی" },
   "viewerCompareExit": { "message": "خروج" },
   "viewerCompareError": { "message": "فایل برای مقایسه بارگذاری نشد" },
   "viewerDropToOpen": { "message": "رها کنید تا در زبانه جدید باز شود" },

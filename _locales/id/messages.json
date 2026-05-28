@@ -31,6 +31,7 @@
   "viewerToolCoords": { "message": "Alihkan koordinat" },
   "viewerToolColors": { "message": "Tampilkan warna DXF asli (O)" },
   "viewerToolTheme": { "message": "Alihkan tema" },
+  "viewerToolLanguage": { "message": "Bahasa" },
   "viewerSidebarCollapse": { "message": "Tutup panel lapisan" },
   "viewerRecentEmpty": { "message": "Tidak ada file terbaru" },
   "viewerLayerFilter": { "message": "Filter lapisan" },
@@ -40,6 +41,7 @@
   "viewerBookmarksHelp": { "message": "Simpan zoom dan posisi saat ini untuk kembali nanti." },
   "viewerBookmarksEmpty": { "message": "Belum ada tampilan tersimpan" },
   "viewerFindPlaceholder": { "message": "Cari teks di gambar" },
+  "viewerLanguageSearchPlaceholder": { "message": "Cari bahasa..." },
 
   "viewerCompareLabel": { "message": "Membandingkan gambar" },
   "viewerCompareNamed": {
@@ -49,7 +51,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "Alihkan hamparan" },
   "viewerCompareExit": { "message": "Keluar" },
   "viewerCompareError": { "message": "Tidak dapat memuat file untuk perbandingan" },
   "viewerDropToOpen": { "message": "Jatuhkan untuk membuka di tab baru" },

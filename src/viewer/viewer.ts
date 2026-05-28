@@ -3,7 +3,7 @@ import { Color } from "three";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
 import { MAX_BYTES } from "../lib/constants";
 import { computeFileKey } from "../lib/fileKey";
-import { applyI18n, setHtmlLang, t } from "../lib/i18n";
+import { applyI18n, getAvailableLocales, getLocale, initI18n, onLocaleChange, setHtmlLang, setLocale, t } from "../lib/i18n";
 import { openTabSafely } from "../lib/openTab";
 import { claimPending, purgeStalePending, savePending } from "../lib/pendingFiles";
 import { getRecentBuffer, listRecent, removeRecent, saveRecent, type RecentFile } from "../lib/recentFiles";
@@ -14,10 +14,6 @@ import { state } from "./state";
 import { getViewerCanvas } from "./types";
 import {
   applyColorMode,
-  DARK_CC_PARAMS,
-  DARK_PALETTE,
-  LIGHT_CC_PARAMS,
-  LIGHT_PALETTE,
   refreshLayerSwatches,
   toHexColor,
   toggleTheme,
@@ -26,7 +22,15 @@ import { applyCoordsVisibility, attachCoordReadout, detachCoordReadout, fitToDra
 import { clearMeasure, handleMeasureClick, handleMeasureMove, hideSnapMarker, renderMeasureOverlay, toggleMeasureMode } from "./measure";
 import { clearFindResults, gotoFindHit, runFindQuery, toggleFindBar } from "./find";
 import { addBookmarkFromCurrentView, renderBookmarks } from "./bookmarksUi";
-import { enterCompareMode, exitCompareMode, swapCompareLayers, syncCompareFromMain } from "./compare";
+import {
+  enterCompareMode,
+  exitCompareMode,
+  refreshCompareLabel,
+  setCompareOverlayOpacity,
+  syncCompareFromMain,
+  toggleCompareBaseVisibility,
+  toggleCompareOverlayVisibility,
+} from "./compare";
 import { applyLayerFilter, renderLayers } from "./layers";
 import { handleGlobalKeydown } from "./keyboard";
 import {
@@ -44,11 +48,16 @@ import { setScreenshotEnabled, takeScreenshot } from "./screenshot";
 const HOVER_TOOLTIP_DELAY_MS = 450;
 const HOVER_TOOLTIP_STILL_PX = 6;
 
-setHtmlLang();
-applyI18n();
+void start();
 
-bindUi();
-void bootstrap();
+async function start(): Promise<void> {
+  await initI18n();
+  setHtmlLang();
+  applyI18n();
+  bindUi();
+  onLocaleChange(handleLocaleChange);
+  await bootstrap();
+}
 
 function bindUi(): void {
   state.applyThemeClass();
@@ -79,7 +88,9 @@ function bindUi(): void {
   setScreenshotEnabled(false);
 
   dom.bookmarkAdd.addEventListener("click", () => void addBookmarkFromCurrentView());
-  dom.compareSwap.addEventListener("click", () => swapCompareLayers());
+  dom.compareBaseToggle.addEventListener("click", () => toggleCompareBaseVisibility());
+  dom.compareLayerToggle.addEventListener("click", () => toggleCompareOverlayVisibility());
+  dom.compareOpacity.addEventListener("input", () => setCompareOverlayOpacity(dom.compareOpacity.valueAsNumber));
   dom.compareExit.addEventListener("click", () => exitCompareMode());
 
   dom.findInput.addEventListener("input", () => {
@@ -132,12 +143,27 @@ function bindUi(): void {
 
   setupDragDrop();
   setupRecentMenu();
+  setupLanguageMenu();
   setupMinimap();
   setupPrintHandlers();
   applyMinimapVisibility();
   applyCoordsVisibility();
 
   window.addEventListener("beforeunload", cleanupViewer);
+}
+
+function handleLocaleChange(): void {
+  setHtmlLang();
+  applyI18n();
+  if (state.currentName) {
+    setHeader(state.currentName, state.currentSize);
+  }
+  refreshCompareLabel();
+  refreshLayerLocaleUi();
+  updateLanguageMenu();
+  if (!dom.recentMenu.classList.contains("hidden")) {
+    void renderRecent();
+  }
 }
 
 function handleCanvasMouseMove(event: MouseEvent): void {
@@ -267,6 +293,146 @@ function setupRecentMenu(): void {
   });
 }
 
+function setupLanguageMenu(): void {
+  updateLanguageMenu();
+
+  dom.languageToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = !dom.languageMenu.classList.contains("hidden");
+    if (isOpen) {
+      closeLanguageMenu();
+      return;
+    }
+    openLanguageMenu();
+  });
+
+  dom.languageSearch.addEventListener("input", () => {
+    updateLanguageMenu(dom.languageSearch.value);
+  });
+
+  dom.languageSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeLanguageMenu();
+      dom.languageToggle.focus();
+      return;
+    }
+    if (event.key === "ArrowDown") {
+      const first = dom.languageList.querySelector<HTMLLIElement>(".language-item");
+      if (first) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  dom.languageList.addEventListener("keydown", async (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLLIElement)) return;
+    if (!target.classList.contains("language-item")) return;
+    if (event.key === "Enter") {
+      event.preventDefault();
+      await changeLocaleFromOption(target.dataset.locale ?? "");
+      return;
+    }
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeLanguageMenu();
+      dom.languageToggle.focus();
+      return;
+    }
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      const next = target.nextElementSibling;
+      if (next instanceof HTMLLIElement) next.focus();
+      return;
+    }
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      const prev = target.previousElementSibling;
+      if (prev instanceof HTMLLIElement) {
+        prev.focus();
+      } else {
+        dom.languageSearch.focus();
+      }
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (dom.languageMenu.classList.contains("hidden")) return;
+    if (event.target instanceof Node && dom.languageMenu.contains(event.target)) return;
+    if (event.target === dom.languageToggle) return;
+    closeLanguageMenu();
+  });
+}
+
+function updateLanguageMenu(query = ""): void {
+  const normalized = query.trim().toLowerCase();
+  const current = getLocale();
+  dom.languageList.innerHTML = "";
+  const locales = getAvailableLocales().filter((item) => {
+    if (!normalized) return true;
+    const nativeName = item.nativeName.toLowerCase();
+    const englishName = item.englishName.toLowerCase();
+    const code = item.code.toLowerCase();
+    return nativeName.includes(normalized) || englishName.includes(normalized) || code.includes(normalized);
+  });
+
+  for (const locale of locales) {
+    const li = document.createElement("li");
+    li.className = "language-item";
+    li.setAttribute("role", "option");
+    li.setAttribute("tabindex", "0");
+    li.dataset.locale = locale.code;
+
+    const label = document.createElement("span");
+    label.className = "language-label lang-native";
+    label.textContent = `${locale.nativeName} (${locale.englishName})`;
+
+    const check = document.createElement("span");
+    check.className = "lang-check";
+    check.textContent = locale.code === current ? "✓" : "";
+
+    li.append(label, check);
+    li.addEventListener("click", () => {
+      void changeLocaleFromOption(locale.code);
+    });
+    dom.languageList.append(li);
+  }
+}
+
+function openLanguageMenu(): void {
+  dom.languageMenu.classList.remove("hidden");
+  dom.languageToggle.setAttribute("aria-expanded", "true");
+  dom.languageSearch.value = "";
+  updateLanguageMenu();
+  dom.languageSearch.focus();
+}
+
+function closeLanguageMenu(): void {
+  dom.languageMenu.classList.add("hidden");
+  dom.languageToggle.setAttribute("aria-expanded", "false");
+}
+
+async function changeLocaleFromOption(code: string): Promise<void> {
+  if (!code) return;
+  await setLocale(code);
+  closeLanguageMenu();
+  dom.languageToggle.focus();
+}
+
+function refreshLayerLocaleUi(): void {
+  const toggleTitle = t("viewerLayerToggleTitle");
+  const soloTitle = t("viewerLayerSoloTitle");
+  for (const entry of state.layerEntries) {
+    entry.checkbox.title = toggleTitle;
+    const soloButton = entry.row.querySelector<HTMLButtonElement>(".solo-btn");
+    if (!soloButton) continue;
+    soloButton.title = soloTitle;
+    soloButton.setAttribute("aria-label", soloTitle);
+  }
+}
+
 function setupMinimap(): void {
   dom.minimapCanvas.addEventListener("mousedown", (event) => {
     state.minimapDrag = true;
@@ -383,10 +549,9 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
     clearColor: new Color(isDark ? 0x262a32 : 0xf6f7f9),
     autoResize: true,
     retainParsedDxf: true,
-    colorCorrection: true,
-    blackWhiteInversion: true,
-    colorCorrectionParams: isDark ? DARK_CC_PARAMS : LIGHT_CC_PARAMS,
-    colorPalette: isDark ? DARK_PALETTE : LIGHT_PALETTE,
+    colorCorrection: false,
+    blackWhiteInversion: false,
+    colorPalette: null,
   });
 
   try {

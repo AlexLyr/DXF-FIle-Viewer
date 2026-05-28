@@ -28,6 +28,7 @@
   "viewerToolCoords": { "message": "הצג/הסתר קואורדינטות" },
   "viewerToolColors": { "message": "הצגת צבעי DXF מקוריים (O)" },
   "viewerToolTheme": { "message": "החלפת ערכת נושא" },
+  "viewerToolLanguage": { "message": "שפה" },
   "viewerSidebarCollapse": { "message": "צמצום חלונית שכבות" },
   "viewerRecentEmpty": { "message": "אין קבצים אחרונים" },
   "viewerLayerFilter": { "message": "סינון שכבות" },
@@ -37,6 +38,7 @@
   "viewerBookmarksHelp": { "message": "שמרו את מצב הזום והמיקום הנוכחי כדי לחזור אליו מאוחר יותר." },
   "viewerBookmarksEmpty": { "message": "אין תצוגות שמורות עדיין" },
   "viewerFindPlaceholder": { "message": "חיפוש טקסט בשרטוט" },
+  "viewerLanguageSearchPlaceholder": { "message": "חפש שפות..." },
 
   "viewerCompareLabel": { "message": "השוואת שרטוטים" },
   "viewerCompareNamed": {
@@ -46,7 +48,6 @@
       "2": { "content": "$2", "example": "drawing-new.dxf" }
     }
   },
-  "viewerCompareToggle": { "message": "הצג/הסתר שכבת-על" },
   "viewerCompareExit": { "message": "יציאה" },
   "viewerCompareError": { "message": "לא ניתן לטעון קובץ להשוואה" },
   "viewerDropToOpen": { "message": "שחררו לפתיחה בלשונית חדשה" },

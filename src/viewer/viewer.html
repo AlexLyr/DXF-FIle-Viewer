@@ -10,7 +10,7 @@
     <main class="viewer">
       <header class="topbar">
         <div class="topbar-left">
-          <span id="fileName" class="file-name">No file</span>
+          <span id="fileName" class="file-name" data-i18n="viewerNoFile">No file</span>
           <span id="fileSize" class="file-size"></span>
           <div class="topbar-meta">
             <div class="recent-wrap">
@@ -19,6 +19,7 @@
                 type="button"
                 class="ghost-icon-btn"
                 aria-label="Recent files"
+                data-i18n-aria-label="viewerToolRecent"
                 aria-expanded="false"
               >
                 <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -33,7 +34,7 @@
                 </svg>
               </button>
               <div id="recentMenu" class="recent-menu hidden" role="menu">
-                <p id="recentEmpty" class="recent-empty">No recent files</p>
+                <p id="recentEmpty" class="recent-empty" data-i18n="viewerRecentEmpty">No recent files</p>
                 <ul id="recentList" class="recent-list"></ul>
               </div>
             </div>
@@ -42,6 +43,7 @@
               type="button"
               class="ghost-icon-btn"
               aria-label="Open another file"
+              data-i18n-aria-label="viewerToolOpenAnother"
             >
               <svg viewBox="0 0 20 20" aria-hidden="true">
                 <path
@@ -62,6 +64,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Fit to screen"
+            data-i18n-aria-label="viewerToolFit"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <path
@@ -79,6 +82,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Measure (M) — hold Alt to disable snap"
+            data-i18n-aria-label="viewerToolMeasure"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <path
@@ -96,6 +100,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Find text (Ctrl+F)"
+            data-i18n-aria-label="viewerToolFind"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <circle
@@ -121,6 +126,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Print (Ctrl+P)"
+            data-i18n-aria-label="viewerToolPrint"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <path
@@ -138,6 +144,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Screenshot view (Ctrl+Shift+S)"
+            data-i18n-aria-label="viewerToolScreenshot"
             disabled
             aria-disabled="true"
           >
@@ -164,6 +171,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Toggle minimap"
+            data-i18n-aria-label="viewerToolMinimap"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <path
@@ -187,6 +195,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Toggle coordinates"
+            data-i18n-aria-label="viewerToolCoords"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <path
@@ -211,6 +220,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Show original DXF colors (O)"
+            data-i18n-aria-label="viewerToolColors"
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <path
@@ -236,6 +246,7 @@
             type="button"
             class="ghost-icon-btn"
             aria-label="Toggle theme"
+            data-i18n-aria-label="viewerToolTheme"
           >
             <svg class="theme-sun" viewBox="0 0 20 20" aria-hidden="true">
               <circle
@@ -269,6 +280,7 @@
           type="button"
           class="sidebar-toggle"
           aria-label="Collapse layers panel"
+          data-i18n-aria-label="viewerSidebarCollapse"
           aria-expanded="true"
         >
           <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
@@ -290,32 +302,33 @@
                 class="search-input"
                 type="search"
                 placeholder="Filter layers"
+                data-i18n-placeholder="viewerLayerFilter"
                 autocomplete="off"
                 spellcheck="false"
               />
             </div>
             <ul id="layers" class="layers"></ul>
-            <p id="layersEmpty" class="muted hidden">No layers in this drawing</p>
+            <p id="layersEmpty" class="muted hidden" data-i18n="viewerLayersEmpty">No layers in this drawing</p>
             <section class="bookmarks-wrap">
               <div class="bookmarks-head">
-                <span>Saved views</span>
-                <button id="bookmarkAdd" type="button" class="ghost-btn bookmarks-add">
+                <span data-i18n="viewerBookmarksTitle">Saved views</span>
+                <button id="bookmarkAdd" type="button" class="ghost-btn bookmarks-add" data-i18n="viewerBookmarksAdd">
                   + Save view
                 </button>
               </div>
-              <p class="bookmarks-help">Save current zoom and position to jump back later.</p>
+              <p class="bookmarks-help" data-i18n="viewerBookmarksHelp">Save current zoom and position to jump back later.</p>
               <ul id="bookmarksList" class="bookmarks-list"></ul>
-              <p id="bookmarksEmpty" class="muted">No saved views yet</p>
+              <p id="bookmarksEmpty" class="muted" data-i18n="viewerBookmarksEmpty">No saved views yet</p>
             </section>
           </div>
         </aside>
 
         <div id="canvasHost" class="canvas-host">
           <div id="compareBar" class="compare-bar hidden">
-            <span id="compareLabel">Comparing drawings</span>
+            <span id="compareLabel" data-i18n="viewerCompareLabel">Comparing drawings</span>
             <div class="compare-actions">
-              <button id="compareSwap" type="button" class="ghost-btn">Toggle overlay</button>
-              <button id="compareExit" type="button" class="ghost-btn">Exit</button>
+              <button id="compareSwap" type="button" class="ghost-btn" data-i18n="viewerCompareToggle">Toggle overlay</button>
+              <button id="compareExit" type="button" class="ghost-btn" data-i18n="viewerCompareExit">Exit</button>
             </div>
           </div>
           <div id="measureOverlay" class="measure-overlay hidden"></div>
@@ -325,6 +338,7 @@
               type="search"
               class="search-input"
               placeholder="Find text in drawing"
+              data-i18n-placeholder="viewerFindPlaceholder"
               autocomplete="off"
               spellcheck="false"
             />
@@ -344,7 +358,7 @@
 
           <div id="dropOverlay" class="drop-overlay hidden">
             <div class="drop-overlay-card">
-              <p>Drop to open in a new tab</p>
+              <p data-i18n="viewerDropToOpen">Drop to open in a new tab</p>
             </div>
           </div>
         </div>
@@ -354,11 +368,12 @@
     <div id="overlay" class="overlay hidden">
       <div class="overlay-card">
         <div id="overlaySpinner" class="spinner"></div>
-        <p id="overlayText">Loading drawing…</p>
+        <p id="overlayText" data-i18n="viewerOverlayLoading">Loading drawing…</p>
         <button
           id="overlayAction"
           type="button"
           class="ghost-btn hidden"
+          data-i18n="viewerOverlayActionOpen"
         >
           Open another file
         </button>

@@ -1,8 +1,13 @@
+import { MAX_BYTES } from "../lib/constants";
+import { applyI18n, setHtmlLang, t } from "../lib/i18n";
+import { openTabSafely } from "../lib/openTab";
 import { savePending } from "../lib/pendingFiles";
 
-const MAX_BYTES = 50 * 1024 * 1024;
-const IDLE_TEXT = "Click or drop a .dxf";
-const DRAGOVER_TEXT = "Release to open";
+setHtmlLang();
+applyI18n();
+
+const IDLE_TEXT = t("popupDropzoneIdle");
+const DRAGOVER_TEXT = t("popupDropzoneDragover");
 
 const dropzone = mustGet<HTMLDivElement>("#dropzone");
 const dropzoneText = mustGet<HTMLParagraphElement>("#dropzoneText");
@@ -53,19 +58,17 @@ async function handleFile(file: File): Promise<void> {
   clearMessages();
 
   if (!file.name.toLowerCase().endsWith(".dxf")) {
-    errorText.textContent =
-      "Could not read file. Please choose a valid .dxf file.";
+    errorText.textContent = t("popupErrorInvalidFile");
     return;
   }
 
   if (file.size > MAX_BYTES) {
-    errorText.textContent =
-      "File is too large. The viewer supports drawings up to 50 MB.";
+    errorText.textContent = t("popupErrorTooLarge");
     return;
   }
 
   statusText.classList.remove("hidden");
-  statusText.textContent = "Opening viewer…";
+  statusText.textContent = t("popupStatusOpening");
   dropzoneText.textContent = "";
 
   try {
@@ -80,7 +83,7 @@ async function handleFile(file: File): Promise<void> {
     });
 
     const url = chrome.runtime.getURL(`src/viewer/viewer.html?id=${fileId}`);
-    await openViewerTab(url);
+    await openTabSafely(url);
 
     window.close();
   } catch (err) {
@@ -88,28 +91,7 @@ async function handleFile(file: File): Promise<void> {
     statusText.classList.add("hidden");
     statusText.textContent = "";
     dropzoneText.textContent = IDLE_TEXT;
-    errorText.textContent =
-      "Could not open the viewer. Please try again.";
-  }
-}
-
-async function openViewerTab(url: string): Promise<void> {
-  // Some Chromium-based browsers reject chrome.tabs.create on the very first
-  // session after install (treating it as an "onboarding" tab). Retry a few
-  // times, then fall back to window.open which works from a user-gesture popup.
-  let lastError: unknown = null;
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    try {
-      await chrome.tabs.create({ url });
-      return;
-    } catch (err) {
-      lastError = err;
-      await new Promise((resolve) => setTimeout(resolve, 150 * (attempt + 1)));
-    }
-  }
-  const fallback = window.open(url, "_blank");
-  if (!fallback) {
-    throw lastError ?? new Error("Failed to open viewer tab");
+    errorText.textContent = t("popupErrorCantOpen");
   }
 }
 

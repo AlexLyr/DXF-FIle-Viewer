@@ -1,0 +1,74 @@
+{
+  "appName": {
+    "message": "DXF Dosya Görüntüleyici"
+  },
+  "shortDesc": {
+    "message": "DXF Dosya Görüntüleyici'yi kullanarak .dxf dosyalarını çevrimiçi açın ve görüntüleyin — tarayıcınızda hızlı AutoCAD uyumlu DXF görüntüleyici."
+  },
+  "storeDesc": {
+    "message": "DXF Dosya Görüntüleyici'yi kullanarak .dxf dosyalarını tarayıcınızda anında açın ve görüntüleyin. Uzantı, ağır CAD yazılımları yüklemeden çizimlere hızlı ve hafif erişim sağlar.\n\n✨ DXF Dosya Görüntüleyici ne yapar:\n1. Çizimleri saniyeler içinde açar — sürükle, bırak veya tıkla\n2. Çizgileri, katmanları, blokları, boyutları ve notları gösterir\n3. Çizimin her detayını pan ve zoom ile incelemenizi sağlar\n4. Belirli parçalara odaklanmak için katmanları değiştirir, herhangi bir katmanı izole etmek için üzerine gelme önizlemesi sunar\n5. Tamamen tarayıcınızda çalışır — kurulum yok, hesap yok\n6. Canlı imleç koordinatları ile açık ve koyu temalar\n\n📌 Kimlerin çevrimiçi bir dxf görüntüleyiciye ihtiyacı var:\n➤ AutoCAD olmadan çevrimiçi dxf görüntüleyen mühendisler ve mimarlar\n➤ Tarayıcıda basit bir .dxf görüntüleyici isteyen CAD öğrenen öğrenciler\n➤ Tasarımcılardan çizim alan inşaat yöneticileri\n➤ Ağır CAD araçlarını açmadan önce dosyaları önizleyen serbest çalışanlar\n➤ Herhangi bir cihazda dxf dosyalarını hızlı bir şekilde nasıl görüntüleyeceğini merak eden herkes\n\n🎯 İnsanlar neden bu dxf aracını seçiyor:\nCAD çizimleriyle ilgili sorun, bir autocad dxf görüntüleyici lisansı satın almak veya sadece içini görmek için benzer araçları yüklemektir. DXF Dosya Görüntüleyici, tarayıcınızda çalışır ve herhangi bir standart .dxf dosyasını saniyeler içinde açar.\n\n🚀 Çevrimiçi dxf dosya görüntüleyici nasıl çalışır:\n1️⃣ Chrome Web Mağazası'ndan uzantıyı yükleyin\n2️⃣ Araç çubuğunuzdaki simgeye tıklayın\n3️⃣ Çiziminizi görüntüleyiciye sürükleyin\n4️⃣ Yapıyı incelemek için pan ve zoom yapın\n5️⃣ Katmanları değiştirin ve her parçayı keşfedin\n\n📂 Desteklenen dosyalar:\n- Standart DXF — hem ASCII hem de ikili\n- Katmanlı çizimler — her katman korunur ve değiştirilebilir\n- 2D varlıklar — çizgiler, çokgenler, yaylar, daireler, spline'lar, taramalar, metin\n- Blok referansları, boyutlar ve notlar\n\n🔒 Gizliliğiniz önemlidir. DXF Dosya Görüntüleyici, çizimleri tarayıcınızda yerel olarak işler. Asla cihazınızdan çıkmaz. Yükleme yok, bulut yok, izleme yok.\n\n💡 DXF dosyası nedir?\nDXF dosyası (Çizim Değişim Formatı), Autodesk'ten uygulamalar arasında veri paylaşımı için bir CAD formatıdır. İkili formatların aksine, metin tabanlıdır ve paylaşması kolaydır. DXF'yi destekleyen herhangi bir CAD aracından dışa aktarılan çizimleri açın.\n\n⚙️ DXF Dosya Görüntüleyici vs ağır CAD yazılımları:\n▸ Kurulum yok — tarayıcınızda açılır\n▸ Lisans yok — AutoCAD abonelikleri olmadan çalışır\n▸ Hafif — tamamen tarayıcıda çalışır\n▸ Çoklu platform — Windows, macOS, Linux, ChromeOS\n\n🛠 Gerçek dünya kullanım senaryoları:\n• Müşteriler tarafından e-posta ile gönderilen çizimleri hızlıca önizleme\n• AutoCAD'i açmadan toplantılarda CAD çalışmalarını gözden geçirme\n• Öğrencilere sınıfta dxf dosyalarını nasıl görüntüleyeceklerini öğretme\n• Dosyaları bir tablet veya Chromebook'ta açma\n• AutoCAD çevrimdışı olduğunda yedek dxf okuyucu olarak kullanma\n• Sıfır kurulum ile çevrimiçi CAD görüntüleme\n\n🧱 Günlük CAD iş akışları için tasarlandı:\n1. Onay turları — boyutları saniyeler içinde kontrol etme\n2. Alan denetimi — bir çizimi bir tabletle iş sahasına getirme\n3. Arşiv erişimi — e-postadan eski çizimleri gözden geçirme\n4. Takım içi devretme — CAD kullanmayanlar mühendislik dosyalarını okur\n5. Hızlı triage — tam CAD çalışması gerektiren çizimleri ayırma\n\n⚡ Kanıtlanmış render üzerine inşa edildi:\nUzatma, dünya çapında mühendislik ekipleri tarafından güvenilen test edilmiş ayrıştırma kütüphanelerini kullanır. Her güncelleme, Chrome Web Mağazası'nda yayınlanmadan önce performans ve uyumluluk açısından gözden geçirilir.\n\n❓ Sıkça sorulan sorular:\nS: DXF dosyalarında 3D içerik açar mı?\nC: Herhangi bir standart 2D DXF çizimini açar, CAD araçlarında 3D modellerden üretilen çizimler dahil. Saf 3D ağ ve yüzey varlıklarının sınırlı render desteği vardır — en iyi sonuçlar 2D çizimlerden ve projeksiyonlu görünümlerden gelir.\n\nS: Görüntüleyici DWG dosyalarını açar mı?\nC: Hayır. DWG, Autodesk'ten ayrı bir ikili formattır. Çoğu CAD aracı, tek tıklamayla DWG'yi DXF'ye dışa aktarabilir — ortaya çıkan .dxf'yi burada açın.\n\nS: Çevrimiçi dxf görüntüleyici veya dxf görüntüle çevrimiçi aradınız mı?\nC: Evet, bu aynı araçtır. İster dxf okuyucu olarak adlandırın, ister sadece çizimleri görüntülemenin bir yolu olarak, dosyanız tarayıcıda açılır.\n\n📍 DXF Dosya Görüntüleyici'yi kullanma ipuçları:\n- Çiziminizi uzantı açılır penceresine bırakın\n- Büyük çizimler için kullanılmayan katmanları gizleyin\n- Dosyaları doğrudan e-posta veya sohbetten açın\n- Panelde bir katman adının üzerine gelerek yalnızca o katmanı önizleyin\n\n👉 Çevrimiçi dxf görüntülemeye hazır mısınız?\nDXF Dosya Görüntüleyici'yi yükleyin, dosyanızı bırakın ve keşfetmeye başlayın. Abonelik yok, ağır kurulum yok, bekleme yok. Mühendisler, mimarlar, öğrenciler ve hızlı CAD önizlemelerine ihtiyaç duyan herkes için tasarlandı.\n—\nAutoCAD, Autodesk, Inc.'in tescilli bir markasıdır. Bu uzantı Autodesk ile ilişkili değildir veya Autodesk tarafından onaylanmamıştır."
+  },
+  "popupAriaOpenFile": { "message": "Bir .dxf dosyası aç" },
+  "popupDropzoneIdle": { "message": "Tıklayın veya bir .dxf bırakın" },
+  "popupDropzoneDragover": { "message": "Açmak için bırakın" },
+  "popupStatusOpening": { "message": "Görüntüleyici açılıyor…" },
+  "popupErrorInvalidFile": { "message": "Dosya okunamadı. Lütfen geçerli bir .dxf dosyası seçin." },
+  "popupErrorTooLarge": { "message": "Dosya çok büyük. Görüntüleyici en fazla 50 MB boyutundaki çizimleri destekler." },
+  "popupErrorCantOpen": { "message": "Görüntüleyici açılamadı. Lütfen tekrar deneyin." },
+
+  "viewerNoFile": { "message": "Dosya yok" },
+  "viewerToolRecent": { "message": "Son dosyalar" },
+  "viewerToolOpenAnother": { "message": "Başka bir dosya aç" },
+  "viewerToolFit": { "message": "Ekrana sığdır" },
+  "viewerToolMeasure": { "message": "Ölçüm (M) — snap'i kapatmak için Alt basılı tutun" },
+  "viewerToolFind": { "message": "Metin bul (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Yazdır (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Ekran görüntüsü al (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Mini haritayı aç/kapat" },
+  "viewerToolCoords": { "message": "Koordinatları aç/kapat" },
+  "viewerToolColors": { "message": "Orijinal DXF renklerini göster (O)" },
+  "viewerToolTheme": { "message": "Temayı değiştir" },
+  "viewerSidebarCollapse": { "message": "Katmanlar panelini daralt" },
+  "viewerRecentEmpty": { "message": "Son dosya yok" },
+  "viewerLayerFilter": { "message": "Katmanları filtrele" },
+  "viewerLayersEmpty": { "message": "Bu çizimde katman yok" },
+  "viewerBookmarksTitle": { "message": "Kayıtlı görünümler" },
+  "viewerBookmarksAdd": { "message": "+ Görünümü kaydet" },
+  "viewerBookmarksHelp": { "message": "Daha sonra geri dönmek için mevcut yakınlaştırma ve konumu kaydedin." },
+  "viewerBookmarksEmpty": { "message": "Henüz kayıtlı görünüm yok" },
+  "viewerFindPlaceholder": { "message": "Çizimde metin bul" },
+
+  "viewerCompareLabel": { "message": "Çizimler karşılaştırılıyor" },
+  "viewerCompareNamed": {
+    "message": "Karşılaştırma: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Bindirmeyi aç/kapat" },
+  "viewerCompareExit": { "message": "Çıkış" },
+  "viewerCompareError": { "message": "Karşılaştırma için dosya yüklenemedi" },
+  "viewerDropToOpen": { "message": "Yeni sekmede açmak için bırakın" },
+  "viewerOverlayDropHint": { "message": "Bir .dxf dosyasını buraya bırakın\nveya Başka dosya aç'a tıklayın" },
+  "viewerOverlayActionOpen": { "message": "Başka bir dosya aç" },
+  "viewerOverlayLoading": { "message": "Çizim yükleniyor…" },
+  "viewerOverlayLoadingFonts": { "message": "Yazı tipleri yükleniyor…" },
+  "viewerOverlayParsing": { "message": "Çizim ayrıştırılıyor…" },
+  "viewerOverlayPreparing": { "message": "Geometri hazırlanıyor…" },
+  "viewerOverlayErrorExpired": { "message": "Bu çizim açılamadı.\nDosyanın süresi dolmuş olabilir." },
+  "viewerOverlayErrorInvalid": { "message": "Dosya okunamadı.\nLütfen geçerli bir .dxf dosyası seçin." },
+  "viewerOverlayErrorTooLarge": { "message": "Dosya çok büyük.\nGörüntüleyici en fazla 50 MB boyutundaki çizimleri destekler." },
+  "viewerOverlayErrorCorrupted": { "message": "Bu çizim açılamadı.\nDosya bozuk veya desteklenmiyor olabilir." },
+  "viewerToastScreenshotSaved": { "message": "Ekran görüntüsü kopyalandı ve kaydedildi" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Ekran görüntüsü kaydedildi (pano engellendi)" },
+  "viewerToastScreenshotError": { "message": "Ekran görüntüsü kaydedilemedi" },
+
+  "viewerRecentBadgeOpen": { "message": "Aç" },
+  "viewerRecentRemoveTitle": { "message": "Son dosyalardan kaldır" },
+  "viewerRecentCompareTitle": { "message": "Mevcut çizimle karşılaştır" },
+  "viewerLayerToggleTitle": { "message": "Katmanı aç/kapat" },
+  "viewerLayerSoloTitle": { "message": "Yalnızca bu katmanı göster" },
+  "viewerBookmarkPromptName": { "message": "Yer imi adı" },
+  "viewerBookmarkPromptRename": { "message": "Yer imini yeniden adlandır" }
+}

@@ -4,6 +4,7 @@ import { dom } from "./dom";
 import { toHexColor } from "./colors";
 import type { LayerEntry } from "./types";
 import { scheduleMinimapPreviewRefresh } from "./minimapUtils";
+import { t } from "../lib/i18n";
 
 function soloIconSvg(): string {
   return `<svg viewBox="0 0 16 16" aria-hidden="true">
@@ -40,7 +41,7 @@ function createLayerEntry(instance: DxfViewer, info: LayerInfo): LayerEntry {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.checked = true;
-  checkbox.title = "Toggle layer";
+  checkbox.title = t("viewerLayerToggleTitle");
   checkbox.addEventListener("change", () => {
     if (state.soloLayer) {
       clearSolo();
@@ -62,8 +63,8 @@ function createLayerEntry(instance: DxfViewer, info: LayerInfo): LayerEntry {
   const soloButton = document.createElement("button");
   soloButton.type = "button";
   soloButton.className = "solo-btn";
-  soloButton.title = "Show only this layer";
-  soloButton.setAttribute("aria-label", "Show only this layer");
+  soloButton.title = t("viewerLayerSoloTitle");
+  soloButton.setAttribute("aria-label", t("viewerLayerSoloTitle"));
   soloButton.innerHTML = soloIconSvg();
   soloButton.addEventListener("click", (event) => {
     event.stopPropagation();

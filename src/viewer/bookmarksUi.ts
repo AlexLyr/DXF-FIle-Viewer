@@ -4,6 +4,7 @@ import { state } from "./state";
 import { dom } from "./dom";
 import { focusOnWorld, setViewFromDxf } from "./coords";
 import type { ViewerWithInternals, ViewState } from "./types";
+import { t } from "../lib/i18n";
 
 export function getCurrentViewState(): ViewState | null {
   if (!state.viewer) return null;
@@ -22,7 +23,7 @@ export async function addBookmarkFromCurrentView(): Promise<void> {
   if (!state.viewer || !state.currentFileKey) return;
   const view = getCurrentViewState();
   if (!view) return;
-  const label = window.prompt("Bookmark name");
+  const label = window.prompt(t("viewerBookmarkPromptName"));
   if (!label) return;
   await saveBookmark(state.currentFileKey, label.trim(), view.centerX, view.centerY, view.width);
   await renderBookmarks();
@@ -55,7 +56,7 @@ function buildBookmarkRow(bookmark: Bookmark): HTMLLIElement {
   rename.textContent = "✎";
   rename.addEventListener("click", async (event) => {
     event.stopPropagation();
-    const next = window.prompt("Rename bookmark", bookmark.label);
+    const next = window.prompt(t("viewerBookmarkPromptRename"), bookmark.label);
     if (!next) return;
     await renameBookmark(bookmark.id, next.trim());
     await renderBookmarks();

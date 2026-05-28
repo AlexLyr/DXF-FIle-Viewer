@@ -1,13 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "DXF File Viewer",
+  "name": "__MSG_appName__",
   "version": "1.0.0",
-  "description": "Open .dxf drawings instantly in your browser. Layer toggles, pan & zoom, dark theme. No upload, no install.",
+  "description": "__MSG_shortDesc__",
+  "default_locale": "en",
   "icons": {
     "16": "src/assets/16x16.png",
     "32": "src/assets/32x32.png",
     "48": "src/assets/48x48.png",
     "64": "src/assets/64x64.png",
+    "96": "src/assets/128x128-96x96.png",
     "128": "src/assets/128x128.png"
   },
   "action": {
@@ -17,6 +19,7 @@
       "32": "src/assets/32x32.png",
       "48": "src/assets/48x48.png",
       "64": "src/assets/64x64.png",
+      "96": "src/assets/128x128-96x96.png",
       "128": "src/assets/128x128.png"
     }
   },

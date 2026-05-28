@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "DXF-tiedoston katseluohjelma",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Käytä DXF-tiedoston katseluohjelmaa .dxf-tiedostojen avaamiseen ja tarkasteluun verkossa — nopea AutoCAD-yhteensopiva DXF-katseluohjelma selaimessasi.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Käytä DXF-tiedoston katseluohjelmaa avatakseen ja katsellakseen .dxf-tiedostoja heti selaimessasi. Laajennus tarjoaa nopean, kevyen pääsyn piirustuksiin ilman raskaan CAD-ohjelmiston asentamista.\n\n✨ Mitä DXF-tiedoston katseluohjelma tekee:\n1. Avaa piirustukset sekunneissa — vedä, pudota tai napsauta\n2. Näyttää viivat, kerrokset, lohkot, mitat ja huomautukset\n3. Mahdollistaa zoomauksen ja panoraamisen jokaisessa piirustuksen yksityiskohdassa\n4. Vaihtelee kerroksia keskittyäkseen tiettyihin osiin, esikatselu hiiren päällä eristää minkä tahansa kerroksen\n5. Toimii täysin selaimessasi — ei asennusta, ei tiliä\n6. Vaaleat ja tummat teemat, elävät osoittimen koordinaatit\n\n📌 Kuka tarvitsee dxf-katseluohjelmaa verkossa:\n➤ Insinöörit ja arkkitehdit, jotka katsovat dxf-tiedostoja verkossa ilman AutoCADia\n➤ CAD:ia opiskelevat opiskelijat, jotka haluavat yksinkertaisen .dxf-katseluohjelman selaimessa\n➤ Rakennusjohtajat, jotka saavat piirustuksia suunnittelijoilta\n➤ Freelancereita, jotka esikatsovat tiedostoja ennen raskaan CAD-työkalun avaamista\n➤ Kuka tahansa, joka miettii, miten katsella dxf-tiedostoja nopeasti millä tahansa laitteella\n\n🎯 Miksi ihmiset valitsevat tämän dxf-työkalun:\nCAD-piirustusten ongelma on AutoCAD DXF-katseluohjelmalisenssin ostaminen tai vastaavien työkalujen asentaminen vain kurkistaakseen sisään. DXF-tiedoston katseluohjelma toimii selaimessasi ja avaa minkä tahansa standardin .dxf-tiedoston sekunneissa.\n\n🚀 Miten dxf-tiedoston katseluohjelma verkossa toimii:\n1️⃣ Asenna laajennus Chrome Web Storesta\n2️⃣ Napsauta kuvaketta työkalupalkissasi\n3️⃣ Vedä piirustuksesi katseluohjelmaan\n4️⃣ Panoraa ja zoomaa rakenteen tarkastamiseksi\n5️⃣ Vaihda kerroksia ja tutki jokaista osaa\n\n📂 Tuetut tiedostot:\n- Standardi DXF — sekä ASCII että binaarinen\n- Kerrokselliset piirustukset — jokainen kerros säilytetään ja vaihdettavissa\n- 2D-entiteetit — viivat, polyviivat, kaaret, ympyrät, splinit, hatching, teksti\n- Lohkoviittaukset, mitat ja huomautukset\n\n🔒 Yksityisyytesi on tärkeää. DXF-tiedoston katseluohjelma käsittelee piirustuksia paikallisesti selaimessasi. Ne eivät koskaan poistu laitteeltasi. Ei latausta, ei pilveä, ei seurantaa.\n\n💡 Mikä on DXF-tiedosto?\nDXF-tiedosto (Drawing Exchange Format) on Autodeskilta peräisin oleva CAD-muoto, jota käytetään tietojen jakamiseen sovellusten välillä. Toisin kuin binaarimuodot, se on tekstipohjainen ja helppo jakaa. Avaa piirustukset, jotka on viety mistä tahansa CAD-työkalusta, joka tukee DXF:ää.\n\n⚙️ DXF-tiedoston katseluohjelma vs raskas CAD-ohjelmisto:\n▸ Ei asennusta — avautuu selaimessasi\n▸ Ei lisenssiä — toimii ilman AutoCAD-tilauksia\n▸ Kevyt — toimii täysin selaimessa\n▸ Ristiin alustoilla — Windows, macOS, Linux, ChromeOS\n\n🛠 Todelliset käyttötapaukset:\n• Esikatsotaan nopeasti asiakkailta sähköpostitse lähetettyjä piirustuksia\n• Tarkastellaan CAD-työtä kokouksissa ilman AutoCADin käynnistämistä\n• Opetetaan opiskelijoille, miten katsella dxf-tiedostoja luokassa\n• Avataan tiedostoja tabletilla tai Chromebookilla\n• Käytetään varatiedostona dxf-lukijana, kun AutoCAD on offline-tilassa\n• Katsotaan CAD:ia verkossa ilman asetuksia\n\n🧱 Rakennettu jokapäiväisiin CAD-työprosesseihin:\n1. Hyväksymiskierrokset — tarkista mitat sekunneissa\n2. Kenttäinspektio — tuo piirustus tabletilla työmaalle\n3. Arkistopääsy — selaa vanhoja piirustuksia sähköpostista\n4. Ristiin tiimien siirto — ei-CAD-käyttäjät lukevat insinööridokumentteja\n5. Nopeaa triagea — lajittelee piirustuksia, jotka tarvitsevat täyttä CAD-työtä\n\n⚡ Rakennettu todistetulle renderoinnille:\nLaajennus käyttää testattuja jäsentämiskirjastoja, joita insinööriryhmät ympäri maailmaa luottavat. Jokainen päivitys tarkistetaan suorituskyvyn ja yhteensopivuuden osalta ennen julkaisua Chrome Web Storessa.\n\n❓ Usein kysytyt kysymykset:\nQ: Avataanko 3D-sisältöä DXF-tiedostoissa?\nA: Se avaa minkä tahansa standardin 2D DXF-piirustuksen, mukaan lukien CAD-työkaluista tuotetut 3D-mallit. Puhtailla 3D-mesh- ja pinnan entiteeteillä on rajoitettu renderointituki — parhaat tulokset saadaan 2D-piirustuksista ja projisoiduista näkymistä.\n\nQ: Avataanko katseluohjelmalla DWG-tiedostoja?\nA: Ei. DWG on erillinen binaarimuoto Autodeskilta. Useimmat CAD-työkalut voivat viedä DWG:n DXF:ään yhdellä napsautuksella — avaa tuloksena saatu .dxf täällä.\n\nQ: Etsitkö verkossa dxf-katseluohjelmaa tai dxf-näyttöä verkossa?\nA: Kyllä, tämä on sama työkalu. Olipa kyseessä dxf-lukija tai vain tapa katsella piirustuksia, tiedostosi avautuu selaimessa.\n\n📍 Vinkkejä DXF-tiedoston katseluohjelman käyttöön:\n- Pudota piirustuksesi laajennuksen ponnahdusikkunaan\n- Suurilla piirustuksilla, piilota käyttämättömät kerrokset\n- Avaa tiedostoja suoraan sähköpostista tai chatista\n- Vie hiiri kerrosnimen päälle paneelissa esikatsellaksesi vain sitä kerrosta\n\n👉 Valmis katsomaan dxf:tä verkossa?\nAsenna DXF-tiedoston katseluohjelma, pudota tiedostosi ja aloita tutkiminen. Ei tilausta, ei raskasta asennusta, ei odottamista. Rakennettu insinööreille, arkkitehdeille, opiskelijoille ja kaikille, jotka tarvitsevat nopeita CAD-esikatseluja.\n—\nAutoCAD® on Autodesk, Inc.:n rekisteröity tavaramerkki. Tämä laajennus ei ole sidoksissa tai hyväksytty Autodeskilta.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Avaa .dxf-tiedosto" },
+  "popupDropzoneIdle": { "message": "Napsauta tai pudota .dxf" },
+  "popupDropzoneDragover": { "message": "Vapauta avataksesi" },
+  "popupStatusOpening": { "message": "Avataan katseluohjelmaa…" },
+  "popupErrorInvalidFile": { "message": "Tiedostoa ei voitu lukea. Valitse kelvollinen .dxf-tiedosto." },
+  "popupErrorTooLarge": { "message": "Tiedosto on liian suuri. Katseluohjelma tukee piirustuksia enintään 50 Mt." },
+  "popupErrorCantOpen": { "message": "Katseluohjelmaa ei voitu avata. Yritä uudelleen." },
+
+  "viewerNoFile": { "message": "Ei tiedostoa" },
+  "viewerToolRecent": { "message": "Viimeisimmät tiedostot" },
+  "viewerToolOpenAnother": { "message": "Avaa toinen tiedosto" },
+  "viewerToolFit": { "message": "Sovita näyttöön" },
+  "viewerToolMeasure": { "message": "Mittaus (M) — pidä Alt poistaaksesi tarttumisen" },
+  "viewerToolFind": { "message": "Etsi tekstiä (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Tulosta (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Kuvakaappaus (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Näytä/piilota minikartta" },
+  "viewerToolCoords": { "message": "Näytä/piilota koordinaatit" },
+  "viewerToolColors": { "message": "Näytä alkuperäiset DXF-värit (O)" },
+  "viewerToolTheme": { "message": "Vaihda teemaa" },
+  "viewerSidebarCollapse": { "message": "Pienennä kerrospaneeli" },
+  "viewerRecentEmpty": { "message": "Ei viimeisimpiä tiedostoja" },
+  "viewerLayerFilter": { "message": "Suodata kerroksia" },
+  "viewerLayersEmpty": { "message": "Ei kerroksia tässä piirustuksessa" },
+  "viewerBookmarksTitle": { "message": "Tallennetut näkymät" },
+  "viewerBookmarksAdd": { "message": "+ Tallenna näkymä" },
+  "viewerBookmarksHelp": { "message": "Tallenna nykyinen zoomaus ja sijainti palataksesi myöhemmin." },
+  "viewerBookmarksEmpty": { "message": "Ei tallennettuja näkymiä" },
+  "viewerFindPlaceholder": { "message": "Etsi tekstiä piirustuksesta" },
+
+  "viewerCompareLabel": { "message": "Vertaillaan piirustuksia" },
+  "viewerCompareNamed": {
+    "message": "Vertailu: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Näytä/piilota päällekkäisyys" },
+  "viewerCompareExit": { "message": "Poistu" },
+  "viewerCompareError": { "message": "Tiedostoa ei voitu ladata vertailua varten" },
+  "viewerDropToOpen": { "message": "Pudota avataksesi uudessa välilehdessä" },
+  "viewerOverlayDropHint": { "message": "Pudota .dxf-tiedosto tähän\ntai napsauta Avaa toinen" },
+  "viewerOverlayActionOpen": { "message": "Avaa toinen tiedosto" },
+  "viewerOverlayLoading": { "message": "Ladataan piirustusta…" },
+  "viewerOverlayLoadingFonts": { "message": "Ladataan fontteja…" },
+  "viewerOverlayParsing": { "message": "Jäsennetään piirustusta…" },
+  "viewerOverlayPreparing": { "message": "Valmistellaan geometriaa…" },
+  "viewerOverlayErrorExpired": { "message": "Piirustusta ei voitu avata.\nTiedosto on saattanut vanhentua." },
+  "viewerOverlayErrorInvalid": { "message": "Tiedostoa ei voitu lukea.\nValitse kelvollinen .dxf-tiedosto." },
+  "viewerOverlayErrorTooLarge": { "message": "Tiedosto on liian suuri.\nKatseluohjelma tukee piirustuksia enintään 50 Mt." },
+  "viewerOverlayErrorCorrupted": { "message": "Piirustusta ei voitu avata.\nTiedosto saattaa olla vioittunut tai ei-tuettu." },
+  "viewerToastScreenshotSaved": { "message": "Kuvakaappaus kopioitu ja tallennettu" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Kuvakaappaus tallennettu (leikepöytä estetty)" },
+  "viewerToastScreenshotError": { "message": "Kuvakaappausta ei voitu tallentaa" },
+
+  "viewerRecentBadgeOpen": { "message": "Avaa" },
+  "viewerRecentRemoveTitle": { "message": "Poista viimeisimmistä" },
+  "viewerRecentCompareTitle": { "message": "Vertaa nykyiseen" },
+  "viewerLayerToggleTitle": { "message": "Vaihda kerros" },
+  "viewerLayerSoloTitle": { "message": "Näytä vain tämä kerros" },
+  "viewerBookmarkPromptName": { "message": "Kirjanmerkin nimi" },
+  "viewerBookmarkPromptRename": { "message": "Nimeä kirjanmerkki uudelleen" }
+}

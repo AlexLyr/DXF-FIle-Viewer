@@ -48,7 +48,6 @@ function readStoredCoordsVisible(): boolean {
 class ViewerState {
   viewer: DxfViewer | null = null;
   currentBlobUrl: string | null = null;
-  currentBuffer: ArrayBuffer | null = null;
   currentName = "";
   currentSize = 0;
   currentFileKey: string | null = null;

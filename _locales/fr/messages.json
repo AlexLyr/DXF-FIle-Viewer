@@ -1,0 +1,75 @@
+{
+  "appName": {
+    "message": "Visionneuse de fichiers DXF"
+  },
+  "shortDesc": {
+    "message": "Utilisez la Visionneuse de fichiers DXF pour ouvrir et visualiser des fichiers .dxf en ligne — visionneuse DXF rapide compatible avec AutoCAD dans votre navigateur."
+  },
+  "storeDesc": {
+    "message": "Utilisez la Visionneuse de fichiers DXF pour ouvrir et visualiser instantanément des fichiers .dxf dans votre navigateur. L'extension offre un accès rapide et léger aux dessins sans installer de logiciels CAD lourds.\n\n✨ Ce que fait la Visionneuse de fichiers DXF :\n1. Ouvre les dessins en quelques secondes — faites glisser, déposez ou cliquez\n2. Affiche les lignes, les couches, les blocs, les dimensions et les annotations\n3. Vous permet de faire un panoramique et de zoomer sur chaque détail du dessin\n4. Permute les couches pour se concentrer sur des parties spécifiques, avec un aperçu au survol pour isoler n'importe quelle couche\n5. Fonctionne entièrement dans votre navigateur — pas d'installation, pas de compte\n6. Thèmes clair et sombre, avec coordonnées du curseur en direct\n\n📌 Qui a besoin d'une visionneuse DXF en ligne :\n➤ Ingénieurs et architectes qui visualisent des DXF en ligne sans AutoCAD\n➤ Étudiants apprenant le CAD qui souhaitent une visionneuse .dxf simple dans le navigateur\n➤ Chefs de chantier recevant des dessins de designers\n➤ Freelances prévisualisant des fichiers avant d'ouvrir des outils CAD lourds\n➤ Quiconque se demande comment visualiser rapidement des fichiers DXF sur n'importe quel appareil\n\n🎯 Pourquoi les gens choisissent cet outil DXF :\nLe problème avec les dessins CAD est d'acheter une licence de visionneuse DXF AutoCAD ou d'installer des outils similaires juste pour jeter un coup d'œil. La Visionneuse de fichiers DXF fonctionne dans votre navigateur et ouvre n'importe quel fichier .dxf standard en quelques secondes.\n\n🚀 Comment fonctionne la visionneuse de fichiers DXF en ligne :\n1️⃣ Installez l'extension depuis le Chrome Web Store\n2️⃣ Cliquez sur l'icône dans votre barre d'outils\n3️⃣ Faites glisser votre dessin dans la visionneuse\n4️⃣ Faites un panoramique et zoomez pour inspecter la structure\n5️⃣ Permutez les couches et explorez chaque partie\n\n📂 Fichiers pris en charge :\n- DXF standard — à la fois ASCII et binaire\n- Dessins en couches — chaque couche préservée et permutable\n- Entités 2D — lignes, polylignes, arcs, cercles, splines, hachures, texte\n- Références de blocs, dimensions et annotations\n\n🔒 Votre vie privée est importante. La Visionneuse de fichiers DXF traite les dessins localement dans votre navigateur. Ils ne quittent jamais votre appareil. Pas de téléchargement, pas de cloud, pas de suivi.\n\n💡 Qu'est-ce qu'un fichier DXF ?\nUn fichier DXF (Drawing Exchange Format) est un format CAD d'Autodesk pour partager des données entre applications. Contrairement aux formats binaires, il est basé sur du texte et facile à partager. Ouvrez des dessins exportés depuis n'importe quel outil CAD qui prend en charge DXF.\n\n⚙️ Visionneuse de fichiers DXF vs logiciels CAD lourds :\n▸ Pas d'installation — s'ouvre dans votre navigateur\n▸ Pas de licence — fonctionne sans abonnements AutoCAD\n▸ Léger — fonctionne entièrement dans le navigateur\n▸ Multi-plateforme — Windows, macOS, Linux, ChromeOS\n\n🛠 Cas d'utilisation dans le monde réel :\n• Prévisualiser rapidement des dessins envoyés par des clients\n• Réviser le travail CAD lors de réunions sans lancer AutoCAD\n• Enseigner aux étudiants comment visualiser des fichiers DXF en classe\n• Ouvrir des fichiers sur une tablette ou un Chromebook\n• Utiliser comme lecteur DXF de secours lorsque AutoCAD est hors ligne\n• Visualiser CAD en ligne sans configuration\n\n🧱 Conçu pour les flux de travail CAD quotidiens :\n1. Rounds d'approbation — vérifiez les dimensions en quelques secondes\n2. Inspection sur le terrain — apportez un dessin sur une tablette sur un chantier\n3. Accès aux archives — parcourez les anciens dessins depuis un e-mail\n4. Passation entre équipes — les utilisateurs non-CAD lisent les fichiers d'ingénierie\n5. Triage rapide — triez les dessins nécessitant un travail CAD complet\n\n⚡ Basé sur un rendu éprouvé :\nL'extension utilise des bibliothèques de parsing testées et approuvées par des équipes d'ingénierie dans le monde entier. Chaque mise à jour est examinée pour la performance et la compatibilité avant sa publication sur le Chrome Web Store.\n\n❓ Questions fréquemment posées :\nQ : Ouvre-t-elle du contenu 3D dans les fichiers DXF ?\nR : Elle ouvre n'importe quel dessin DXF 2D standard, y compris les dessins produits à partir de modèles 3D dans des outils CAD. Les entités de maillage et de surface 3D pures ont un support de rendu limité — les meilleurs résultats proviennent des dessins 2D et des vues projetées.\n\nQ : La visionneuse ouvre-t-elle des fichiers DWG ?\nR : Non. DWG est un format binaire distinct d'Autodesk. La plupart des outils CAD peuvent exporter DWG vers DXF en un clic — ouvrez le .dxf résultant ici.\n\nQ : Avez-vous recherché une visionneuse DXF en ligne ou une vue DXF en ligne ?\nR : Oui, c'est le même outil. Que vous l'appeliez lecteur DXF ou simplement moyen de visualiser des dessins, votre fichier s'ouvre dans le navigateur.\n\n📍 Conseils pour utiliser la Visionneuse de fichiers DXF :\n- Déposez votre dessin sur la fenêtre contextuelle de l'extension\n- Pour les grands dessins, masquez les couches inutilisées\n- Ouvrez des fichiers directement depuis un e-mail ou un chat\n- Survolez un nom de couche dans le panneau pour prévisualiser uniquement cette couche\n\n👉 Prêt à visualiser des DXF en ligne ?\nInstallez la Visionneuse de fichiers DXF, déposez votre fichier et commencez à explorer. Pas d'abonnement, pas d'installation lourde, pas d'attente. Conçu pour les ingénieurs, les architectes, les étudiants et quiconque ayant besoin de prévisualisations CAD rapides.\n—\nAutoCAD® est une marque déposée d'Autodesk, Inc. Cette extension n'est pas affiliée à Autodesk et n'est pas approuvée par Autodesk."
+  },
+
+  "popupAriaOpenFile": { "message": "Ouvrir un fichier .dxf" },
+  "popupDropzoneIdle": { "message": "Cliquez ou déposez un .dxf" },
+  "popupDropzoneDragover": { "message": "Relâchez pour ouvrir" },
+  "popupStatusOpening": { "message": "Ouverture de la visionneuse…" },
+  "popupErrorInvalidFile": { "message": "Impossible de lire le fichier. Veuillez choisir un fichier .dxf valide." },
+  "popupErrorTooLarge": { "message": "Le fichier est trop volumineux. La visionneuse prend en charge les dessins jusqu'à 50 Mo." },
+  "popupErrorCantOpen": { "message": "Impossible d'ouvrir la visionneuse. Veuillez réessayer." },
+
+  "viewerNoFile": { "message": "Aucun fichier" },
+  "viewerToolRecent": { "message": "Fichiers récents" },
+  "viewerToolOpenAnother": { "message": "Ouvrir un autre fichier" },
+  "viewerToolFit": { "message": "Ajuster à l'écran" },
+  "viewerToolMeasure": { "message": "Mesurer (M) — maintenez Alt pour désactiver l'accrochage" },
+  "viewerToolFind": { "message": "Rechercher du texte (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Imprimer (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Capturer la vue (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Afficher/masquer la minicarte" },
+  "viewerToolCoords": { "message": "Afficher/masquer les coordonnées" },
+  "viewerToolColors": { "message": "Afficher les couleurs DXF d'origine (O)" },
+  "viewerToolTheme": { "message": "Changer de thème" },
+  "viewerSidebarCollapse": { "message": "Réduire le panneau des calques" },
+  "viewerRecentEmpty": { "message": "Aucun fichier récent" },
+  "viewerLayerFilter": { "message": "Filtrer les calques" },
+  "viewerLayersEmpty": { "message": "Aucun calque dans ce dessin" },
+  "viewerBookmarksTitle": { "message": "Vues enregistrées" },
+  "viewerBookmarksAdd": { "message": "+ Enregistrer la vue" },
+  "viewerBookmarksHelp": { "message": "Enregistrez le zoom et la position actuels pour y revenir plus tard." },
+  "viewerBookmarksEmpty": { "message": "Aucune vue enregistrée" },
+  "viewerFindPlaceholder": { "message": "Rechercher du texte dans le dessin" },
+
+  "viewerCompareLabel": { "message": "Comparaison de dessins" },
+  "viewerCompareNamed": {
+    "message": "Comparaison : $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Afficher/masquer la superposition" },
+  "viewerCompareExit": { "message": "Quitter" },
+  "viewerCompareError": { "message": "Impossible de charger le fichier pour la comparaison" },
+  "viewerDropToOpen": { "message": "Déposez pour ouvrir dans un nouvel onglet" },
+  "viewerOverlayDropHint": { "message": "Déposez un fichier .dxf ici\nou cliquez sur Ouvrir un autre" },
+  "viewerOverlayActionOpen": { "message": "Ouvrir un autre fichier" },
+  "viewerOverlayLoading": { "message": "Chargement du dessin…" },
+  "viewerOverlayLoadingFonts": { "message": "Chargement des polices…" },
+  "viewerOverlayParsing": { "message": "Analyse du dessin…" },
+  "viewerOverlayPreparing": { "message": "Préparation de la géométrie…" },
+  "viewerOverlayErrorExpired": { "message": "Impossible d'ouvrir ce dessin.\nLe fichier a peut-être expiré." },
+  "viewerOverlayErrorInvalid": { "message": "Impossible de lire le fichier.\nVeuillez choisir un fichier .dxf valide." },
+  "viewerOverlayErrorTooLarge": { "message": "Le fichier est trop volumineux.\nLa visionneuse prend en charge les dessins jusqu'à 50 Mo." },
+  "viewerOverlayErrorCorrupted": { "message": "Impossible d'ouvrir ce dessin.\nLe fichier est peut-être corrompu ou non pris en charge." },
+  "viewerToastScreenshotSaved": { "message": "Capture d'écran copiée et enregistrée" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Capture d'écran enregistrée (presse-papiers bloqué)" },
+  "viewerToastScreenshotError": { "message": "Impossible d'enregistrer la capture d'écran" },
+
+  "viewerRecentBadgeOpen": { "message": "Ouvrir" },
+  "viewerRecentRemoveTitle": { "message": "Supprimer des récents" },
+  "viewerRecentCompareTitle": { "message": "Comparer avec le dessin actuel" },
+  "viewerLayerToggleTitle": { "message": "Afficher/masquer le calque" },
+  "viewerLayerSoloTitle": { "message": "Afficher uniquement ce calque" },
+  "viewerBookmarkPromptName": { "message": "Nom du signet" },
+  "viewerBookmarkPromptRename": { "message": "Renommer le signet" }
+}

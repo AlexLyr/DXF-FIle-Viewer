@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "DXF-filviser",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Bruk DXF-filvisningsprogram til å åpne og vise .dxf-filer på nettet – et raskt AutoCAD-kompatibelt DXF-visningsprogram i nettleseren din.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Bruk DXF-filviseren til å åpne og vise .dxf-filer umiddelbart i nettleseren din. Utvidelsen gir rask og enkel tilgang til tegninger uten å installere tung CAD-programvare.\n\n ✨ Hva DXF-filviseren gjør:\n 1. Åpner tegninger på sekunder – dra, slipp eller klikk\n 2. Viser linjer, lag, blokker, dimensjoner og merknader\n 3. Lar deg panorere og zoome inn i alle detaljer i tegningen\n 4. Aktiverer lag for å fokusere på bestemte deler, med forhåndsvisning over musepekeren for å isolere ethvert lag\n 5. Fungerer fullt ut i nettleseren din – ingen installasjon, ingen konto\n 6. Lyse og mørke temaer, med live markørkoordinater\n\n 📌 Hvem trenger en dxf-visningsprogramvare på nett:\n ➤ Ingeniører og arkitekter som ser dxf på nettet uten AutoCAD\n ➤ Studenter som lærer CAD og ønsker et enkelt .dxf-visningsprogram i nettleseren\n ➤ Byggeledere mottar tegninger fra designere\n ➤ Frilansere forhåndsviser filer før de åpner tunge CAD-verktøy\n ➤ Lurer noen på hvordan man raskt kan se dxf-filer på en hvilken som helst enhet\n\n 🎯 Hvorfor folk velger dette dxf-verktøyet:\n Problemet med CAD-tegninger er å kjøpe en lisens for AutoCAD DXF Viewer eller installere lignende verktøy bare for å kikke inn. DXF File Viewer kjører i nettleseren din og åpner alle standard .dxf-filer på sekunder.\n\n 🚀 Slik fungerer dxf-filvisningsprogrammet på nett:\n 1️⃣ Installer utvidelsen fra Chrome Nettmarked\n 2️⃣ Klikk på ikonet i verktøylinjen\n 3️⃣ Dra tegningen din inn i visningen\n 4️⃣ Panorer og zoom for å inspisere strukturen\n 5️⃣ Veksle lag og utforsk hver del\n\n 📂 Støttede filer:\n - Standard DXF — både ASCII og binær\n - Lagdelte tegninger — hvert lag er bevart og kan slås av/på\n - 2D-enheter — linjer, polylinjer, buer, sirkler, splines, skravurer, tekst\n - Blokreferanser, dimensjoner og annoteringer\n\n 🔒 Ditt personvern er viktig. DXF File Viewer behandler tegninger lokalt i nettleseren din. De forlater aldri enheten din. Ingen opplasting, ingen sky, ingen sporing.\n\n 💡 Hva er en DXF-fil?\n En DXF-fil (Drawing Exchange Format) er et CAD-format fra Autodesk for deling av data mellom applikasjoner. I motsetning til binære formater er den tekstbasert og enkel å dele. Åpne tegninger eksportert fra et hvilket som helst CAD-verktøy som støtter DXF.\n\n ⚙️ DXF-filviser kontra tung CAD-programvare:\n ▸ Ingen installasjon – åpnes i nettleseren din\n ▸ Ingen lisens – fungerer uten AutoCAD-abonnementer\n ▸ Lett – kjører utelukkende i nettleseren\n ▸ Kryssplattform – Windows, macOS, Linux, ChromeOS\n\n 🛠 Eksempler på bruk i den virkelige verden:\n • Rask forhåndsvisning av tegninger sendt på e-post fra kunder\n • Gjennomgå CAD-arbeid i møter uten å starte AutoCAD\n • Lær elevene hvordan de kan vise dxf-filer i klasserommet\n • Åpne filer på et nettbrett eller en Chromebook\n • Bruk som en reserve-dxf-leser når AutoCAD er frakoblet\n • Se CAD på nett uten oppsett\n\n 🧱 Bygget for daglige CAD-arbeidsflyter:\n 1. Godkjenningsrunder – sjekk dimensjoner på sekunder\n 2. Feltinspeksjon – ta med en tegning på et nettbrett til arbeidsplassen\n 3. Arkivtilgang – bla gjennom gamle tegninger fra e-post\n 4. Overlevering på tvers av team – ikke-CAD-brukere leser ingeniørfiler\n 5. Rask sortering – sorter tegninger som trenger fullstendig CAD-arbeid\n\n ⚡ Bygget på dokumentert gjengivelse:\n Utvidelsen bruker testede parsebiblioteker som er klarert av ingeniørteam over hele verden. Hver oppdatering gjennomgås for ytelse og kompatibilitet før den lanseres i Chrome Nettmarked.\n\n ❓ Ofte stilte spørsmål:\n Spørsmål: Åpner den 3D-innhold i DXF-filer?\n A: Den åpner alle standard 2D DXF-tegninger, inkludert tegninger produsert fra 3D-modeller i CAD-verktøy. Rent 3D-nett og overflateenheter har begrenset gjengivelsesstøtte – de beste resultatene kommer fra 2D-tegninger og projiserte visninger.\n\n Spørsmål: Åpner visningsprogrammet DWG-filer?\n A: Nei. DWG er et separat binærformat fra Autodesk. De fleste CAD-verktøy kan eksportere DWG til DXF med ett klikk – åpne den resulterende .dxf-filen her.\n\n Spørsmål: Søkte du etter dxf-visning på nett eller dxf-visning på nett?\n A: Ja, dette er det samme verktøyet. Enten du kaller det en dxf-leser eller bare en måte å vise tegninger på, åpnes filen din i nettleseren.\n\n 📍 Tips for bruk av DXF-filviser:\n - Slipp tegningen din i popup-vinduet for utvidelsen\n - For store tegninger, skjul ubrukte lag\n - Åpne filer direkte fra e-post eller chat\n – Hold musepekeren over et lagnavn i panelet for å forhåndsvise bare det laget\n\n 👉 Klar til å se dxf-filer på nett?\n Installer DXF File Viewer, slipp filen din og begynn å utforske. Ingen abonnement, ingen tung installasjon, ingen venting. Bygget for ingeniører, arkitekter, studenter og alle som trenger raske CAD-forhåndsvisninger.\n —\n AutoCAD® er et registrert varemerke for Autodesk, Inc. Denne utvidelsen er ikke tilknyttet eller godkjent av Autodesk.\n",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Åpne en .dxf-fil" },
+  "popupDropzoneIdle": { "message": "Klikk eller slipp en .dxf" },
+  "popupDropzoneDragover": { "message": "Slipp for å åpne" },
+  "popupStatusOpening": { "message": "Åpner visningsprogram…" },
+  "popupErrorInvalidFile": { "message": "Kunne ikke lese filen. Velg en gyldig .dxf-fil." },
+  "popupErrorTooLarge": { "message": "Filen er for stor. Visningsprogrammet støtter tegninger opptil 50 MB." },
+  "popupErrorCantOpen": { "message": "Kunne ikke åpne visningsprogrammet. Prøv igjen." },
+
+  "viewerNoFile": { "message": "Ingen fil" },
+  "viewerToolRecent": { "message": "Nylige filer" },
+  "viewerToolOpenAnother": { "message": "Åpne en annen fil" },
+  "viewerToolFit": { "message": "Tilpass til skjerm" },
+  "viewerToolMeasure": { "message": "Mål (M) — hold Alt for å deaktivere snapping" },
+  "viewerToolFind": { "message": "Finn tekst (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Skriv ut (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Skjermbilde av visningen (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Slå av/på minikart" },
+  "viewerToolCoords": { "message": "Slå av/på koordinater" },
+  "viewerToolColors": { "message": "Vis originale DXF-farger (O)" },
+  "viewerToolTheme": { "message": "Bytt tema" },
+  "viewerSidebarCollapse": { "message": "Skjul lagpanelet" },
+  "viewerRecentEmpty": { "message": "Ingen nylige filer" },
+  "viewerLayerFilter": { "message": "Filtrer lag" },
+  "viewerLayersEmpty": { "message": "Ingen lag i denne tegningen" },
+  "viewerBookmarksTitle": { "message": "Lagrede visninger" },
+  "viewerBookmarksAdd": { "message": "+ Lagre visning" },
+  "viewerBookmarksHelp": { "message": "Lagre gjeldende zoom og posisjon for å gå tilbake senere." },
+  "viewerBookmarksEmpty": { "message": "Ingen lagrede visninger ennå" },
+  "viewerFindPlaceholder": { "message": "Finn tekst i tegningen" },
+
+  "viewerCompareLabel": { "message": "Sammenligner tegninger" },
+  "viewerCompareNamed": {
+    "message": "Sammenligner: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Slå av/på overlegg" },
+  "viewerCompareExit": { "message": "Avslutt" },
+  "viewerCompareError": { "message": "Kunne ikke laste filen for sammenligning" },
+  "viewerDropToOpen": { "message": "Slipp for å åpne i ny fane" },
+  "viewerOverlayDropHint": { "message": "Slipp en .dxf-fil her\neller klikk Åpne en annen" },
+  "viewerOverlayActionOpen": { "message": "Åpne en annen fil" },
+  "viewerOverlayLoading": { "message": "Laster tegning…" },
+  "viewerOverlayLoadingFonts": { "message": "Laster skrifter…" },
+  "viewerOverlayParsing": { "message": "Analyserer tegning…" },
+  "viewerOverlayPreparing": { "message": "Forbereder geometri…" },
+  "viewerOverlayErrorExpired": { "message": "Kunne ikke åpne denne tegningen.\nFilen kan ha utløpt." },
+  "viewerOverlayErrorInvalid": { "message": "Kunne ikke lese filen.\nVelg en gyldig .dxf-fil." },
+  "viewerOverlayErrorTooLarge": { "message": "Filen er for stor.\nVisningsprogrammet støtter tegninger opptil 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Kunne ikke åpne denne tegningen.\nFilen kan være skadet eller ikke støttet." },
+  "viewerToastScreenshotSaved": { "message": "Skjermbilde kopiert og lagret" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Skjermbilde lagret (utklippstavle blokkert)" },
+  "viewerToastScreenshotError": { "message": "Kunne ikke lagre skjermbildet" },
+
+  "viewerRecentBadgeOpen": { "message": "Åpne" },
+  "viewerRecentRemoveTitle": { "message": "Fjern fra nylige" },
+  "viewerRecentCompareTitle": { "message": "Sammenlign med gjeldende" },
+  "viewerLayerToggleTitle": { "message": "Slå av/på lag" },
+  "viewerLayerSoloTitle": { "message": "Vis bare dette laget" },
+  "viewerBookmarkPromptName": { "message": "Bokmerkenavn" },
+  "viewerBookmarkPromptRename": { "message": "Gi nytt navn til bokmerke" }
+}

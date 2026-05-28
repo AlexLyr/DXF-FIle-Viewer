@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "DXF File Viewer",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Sử dụng DXF File Viewer để mở và xem các tệp .dxf trực tuyến — trình xem DXF tương thích AutoCAD nhanh chóng trong trình duyệt của bạn.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Sử dụng DXF File Viewer để mở và xem các tệp .dxf ngay lập tức trong trình duyệt của bạn. Tiện ích mở rộng này cung cấp quyền truy cập nhanh chóng, nhẹ nhàng vào các bản vẽ mà không cần cài đặt phần mềm CAD nặng nề.\n\n✨ Những gì DXF File Viewer làm:\n1. Mở bản vẽ trong vài giây — kéo, thả hoặc nhấp\n2. Hiển thị các đường, lớp, khối, kích thước và chú thích\n3. Cho phép bạn di chuyển và phóng to từng chi tiết của bản vẽ\n4. Chuyển đổi các lớp để tập trung vào các phần cụ thể, với bản xem trước khi di chuột để tách biệt bất kỳ lớp nào\n5. Hoạt động hoàn toàn trong trình duyệt của bạn — không cần cài đặt, không cần tài khoản\n6. Chủ đề sáng và tối, với tọa độ con trỏ trực tiếp\n\n📌 Ai cần một trình xem dxf trực tuyến:\n➤ Kỹ sư và kiến trúc sư xem dxf trực tuyến mà không cần AutoCAD\n➤ Sinh viên học CAD muốn một trình xem .dxf đơn giản trong trình duyệt\n➤ Quản lý xây dựng nhận bản vẽ từ các nhà thiết kế\n➤ Người làm tự do xem trước các tệp trước khi mở các công cụ CAD nặng nề\n➤ Bất kỳ ai tự hỏi làm thế nào để xem các tệp dxf nhanh chóng trên bất kỳ thiết bị nào\n\n🎯 Tại sao mọi người chọn công cụ dxf này:\nCảm giác khó chịu với các bản vẽ CAD là phải mua giấy phép trình xem dxf autocad hoặc cài đặt các công cụ tương tự chỉ để xem qua. DXF File Viewer chạy trong trình duyệt của bạn và mở bất kỳ tệp .dxf tiêu chuẩn nào trong vài giây.\n\n🚀 Cách hoạt động của trình xem tệp dxf trực tuyến:\n1️⃣ Cài đặt tiện ích mở rộng từ Chrome Web Store\n2️⃣ Nhấp vào biểu tượng trong thanh công cụ của bạn\n3️⃣ Kéo bản vẽ của bạn vào trình xem\n4️⃣ Di chuyển và phóng to để kiểm tra cấu trúc\n5️⃣ Chuyển đổi các lớp và khám phá từng phần\n\n📂 Các tệp được hỗ trợ:\n- DXF tiêu chuẩn — cả ASCII và nhị phân\n- Bản vẽ có lớp — mỗi lớp được bảo tồn và có thể chuyển đổi\n- Thực thể 2D — đường, polyline, cung, hình tròn, spline, hatch, văn bản\n- Tham chiếu khối, kích thước và chú thích\n\n🔒 Quyền riêng tư của bạn rất quan trọng. DXF File Viewer xử lý các bản vẽ cục bộ trong trình duyệt của bạn. Chúng không bao giờ rời khỏi thiết bị của bạn. Không tải lên, không đám mây, không theo dõi.\n\n💡 Tệp DXF là gì?\nTệp DXF (Drawing Exchange Format) là một định dạng CAD từ Autodesk để chia sẻ dữ liệu giữa các ứng dụng. Khác với các định dạng nhị phân, nó dựa trên văn bản và dễ chia sẻ. Mở các bản vẽ được xuất từ bất kỳ công cụ CAD nào hỗ trợ DXF.\n\n⚙️ DXF File Viewer so với phần mềm CAD nặng:\n▸ Không cần cài đặt — mở trong trình duyệt của bạn\n▸ Không cần giấy phép — hoạt động mà không cần đăng ký AutoCAD\n▸ Nhẹ — chạy hoàn toàn trong trình duyệt\n▸ Đa nền tảng — Windows, macOS, Linux, ChromeOS\n\n🛠 Các trường hợp sử dụng thực tế:\n• Xem nhanh các bản vẽ được gửi qua email bởi khách hàng\n• Xem xét công việc CAD trong các cuộc họp mà không cần khởi động AutoCAD\n• Dạy sinh viên cách xem các tệp dxf trong lớp\n• Mở tệp trên máy tính bảng hoặc Chromebook\n• Sử dụng như một trình đọc dxf dự phòng khi AutoCAD ngoại tuyến\n• Xem cad trực tuyến mà không cần thiết lập\n\n🧱 Được xây dựng cho quy trình làm việc CAD hàng ngày:\n1. Vòng phê duyệt — kiểm tra kích thước trong vài giây\n2. Kiểm tra hiện trường — mang một bản vẽ trên máy tính bảng đến công trường\n3. Truy cập lưu trữ — duyệt các bản vẽ cũ từ email\n4. Chuyển giao giữa các đội — người không sử dụng CAD đọc các tệp kỹ thuật\n5. Phân loại nhanh — sắp xếp các bản vẽ cần công việc CAD đầy đủ\n\n⚡ Dựa trên khả năng hiển thị đã được chứng minh:\nTiện ích mở rộng sử dụng các thư viện phân tích đã được kiểm tra và được các đội kỹ thuật trên toàn thế giới tin tưởng. Mỗi bản cập nhật đều được xem xét về hiệu suất và khả năng tương thích trước khi phát hành trên Chrome Web Store.\n\n❓ Câu hỏi thường gặp:\nQ: Nó có mở nội dung 3D trong các tệp DXF không?\nA: Nó mở bất kỳ bản vẽ 2D DXF tiêu chuẩn nào, bao gồm các bản vẽ được sản xuất từ các mô hình 3D trong các công cụ CAD. Các thực thể lưới và bề mặt 3D thuần túy có hỗ trợ hiển thị hạn chế — kết quả tốt nhất đến từ các bản vẽ 2D và các góc nhìn chiếu.\n\nQ: Trình xem có mở các tệp DWG không?\nA: Không. DWG là một định dạng nhị phân riêng biệt từ Autodesk. Hầu hết các công cụ CAD có thể xuất DWG sang DXF chỉ với một cú nhấp chuột — mở tệp .dxf kết quả ở đây.\n\nQ: Bạn đã tìm kiếm trình xem dxf trực tuyến hoặc xem dxf trực tuyến chưa?\nA: Có, đây là cùng một công cụ. Dù bạn gọi nó là trình đọc dxf hay chỉ là một cách để xem các bản vẽ, tệp của bạn sẽ mở trong trình duyệt.\n\n📍 Mẹo sử dụng DXF File Viewer:\n- Thả bản vẽ của bạn vào cửa sổ bật lên của tiện ích mở rộng\n- Đối với các bản vẽ lớn, ẩn các lớp không sử dụng\n- Mở tệp trực tiếp từ email hoặc trò chuyện\n- Di chuột qua tên lớp trong bảng để xem trước chỉ lớp đó\n\n👉 Sẵn sàng để xem dxf trực tuyến?\nCài đặt DXF File Viewer, thả tệp của bạn và bắt đầu khám phá. Không cần đăng ký, không cần cài đặt nặng, không cần chờ đợi. Được xây dựng cho các kỹ sư, kiến trúc sư, sinh viên và bất kỳ ai cần xem trước CAD nhanh chóng.\n\n—\nAutoCAD® là một thương hiệu đã đăng ký của Autodesk, Inc. Tiện ích mở rộng này không liên kết hoặc được ủy quyền bởi Autodesk.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Mở tệp .dxf" },
+  "popupDropzoneIdle": { "message": "Nhấp hoặc thả tệp .dxf" },
+  "popupDropzoneDragover": { "message": "Thả để mở" },
+  "popupStatusOpening": { "message": "Đang mở trình xem…" },
+  "popupErrorInvalidFile": { "message": "Không thể đọc tệp. Vui lòng chọn tệp .dxf hợp lệ." },
+  "popupErrorTooLarge": { "message": "Tệp quá lớn. Trình xem hỗ trợ bản vẽ đến 50 MB." },
+  "popupErrorCantOpen": { "message": "Không thể mở trình xem. Vui lòng thử lại." },
+
+  "viewerNoFile": { "message": "Không có tệp" },
+  "viewerToolRecent": { "message": "Tệp gần đây" },
+  "viewerToolOpenAnother": { "message": "Mở tệp khác" },
+  "viewerToolFit": { "message": "Vừa màn hình" },
+  "viewerToolMeasure": { "message": "Đo (M) — giữ Alt để tắt bắt điểm" },
+  "viewerToolFind": { "message": "Tìm văn bản (Ctrl+F)" },
+  "viewerToolPrint": { "message": "In (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Chụp màn hình (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Bật/tắt bản đồ thu nhỏ" },
+  "viewerToolCoords": { "message": "Bật/tắt tọa độ" },
+  "viewerToolColors": { "message": "Hiển thị màu DXF gốc (O)" },
+  "viewerToolTheme": { "message": "Chuyển đổi chủ đề" },
+  "viewerSidebarCollapse": { "message": "Thu gọn bảng lớp" },
+  "viewerRecentEmpty": { "message": "Không có tệp gần đây" },
+  "viewerLayerFilter": { "message": "Lọc lớp" },
+  "viewerLayersEmpty": { "message": "Không có lớp trong bản vẽ này" },
+  "viewerBookmarksTitle": { "message": "Góc nhìn đã lưu" },
+  "viewerBookmarksAdd": { "message": "+ Lưu góc nhìn" },
+  "viewerBookmarksHelp": { "message": "Lưu vị trí phóng to hiện tại để quay lại sau." },
+  "viewerBookmarksEmpty": { "message": "Chưa có góc nhìn đã lưu" },
+  "viewerFindPlaceholder": { "message": "Tìm văn bản trong bản vẽ" },
+
+  "viewerCompareLabel": { "message": "Đang so sánh bản vẽ" },
+  "viewerCompareNamed": {
+    "message": "So sánh: $1 và $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Bật/tắt lớp phủ" },
+  "viewerCompareExit": { "message": "Thoát" },
+  "viewerCompareError": { "message": "Không thể tải tệp để so sánh" },
+  "viewerDropToOpen": { "message": "Thả để mở trong tab mới" },
+  "viewerOverlayDropHint": { "message": "Thả tệp .dxf tại đây\nhoặc nhấp Mở tệp khác" },
+  "viewerOverlayActionOpen": { "message": "Mở tệp khác" },
+  "viewerOverlayLoading": { "message": "Đang tải bản vẽ…" },
+  "viewerOverlayLoadingFonts": { "message": "Đang tải phông chữ…" },
+  "viewerOverlayParsing": { "message": "Đang phân tích bản vẽ…" },
+  "viewerOverlayPreparing": { "message": "Đang chuẩn bị hình học…" },
+  "viewerOverlayErrorExpired": { "message": "Không thể mở bản vẽ này.\nTệp có thể đã hết hạn." },
+  "viewerOverlayErrorInvalid": { "message": "Không thể đọc tệp.\nVui lòng chọn tệp .dxf hợp lệ." },
+  "viewerOverlayErrorTooLarge": { "message": "Tệp quá lớn.\nTrình xem hỗ trợ bản vẽ đến 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Không thể mở bản vẽ này.\nTệp có thể bị hỏng hoặc không được hỗ trợ." },
+  "viewerToastScreenshotSaved": { "message": "Đã sao chép & lưu ảnh chụp màn hình" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Đã lưu ảnh chụp màn hình (bộ nhớ tạm bị chặn)" },
+  "viewerToastScreenshotError": { "message": "Không thể lưu ảnh chụp màn hình" },
+
+  "viewerRecentBadgeOpen": { "message": "Mở" },
+  "viewerRecentRemoveTitle": { "message": "Xóa khỏi danh sách gần đây" },
+  "viewerRecentCompareTitle": { "message": "So sánh với bản vẽ hiện tại" },
+  "viewerLayerToggleTitle": { "message": "Bật/tắt lớp" },
+  "viewerLayerSoloTitle": { "message": "Chỉ hiển thị lớp này" },
+  "viewerBookmarkPromptName": { "message": "Tên đánh dấu" },
+  "viewerBookmarkPromptRename": { "message": "Đổi tên đánh dấu" }
+}

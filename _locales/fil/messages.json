@@ -1,0 +1,74 @@
+{
+  "appName": {
+    "message": "Tagakita ng DXF na File"
+  },
+  "shortDesc": {
+    "message": "Gamitin ang Tagakita ng DXF na File upang buksan at tingnan ang mga .dxf na file online — mabilis na AutoCAD-compatible na tagakita ng DXF sa iyong browser."
+  },
+  "storeDesc": {
+    "message": "Gamitin ang Tagakita ng DXF na File upang buksan at tingnan ang mga .dxf na file agad sa iyong browser. Ang extension ay nagbibigay ng mabilis, magaan na access sa mga guhit nang hindi nag-iinstall ng anumang mabigat na CAD software.\n\n✨ Ano ang ginagawa ng Tagakita ng DXF na File:\n1. Nagbubukas ng mga guhit sa loob ng ilang segundo — i-drag, i-drop, o i-click\n2. Ipinapakita ang mga linya, layer, bloke, sukat, at anotasyon\n3. Pinapayagan kang mag-pan at mag-zoom sa bawat detalye ng guhit\n4. Nagpapalit ng mga layer upang tumutok sa mga tiyak na bahagi, na may hover preview upang ihiwalay ang anumang layer\n5. Ganap na gumagana sa iyong browser — walang install, walang account\n6. Magaan at madilim na tema, na may live cursor coordinates\n\n📌 Sino ang nangangailangan ng online na tagakita ng dxf:\n➤ Mga inhinyero at arkitekto na tumitingin ng dxf online nang walang AutoCAD\n➤ Mga estudyanteng nag-aaral ng CAD na nais ng simpleng .dxf na tagakita sa browser\n➤ Mga tagapamahala ng konstruksyon na tumatanggap ng mga guhit mula sa mga designer\n➤ Mga freelancer na nag-preview ng mga file bago buksan ang mabibigat na CAD tools\n➤ Sinumang nagtataka kung paano mabilis na tingnan ang mga dxf na file sa anumang device\n\n🎯 Bakit pinipili ng mga tao ang tool na ito ng dxf:\nAng sakit sa mga CAD na guhit ay ang pagbili ng lisensya para sa autocad dxf viewer o pag-install ng mga katulad na tool para lamang sumilip. Ang Tagakita ng DXF na File ay tumatakbo sa iyong browser at nagbubukas ng anumang standard na .dxf na file sa loob ng ilang segundo.\n\n🚀 Paano gumagana ang online na tagakita ng dxf:\n1️⃣ I-install ang extension mula sa Chrome Web Store\n2️⃣ I-click ang icon sa iyong toolbar\n3️⃣ I-drag ang iyong guhit sa tagakita\n4️⃣ Mag-pan at mag-zoom upang suriin ang estruktura\n5️⃣ Magpalit ng mga layer at tuklasin ang bawat bahagi\n\n📂 Suportadong mga file:\n- Standard na DXF — parehong ASCII at binary\n- Layered na mga guhit — bawat layer ay napanatili at maaaring palitan\n- 2D na mga entidad — mga linya, polylines, arcs, bilog, splines, hatches, teksto\n- Mga reference ng bloke, sukat, at anotasyon\n\n🔒 Mahalaga ang iyong privacy. Ang Tagakita ng DXF na File ay nagpoproseso ng mga guhit nang lokal sa iyong browser. Hindi sila umaalis sa iyong device. Walang upload, walang cloud, walang tracking.\n\n💡 Ano ang DXF na file?\nAng DXF na file (Drawing Exchange Format) ay isang CAD format mula sa Autodesk para sa pagbabahagi ng data sa pagitan ng mga aplikasyon. Hindi tulad ng mga binary format, ito ay nakabatay sa teksto at madaling ibahagi. Buksan ang mga guhit na na-export mula sa anumang CAD tool na sumusuporta sa DXF.\n\n⚙️ Tagakita ng DXF na File vs mabibigat na CAD software:\n▸ Walang install — nagbubukas sa iyong browser\n▸ Walang lisensya — gumagana nang walang AutoCAD subscriptions\n▸ Magaan — tumatakbo nang buo sa browser\n▸ Cross-platform — Windows, macOS, Linux, ChromeOS\n\n🛠 Mga totoong kaso ng paggamit:\n• Mabilis na i-preview ang mga guhit na ipinadala ng mga kliyente\n• Suriin ang CAD na trabaho sa mga pulong nang hindi nagbubukas ng AutoCAD\n• Turuan ang mga estudyante kung paano tingnan ang mga dxf na file sa klase\n• Buksan ang mga file sa isang tablet o Chromebook\n• Gamitin bilang fallback na dxf reader kapag offline ang AutoCAD\n• Tingnan ang cad online na walang setup\n\n🧱 Naka-built para sa pang-araw-araw na CAD workflows:\n1. Mga round ng pag-apruba — suriin ang mga sukat sa loob ng ilang segundo\n2. Pagsusuri sa field — dalhin ang isang guhit sa isang tablet sa site ng trabaho\n3. Access sa archive — mag-browse ng mga lumang guhit mula sa email\n4. Cross-team handoff — ang mga non-CAD na gumagamit ay nagbabasa ng mga engineering file\n5. Mabilis na triage — ayusin ang mga guhit na nangangailangan ng buong CAD na trabaho\n\n⚡ Naka-built sa napatunayang rendering:\nAng extension ay gumagamit ng mga nasubok na parsing libraries na pinagkakatiwalaan ng mga engineering teams sa buong mundo. Bawat update ay sinusuri para sa pagganap at compatibility bago ilabas sa Chrome Web Store.\n\n❓ Mga madalas itanong:\nQ: Nagbubukas ba ito ng 3D na nilalaman sa mga DXF na file?\nA: Nagbubukas ito ng anumang standard na 2D na DXF na guhit, kabilang ang mga guhit na ginawa mula sa 3D na modelo sa mga CAD tool. Ang purong 3D mesh at surface entities ay may limitadong suporta sa rendering — ang pinakamahusay na resulta ay nagmumula sa 2D na mga guhit at projected views.\n\nQ: Nagbubukas ba ang tagakita ng mga DWG na file?\nA: Hindi. Ang DWG ay isang hiwalay na binary format mula sa Autodesk. Karamihan sa mga CAD tool ay maaaring mag-export ng DWG sa DXF sa isang click — buksan ang resulta na .dxf dito.\n\nQ: Naghahanap ka ba ng online na tagakita ng dxf o dxf view online?\nA: Oo, ito ang parehong tool. Kung tawagin mo itong dxf reader o simpleng paraan upang tingnan ang mga guhit, ang iyong file ay nagbubukas sa browser.\n\n📍 Mga tip para sa paggamit ng Tagakita ng DXF na File:\n- I-drop ang iyong guhit sa popup ng extension\n- Para sa malalaking guhit, itago ang mga hindi nagagamit na layer\n- Buksan ang mga file nang direkta mula sa email o chat\n- I-hover ang pangalan ng layer sa panel upang i-preview lamang ang layer na iyon\n\n👉 Handa nang tingnan ang dxf online?\nI-install ang Tagakita ng DXF na File, i-drop ang iyong file, at simulan ang pagtuklas. Walang subscription, walang mabigat na install, walang paghihintay. Naka-built para sa mga inhinyero, arkitekto, estudyante, at sinumang nangangailangan ng mabilis na CAD previews.\n—\nAng AutoCAD® ay isang nakarehistrong trademark ng Autodesk, Inc. Ang extension na ito ay hindi kaakibat o sinusuportahan ng Autodesk."
+  },
+  "popupAriaOpenFile": { "message": "Magbukas ng .dxf na file" },
+  "popupDropzoneIdle": { "message": "I-click o i-drop ang .dxf" },
+  "popupDropzoneDragover": { "message": "Bitawan upang buksan" },
+  "popupStatusOpening": { "message": "Binubuksan ang viewer…" },
+  "popupErrorInvalidFile": { "message": "Hindi mabasa ang file. Mangyaring pumili ng tamang .dxf na file." },
+  "popupErrorTooLarge": { "message": "Masyadong malaki ang file. Sinusuportahan ng viewer ang mga guhit hanggang 50 MB." },
+  "popupErrorCantOpen": { "message": "Hindi mabuksan ang viewer. Mangyaring subukan muli." },
+
+  "viewerNoFile": { "message": "Walang file" },
+  "viewerToolRecent": { "message": "Mga kamakailang file" },
+  "viewerToolOpenAnother": { "message": "Magbukas ng iba pang file" },
+  "viewerToolFit": { "message": "I-fit sa screen" },
+  "viewerToolMeasure": { "message": "Sukatin (M) — pindutin nang matagal ang Alt upang i-disable ang snap" },
+  "viewerToolFind": { "message": "Maghanap ng teksto (Ctrl+F)" },
+  "viewerToolPrint": { "message": "I-print (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Screenshot ng view (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "I-toggle ang minimap" },
+  "viewerToolCoords": { "message": "I-toggle ang coordinates" },
+  "viewerToolColors": { "message": "Ipakita ang orihinal na mga kulay ng DXF (O)" },
+  "viewerToolTheme": { "message": "I-toggle ang tema" },
+  "viewerSidebarCollapse": { "message": "I-collapse ang panel ng mga layer" },
+  "viewerRecentEmpty": { "message": "Walang kamakailang file" },
+  "viewerLayerFilter": { "message": "I-filter ang mga layer" },
+  "viewerLayersEmpty": { "message": "Walang mga layer sa guhit na ito" },
+  "viewerBookmarksTitle": { "message": "Mga naka-save na view" },
+  "viewerBookmarksAdd": { "message": "+ I-save ang view" },
+  "viewerBookmarksHelp": { "message": "I-save ang kasalukuyang zoom at posisyon upang makabalik dito sa ibang pagkakataon." },
+  "viewerBookmarksEmpty": { "message": "Wala pang naka-save na view" },
+  "viewerFindPlaceholder": { "message": "Maghanap ng teksto sa guhit" },
+
+  "viewerCompareLabel": { "message": "Paghahambing ng mga guhit" },
+  "viewerCompareNamed": {
+    "message": "Paghahambing: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "I-toggle ang overlay" },
+  "viewerCompareExit": { "message": "Lumabas" },
+  "viewerCompareError": { "message": "Hindi ma-load ang file para sa paghahambing" },
+  "viewerDropToOpen": { "message": "I-drop upang buksan sa bagong tab" },
+  "viewerOverlayDropHint": { "message": "I-drop ang .dxf na file dito\no i-click ang Magbukas ng iba pa" },
+  "viewerOverlayActionOpen": { "message": "Magbukas ng iba pang file" },
+  "viewerOverlayLoading": { "message": "Nilo-load ang guhit…" },
+  "viewerOverlayLoadingFonts": { "message": "Nilo-load ang mga font…" },
+  "viewerOverlayParsing": { "message": "Pina-parse ang guhit…" },
+  "viewerOverlayPreparing": { "message": "Inihahanda ang geometry…" },
+  "viewerOverlayErrorExpired": { "message": "Hindi mabuksan ang guhit na ito.\nMaaaring nag-expire na ang file." },
+  "viewerOverlayErrorInvalid": { "message": "Hindi mabasa ang file.\nMangyaring pumili ng tamang .dxf na file." },
+  "viewerOverlayErrorTooLarge": { "message": "Masyadong malaki ang file.\nSinusuportahan ng viewer ang mga guhit hanggang 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Hindi mabuksan ang guhit na ito.\nMaaaring sira o hindi suportado ang file." },
+  "viewerToastScreenshotSaved": { "message": "Na-copy at na-save ang screenshot" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Na-save ang screenshot (naka-block ang clipboard)" },
+  "viewerToastScreenshotError": { "message": "Hindi ma-save ang screenshot" },
+
+  "viewerRecentBadgeOpen": { "message": "Buksan" },
+  "viewerRecentRemoveTitle": { "message": "Alisin sa mga kamakailang file" },
+  "viewerRecentCompareTitle": { "message": "Ihambing sa kasalukuyan" },
+  "viewerLayerToggleTitle": { "message": "I-toggle ang layer" },
+  "viewerLayerSoloTitle": { "message": "Ipakita lang ang layer na ito" },
+  "viewerBookmarkPromptName": { "message": "Pangalan ng bookmark" },
+  "viewerBookmarkPromptRename": { "message": "Palitan ang pangalan ng bookmark" }
+}

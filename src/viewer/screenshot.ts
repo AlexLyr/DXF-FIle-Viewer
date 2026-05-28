@@ -4,6 +4,7 @@ import { dom } from "./dom";
 import { worldToScreen } from "./coords";
 import { getUnitLabel } from "./units";
 import { showToast } from "./toast";
+import { t } from "../lib/i18n";
 
 function formatTimestampLocal(date: Date): string {
   const yyyy = date.getFullYear();
@@ -122,7 +123,7 @@ export async function takeScreenshot(): Promise<void> {
     out.height = canvas.height;
     const ctx = out.getContext("2d");
     if (!ctx) {
-      showToast("Could not save screenshot", { variant: "error" });
+      showToast(t("viewerToastScreenshotError"), { variant: "error" });
       return;
     }
     ctx.drawImage(canvas, 0, 0);
@@ -131,21 +132,21 @@ export async function takeScreenshot(): Promise<void> {
     drawMeasureOverlayToImage(ctx, scaleX, scaleY);
     const blob = await canvasToPngBlob(out);
     if (!blob) {
-      showToast("Could not save screenshot", { variant: "error" });
+      showToast(t("viewerToastScreenshotError"), { variant: "error" });
       return;
     }
     const fileName = buildImageFileName(state.currentName);
     const [clipboardOk, saveOk] = await Promise.all([writePngToClipboard(blob), Promise.resolve(saveBlobToFile(blob, fileName))]);
     if (clipboardOk && saveOk) {
-      showToast("Screenshot copied & saved");
+      showToast(t("viewerToastScreenshotSaved"));
       return;
     }
     if (saveOk) {
-      showToast("Screenshot saved (clipboard blocked)");
+      showToast(t("viewerToastScreenshotClipboardBlocked"));
       return;
     }
-    showToast("Could not save screenshot", { variant: "error" });
+    showToast(t("viewerToastScreenshotError"), { variant: "error" });
   } catch {
-    showToast("Could not save screenshot", { variant: "error" });
+    showToast(t("viewerToastScreenshotError"), { variant: "error" });
   }
 }

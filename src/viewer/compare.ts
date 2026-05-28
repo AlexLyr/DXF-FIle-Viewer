@@ -5,6 +5,7 @@ import { dom } from "./dom";
 import { COMPARE_BASE_PALETTE } from "./colors";
 import type { ViewerWithInternals } from "./types";
 import { showToast } from "./toast";
+import { t } from "../lib/i18n";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
 import DxfWorkerFactory from "../worker/dxf.worker.ts?worker";
 
@@ -55,10 +56,10 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
       compareControls.enabled = false;
     }
     dom.compareBar.classList.remove("hidden");
-    dom.compareLabel.textContent = `Comparing: ${name} vs ${state.currentName}`;
+    dom.compareLabel.textContent = t("viewerCompareNamed", name, state.currentName);
     syncCompareFromMain();
   } catch {
-    showToast("Could not load file for comparison", { variant: "error" });
+    showToast(t("viewerCompareError"), { variant: "error" });
     exitCompareMode();
   } finally {
     URL.revokeObjectURL(url);
@@ -101,7 +102,7 @@ export function swapCompareLayers(): void {
 
 export function exitCompareMode(): void {
   dom.compareBar.classList.add("hidden");
-  dom.compareLabel.textContent = "Comparing drawings";
+  dom.compareLabel.textContent = t("viewerCompareLabel");
   if (state.compareViewer) {
     const host = state.compareHost;
     state.compareViewer.Destroy();

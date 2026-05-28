@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="./popup.css" />
   </head>
   <body>
-    <main id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Open a .dxf file">
+    <main
+      id="dropzone"
+      class="dropzone"
+      role="button"
+      tabindex="0"
+      aria-label="Open a .dxf file"
+      data-i18n-aria-label="popupAriaOpenFile"
+    >
       <svg
         class="dropzone-glyph"
         viewBox="0 0 48 48"
@@ -37,8 +44,8 @@
           stroke-linejoin="round"
         />
       </svg>
-      <p id="dropzoneText" class="dropzone-text">Click or drop a .dxf</p>
-      <p id="status" class="status hidden">Opening viewer…</p>
+      <p id="dropzoneText" class="dropzone-text" data-i18n="popupDropzoneIdle">Click or drop a .dxf</p>
+      <p id="status" class="status hidden" data-i18n="popupStatusOpening">Opening viewer…</p>
       <p id="error" class="error" role="alert"></p>
     </main>
     <input id="fileInput" class="hidden-input" type="file" accept=".dxf" />

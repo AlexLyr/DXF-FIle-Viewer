@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "Penampil File DXF",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Gunakan Penampil File DXF untuk membuka dan melihat file .dxf secara online — penampil DXF yang cepat dan kompatibel dengan AutoCAD di browser Anda.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Gunakan Penampil File DXF untuk membuka dan melihat file .dxf secara instan di browser Anda. Ekstensi ini memberikan akses cepat dan ringan ke gambar tanpa menginstal perangkat lunak CAD yang berat.\n\n✨ Apa yang dilakukan Penampil File DXF:\n1. Membuka gambar dalam hitungan detik — seret, jatuhkan, atau klik\n2. Menampilkan garis, lapisan, blok, dimensi, dan anotasi\n3. Memungkinkan Anda untuk menggeser dan memperbesar setiap detail gambar\n4. Mengalihkan lapisan untuk fokus pada bagian tertentu, dengan pratinjau saat melayang untuk mengisolasi lapisan mana pun\n5. Bekerja sepenuhnya di browser Anda — tanpa instalasi, tanpa akun\n6. Tema terang dan gelap, dengan koordinat kursor langsung\n\n📌 Siapa yang membutuhkan penampil dxf online:\n➤ Insinyur dan arsitek yang melihat dxf secara online tanpa AutoCAD\n➤ Siswa yang belajar CAD yang ingin penampil .dxf sederhana di browser\n➤ Manajer konstruksi yang menerima gambar dari desainer\n➤ Pekerja lepas yang melihat pratinjau file sebelum membuka alat CAD yang berat\n➤ Siapa saja yang ingin tahu cara melihat file dxf dengan cepat di perangkat mana pun\n\n🎯 Mengapa orang memilih alat dxf ini:\nMasalah dengan gambar CAD adalah membeli lisensi penampil dxf autocad atau menginstal alat serupa hanya untuk melihat ke dalam. Penampil File DXF berjalan di browser Anda dan membuka file .dxf standar dalam hitungan detik.\n\n🚀 Cara kerja penampil file dxf online:\n1️⃣ Instal ekstensi dari Chrome Web Store\n2️⃣ Klik ikon di bilah alat Anda\n3️⃣ Seret gambar Anda ke dalam penampil\n4️⃣ Geser dan perbesar untuk memeriksa struktur\n5️⃣ Alihkan lapisan dan jelajahi setiap bagian\n\n📂 File yang didukung:\n- DXF Standar — baik ASCII maupun biner\n- Gambar berlapis — setiap lapisan dipertahankan dan dapat dialihkan\n- Entitas 2D — garis, poligon, busur, lingkaran, spline, hatch, teks\n- Referensi blok, dimensi, dan anotasi\n\n🔒 Privasi Anda penting. Penampil File DXF memproses gambar secara lokal di browser Anda. Mereka tidak pernah meninggalkan perangkat Anda. Tidak ada unggahan, tidak ada cloud, tidak ada pelacakan.\n\n💡 Apa itu file DXF?\nFile DXF (Drawing Exchange Format) adalah format CAD dari Autodesk untuk berbagi data antara aplikasi. Berbeda dengan format biner, ini berbasis teks dan mudah untuk dibagikan. Buka gambar yang diekspor dari alat CAD mana pun yang mendukung DXF.\n\n⚙️ Penampil File DXF vs perangkat lunak CAD berat:\n▸ Tanpa instalasi — terbuka di browser Anda\n▸ Tanpa lisensi — bekerja tanpa langganan AutoCAD\n▸ Ringan — berjalan sepenuhnya di browser\n▸ Lintas platform — Windows, macOS, Linux, ChromeOS\n\n🛠 Kasus penggunaan di dunia nyata:\n• Pratinjau gambar yang dikirim melalui email oleh klien dengan cepat\n• Tinjau pekerjaan CAD dalam rapat tanpa membuka AutoCAD\n• Ajari siswa cara melihat file dxf di kelas\n• Buka file di tablet atau Chromebook\n• Gunakan sebagai pembaca dxf cadangan saat AutoCAD offline\n• Lihat cad secara online tanpa pengaturan\n\n🧱 Dibangun untuk alur kerja CAD sehari-hari:\n1. Putaran persetujuan — periksa dimensi dalam hitungan detik\n2. Inspeksi lapangan — bawa gambar di tablet ke lokasi kerja\n3. Akses arsip — telusuri gambar lama dari email\n4. Serah terima lintas tim — pengguna non-CAD membaca file teknik\n5. Triage cepat — urutkan gambar yang membutuhkan pekerjaan CAD penuh\n\n⚡ Dibangun di atas rendering yang terbukti:\nEkstensi ini menggunakan pustaka parsing yang teruji dan dipercaya oleh tim teknik di seluruh dunia. Setiap pembaruan ditinjau untuk kinerja dan kompatibilitas sebelum dirilis di Chrome Web Store.\n\n❓ Pertanyaan yang sering diajukan:\nQ: Apakah ini membuka konten 3D dalam file DXF?\nA: Ini membuka gambar DXF 2D standar, termasuk gambar yang dihasilkan dari model 3D dalam alat CAD. Entitas mesh dan permukaan 3D murni memiliki dukungan rendering terbatas — hasil terbaik berasal dari gambar 2D dan tampilan proyeksi.\n\nQ: Apakah penampil ini membuka file DWG?\nA: Tidak. DWG adalah format biner terpisah dari Autodesk. Sebagian besar alat CAD dapat mengekspor DWG ke DXF dalam satu klik — buka .dxf yang dihasilkan di sini.\n\nQ: Apakah Anda mencari penampil dxf online atau lihat dxf online?\nA: Ya, ini adalah alat yang sama. Apakah Anda menyebutnya pembaca dxf atau hanya cara untuk melihat gambar, file Anda terbuka di browser.\n\n📍 Tips untuk menggunakan Penampil File DXF:\n- Jatuhkan gambar Anda ke popup ekstensi\n- Untuk gambar besar, sembunyikan lapisan yang tidak digunakan\n- Buka file langsung dari email atau obrolan\n- Arahkan nama lapisan di panel untuk melihat pratinjau hanya lapisan itu\n\n👉 Siap untuk melihat dxf secara online?\nInstal Penampil File DXF, jatuhkan file Anda, dan mulai menjelajahi. Tanpa langganan, tanpa instalasi berat, tanpa menunggu. Dibangun untuk insinyur, arsitek, siswa, dan siapa saja yang membutuhkan pratinjau CAD yang cepat.\n\n—\nAutoCAD® adalah merek dagang terdaftar dari Autodesk, Inc. Ekstensi ini tidak terafiliasi dengan atau didukung oleh Autodesk.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Buka file .dxf" },
+  "popupDropzoneIdle": { "message": "Klik atau jatuhkan file .dxf" },
+  "popupDropzoneDragover": { "message": "Lepaskan untuk membuka" },
+  "popupStatusOpening": { "message": "Membuka penampil…" },
+  "popupErrorInvalidFile": { "message": "Tidak dapat membaca file. Silakan pilih file .dxf yang valid." },
+  "popupErrorTooLarge": { "message": "File terlalu besar. Penampil mendukung gambar hingga 50 MB." },
+  "popupErrorCantOpen": { "message": "Tidak dapat membuka penampil. Silakan coba lagi." },
+
+  "viewerNoFile": { "message": "Tidak ada file" },
+  "viewerToolRecent": { "message": "File terbaru" },
+  "viewerToolOpenAnother": { "message": "Buka file lain" },
+  "viewerToolFit": { "message": "Sesuaikan dengan layar" },
+  "viewerToolMeasure": { "message": "Ukur (M) — tahan Alt untuk menonaktifkan snap" },
+  "viewerToolFind": { "message": "Cari teks (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Cetak (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Tangkapan layar (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Alihkan peta mini" },
+  "viewerToolCoords": { "message": "Alihkan koordinat" },
+  "viewerToolColors": { "message": "Tampilkan warna DXF asli (O)" },
+  "viewerToolTheme": { "message": "Alihkan tema" },
+  "viewerSidebarCollapse": { "message": "Tutup panel lapisan" },
+  "viewerRecentEmpty": { "message": "Tidak ada file terbaru" },
+  "viewerLayerFilter": { "message": "Filter lapisan" },
+  "viewerLayersEmpty": { "message": "Tidak ada lapisan dalam gambar ini" },
+  "viewerBookmarksTitle": { "message": "Tampilan tersimpan" },
+  "viewerBookmarksAdd": { "message": "+ Simpan tampilan" },
+  "viewerBookmarksHelp": { "message": "Simpan zoom dan posisi saat ini untuk kembali nanti." },
+  "viewerBookmarksEmpty": { "message": "Belum ada tampilan tersimpan" },
+  "viewerFindPlaceholder": { "message": "Cari teks di gambar" },
+
+  "viewerCompareLabel": { "message": "Membandingkan gambar" },
+  "viewerCompareNamed": {
+    "message": "Membandingkan: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Alihkan hamparan" },
+  "viewerCompareExit": { "message": "Keluar" },
+  "viewerCompareError": { "message": "Tidak dapat memuat file untuk perbandingan" },
+  "viewerDropToOpen": { "message": "Jatuhkan untuk membuka di tab baru" },
+  "viewerOverlayDropHint": { "message": "Jatuhkan file .dxf di sini\natau klik Buka file lain" },
+  "viewerOverlayActionOpen": { "message": "Buka file lain" },
+  "viewerOverlayLoading": { "message": "Memuat gambar…" },
+  "viewerOverlayLoadingFonts": { "message": "Memuat font…" },
+  "viewerOverlayParsing": { "message": "Mengurai gambar…" },
+  "viewerOverlayPreparing": { "message": "Menyiapkan geometri…" },
+  "viewerOverlayErrorExpired": { "message": "Tidak dapat membuka gambar ini.\nFile mungkin sudah kedaluwarsa." },
+  "viewerOverlayErrorInvalid": { "message": "Tidak dapat membaca file.\nSilakan pilih file .dxf yang valid." },
+  "viewerOverlayErrorTooLarge": { "message": "File terlalu besar.\nPenampil mendukung gambar hingga 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Tidak dapat membuka gambar ini.\nFile mungkin rusak atau tidak didukung." },
+  "viewerToastScreenshotSaved": { "message": "Tangkapan layar disalin & disimpan" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Tangkapan layar disimpan (papan klip diblokir)" },
+  "viewerToastScreenshotError": { "message": "Tidak dapat menyimpan tangkapan layar" },
+
+  "viewerRecentBadgeOpen": { "message": "Buka" },
+  "viewerRecentRemoveTitle": { "message": "Hapus dari terbaru" },
+  "viewerRecentCompareTitle": { "message": "Bandingkan dengan yang aktif" },
+  "viewerLayerToggleTitle": { "message": "Alihkan lapisan" },
+  "viewerLayerSoloTitle": { "message": "Tampilkan hanya lapisan ini" },
+  "viewerBookmarkPromptName": { "message": "Nama penanda" },
+  "viewerBookmarkPromptRename": { "message": "Ubah nama penanda" }
+}

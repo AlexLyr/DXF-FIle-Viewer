@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "Papar Fail DXF",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Gunakan Papar Fail DXF untuk membuka dan melihat fail .dxf dalam talian — pemapar DXF yang serasi dengan AutoCAD yang pantas di pelayar anda.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Gunakan Papar Fail DXF untuk membuka dan melihat fail .dxf dengan segera di pelayar anda. Sambungan ini memberikan akses cepat dan ringan kepada lukisan tanpa memasang sebarang perisian CAD yang berat.\n\n✨ Apa yang dilakukan oleh Papar Fail DXF:\n1. Membuka lukisan dalam beberapa saat — seret, lepas, atau klik\n2. Menunjukkan garis, lapisan, blok, dimensi, dan anotasi\n3. Membolehkan anda menggeser dan memperbesar setiap butiran lukisan\n4. Menukar lapisan untuk memberi tumpuan kepada bahagian tertentu, dengan pratonton hover untuk mengasingkan mana-mana lapisan\n5. Berfungsi sepenuhnya di pelayar anda — tiada pemasangan, tiada akaun\n6. Tema terang dan gelap, dengan koordinat kursor langsung\n\n📌 Siapa yang memerlukan pemapar dxf dalam talian:\n➤ Jurutera dan arkitek yang melihat dxf dalam talian tanpa AutoCAD\n➤ Pelajar yang belajar CAD yang ingin pemapar .dxf yang mudah di pelayar\n➤ Pengurus pembinaan yang menerima lukisan daripada pereka\n➤ Pekerja bebas yang melihat pratonton fail sebelum membuka alat CAD yang berat\n➤ Sesiapa yang ingin tahu bagaimana untuk melihat fail dxf dengan cepat di mana-mana peranti\n\n🎯 Mengapa orang memilih alat dxf ini:\nKesakitan dengan lukisan CAD adalah membeli lesen pemapar dxf autocad atau memasang alat serupa hanya untuk melihat ke dalam. Papar Fail DXF berfungsi di pelayar anda dan membuka mana-mana fail .dxf standard dalam beberapa saat.\n\n🚀 Bagaimana pemapar fail dxf dalam talian berfungsi:\n1️⃣ Pasang sambungan dari Chrome Web Store\n2️⃣ Klik ikon di bar alat anda\n3️⃣ Seret lukisan anda ke dalam pemapar\n4️⃣ Geser dan perbesar untuk memeriksa struktur\n5️⃣ Tukar lapisan dan terokai setiap bahagian\n\n📂 Fail yang disokong:\n- DXF Standard — kedua-dua ASCII dan binari\n- Lukisan berlapis — setiap lapisan dipelihara dan boleh ditukar\n- Entiti 2D — garis, poligon, lengkung, bulatan, spline, hatch, teks\n- Rujukan blok, dimensi, dan anotasi\n\n🔒 Privasi anda penting. Papar Fail DXF memproses lukisan secara tempatan di pelayar anda. Mereka tidak pernah meninggalkan peranti anda. Tiada muat naik, tiada awan, tiada penjejakan.\n\n💡 Apa itu fail DXF?\nFail DXF (Format Pertukaran Lukisan) adalah format CAD dari Autodesk untuk berkongsi data antara aplikasi. Tidak seperti format binari, ia berasaskan teks dan mudah untuk dikongsi. Buka lukisan yang dieksport dari mana-mana alat CAD yang menyokong DXF.\n\n⚙️ Papar Fail DXF vs perisian CAD berat:\n▸ Tiada pemasangan — dibuka di pelayar anda\n▸ Tiada lesen — berfungsi tanpa langganan AutoCAD\n▸ Ringan — berfungsi sepenuhnya di pelayar\n▸ Pelbagai platform — Windows, macOS, Linux, ChromeOS\n\n🛠 Kes penggunaan dunia nyata:\n• Pratonton lukisan yang dihantar melalui email oleh pelanggan dengan cepat\n• Semak kerja CAD dalam mesyuarat tanpa membuka AutoCAD\n• Ajar pelajar bagaimana untuk melihat fail dxf dalam kelas\n• Buka fail di tablet atau Chromebook\n• Gunakan sebagai pembaca dxf sandaran apabila AutoCAD tidak dalam talian\n• Lihat cad dalam talian tanpa penyediaan\n\n🧱 Dibina untuk aliran kerja CAD harian:\n1. Pusingan kelulusan — semak dimensi dalam beberapa saat\n2. Pemeriksaan lapangan — bawa lukisan di tablet ke tapak kerja\n3. Akses arkib — semak lukisan lama dari email\n4. Serah tangan antara pasukan — pengguna bukan CAD membaca fail kejuruteraan\n5. Triage cepat — susun lukisan yang memerlukan kerja CAD penuh\n\n⚡ Dibina berdasarkan rendering yang terbukti:\nSambungan ini menggunakan pustaka penguraian yang diuji dan dipercayai oleh pasukan kejuruteraan di seluruh dunia. Setiap kemas kini disemak untuk prestasi dan keserasian sebelum dikeluarkan di Chrome Web Store.\n\n❓ Soalan yang sering ditanya:\nS: Adakah ia membuka kandungan 3D dalam fail DXF?\nJ: Ia membuka mana-mana lukisan DXF 2D standard, termasuk lukisan yang dihasilkan dari model 3D dalam alat CAD. Entiti mesh dan permukaan 3D tulen mempunyai sokongan rendering yang terhad — hasil terbaik datang dari lukisan 2D dan pandangan yang diproyeksikan.\n\nS: Adakah pemapar membuka fail DWG?\nJ: Tidak. DWG adalah format binari yang berasingan dari Autodesk. Kebanyakan alat CAD boleh mengeksport DWG ke DXF dengan satu klik — buka .dxf yang dihasilkan di sini.\n\nS: Adakah anda mencari pemapar dxf dalam talian atau lihat dxf dalam talian?\nJ: Ya, ini adalah alat yang sama. Sama ada anda memanggilnya pembaca dxf atau hanya cara untuk melihat lukisan, fail anda dibuka di pelayar.\n\n📍 Petua untuk menggunakan Papar Fail DXF:\n- Lepaskan lukisan anda ke atas popup sambungan\n- Untuk lukisan besar, sembunyikan lapisan yang tidak digunakan\n- Buka fail terus dari email atau chat\n- Hover nama lapisan di panel untuk pratonton hanya lapisan itu\n\n👉 Sedia untuk melihat dxf dalam talian?\nPasang Papar Fail DXF, lepaskan fail anda, dan mula meneroka. Tiada langganan, tiada pemasangan berat, tiada menunggu. Dibina untuk jurutera, arkitek, pelajar, dan sesiapa yang memerlukan pratonton CAD yang cepat.\n\n—\nAutoCAD® adalah tanda dagangan berdaftar Autodesk, Inc. Sambungan ini tidak mempunyai hubungan dengan atau disokong oleh Autodesk.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Buka fail .dxf" },
+  "popupDropzoneIdle": { "message": "Klik atau lepaskan fail .dxf" },
+  "popupDropzoneDragover": { "message": "Lepaskan untuk membuka" },
+  "popupStatusOpening": { "message": "Membuka pemapar…" },
+  "popupErrorInvalidFile": { "message": "Tidak dapat membaca fail. Sila pilih fail .dxf yang sah." },
+  "popupErrorTooLarge": { "message": "Fail terlalu besar. Pemapar menyokong lukisan sehingga 50 MB." },
+  "popupErrorCantOpen": { "message": "Tidak dapat membuka pemapar. Sila cuba lagi." },
+
+  "viewerNoFile": { "message": "Tiada fail" },
+  "viewerToolRecent": { "message": "Fail terkini" },
+  "viewerToolOpenAnother": { "message": "Buka fail lain" },
+  "viewerToolFit": { "message": "Muat ke skrin" },
+  "viewerToolMeasure": { "message": "Ukur (M) — tahan Alt untuk nyahaktifkan snap" },
+  "viewerToolFind": { "message": "Cari teks (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Cetak (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Tangkap skrin paparan (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Togol peta mini" },
+  "viewerToolCoords": { "message": "Togol koordinat" },
+  "viewerToolColors": { "message": "Tunjukkan warna DXF asal (O)" },
+  "viewerToolTheme": { "message": "Togol tema" },
+  "viewerSidebarCollapse": { "message": "Kecilkan panel lapisan" },
+  "viewerRecentEmpty": { "message": "Tiada fail terkini" },
+  "viewerLayerFilter": { "message": "Tapis lapisan" },
+  "viewerLayersEmpty": { "message": "Tiada lapisan dalam lukisan ini" },
+  "viewerBookmarksTitle": { "message": "Paparan tersimpan" },
+  "viewerBookmarksAdd": { "message": "+ Simpan paparan" },
+  "viewerBookmarksHelp": { "message": "Simpan zum dan kedudukan semasa untuk kembali kemudian." },
+  "viewerBookmarksEmpty": { "message": "Belum ada paparan tersimpan" },
+  "viewerFindPlaceholder": { "message": "Cari teks dalam lukisan" },
+
+  "viewerCompareLabel": { "message": "Membandingkan lukisan" },
+  "viewerCompareNamed": {
+    "message": "Membandingkan: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Togol tindanan" },
+  "viewerCompareExit": { "message": "Keluar" },
+  "viewerCompareError": { "message": "Tidak dapat memuatkan fail untuk perbandingan" },
+  "viewerDropToOpen": { "message": "Lepaskan untuk membuka dalam tab baharu" },
+  "viewerOverlayDropHint": { "message": "Lepaskan fail .dxf di sini\natau klik Buka fail lain" },
+  "viewerOverlayActionOpen": { "message": "Buka fail lain" },
+  "viewerOverlayLoading": { "message": "Memuatkan lukisan…" },
+  "viewerOverlayLoadingFonts": { "message": "Memuatkan fon…" },
+  "viewerOverlayParsing": { "message": "Menguraikan lukisan…" },
+  "viewerOverlayPreparing": { "message": "Menyediakan geometri…" },
+  "viewerOverlayErrorExpired": { "message": "Tidak dapat membuka lukisan ini.\nFail mungkin telah tamat tempoh." },
+  "viewerOverlayErrorInvalid": { "message": "Tidak dapat membaca fail.\nSila pilih fail .dxf yang sah." },
+  "viewerOverlayErrorTooLarge": { "message": "Fail terlalu besar.\nPemapar menyokong lukisan sehingga 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Tidak dapat membuka lukisan ini.\nFail mungkin rosak atau tidak disokong." },
+  "viewerToastScreenshotSaved": { "message": "Tangkap skrin disalin & disimpan" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Tangkap skrin disimpan (papan keratan disekat)" },
+  "viewerToastScreenshotError": { "message": "Tidak dapat menyimpan tangkap skrin" },
+
+  "viewerRecentBadgeOpen": { "message": "Buka" },
+  "viewerRecentRemoveTitle": { "message": "Buang daripada terkini" },
+  "viewerRecentCompareTitle": { "message": "Bandingkan dengan semasa" },
+  "viewerLayerToggleTitle": { "message": "Togol lapisan" },
+  "viewerLayerSoloTitle": { "message": "Tunjukkan hanya lapisan ini" },
+  "viewerBookmarkPromptName": { "message": "Nama penanda buku" },
+  "viewerBookmarkPromptRename": { "message": "Namakan semula penanda buku" }
+}

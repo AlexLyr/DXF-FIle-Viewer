@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "Vizualizator fișiere DXF",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Folosește Vizualizator fișiere DXF pentru a deschide și vizualiza fișiere .dxf online — un vizualizator DXF rapid, compatibil cu AutoCAD, în browserul tău.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Folosește Vizualizator fișiere DXF pentru a deschide și vizualiza fișiere .dxf instantaneu în browserul tău. Extensia oferă acces rapid și ușor la desene fără a instala software CAD greu.\n\n✨ Ce face Vizualizator fișiere DXF:\n1. Deschide desene în câteva secunde — trage, lasă sau dă clic\n2. Afișează linii, straturi, blocuri, dimensiuni și note\n3. Îți permite să te deplasezi și să mărești fiecare detaliu al desenului\n4. Comută straturile pentru a te concentra pe părți specifice, cu previzualizare la trecerea mouse-ului pentru a izola orice strat\n5. Funcționează complet în browserul tău — fără instalare, fără cont\n6. Tematici deschise și întunecate, cu coordonate ale cursorului în timp real\n\n📌 Cine are nevoie de un vizualizator dxf online:\n➤ Ingineri și arhitecți care vizualizează dxf online fără AutoCAD\n➤ Studenți care învață CAD și doresc un vizualizator .dxf simplu în browser\n➤ Manageri de construcții care primesc desene de la designeri\n➤ Freelanceri care previzualizează fișiere înainte de a deschide instrumente CAD grele\n➤ Oricine se întreabă cum să vizualizeze fișiere dxf rapid pe orice dispozitiv\n\n🎯 De ce aleg oamenii acest instrument dxf:\nProblema cu desenele CAD este achiziționarea unei licențe pentru un vizualizator dxf AutoCAD sau instalarea unor instrumente similare doar pentru a arunca o privire. Vizualizator fișiere DXF rulează în browserul tău și deschide orice fișier .dxf standard în câteva secunde.\n\n🚀 Cum funcționează vizualizatorul de fișiere dxf online:\n1️⃣ Instalează extensia din Chrome Web Store\n2️⃣ Dă clic pe pictograma din bara ta de instrumente\n3️⃣ Trage desenul tău în vizualizator\n4️⃣ Deplasează-te și mărește pentru a inspecta structura\n5️⃣ Comută straturile și explorează fiecare parte\n\n📂 Fișiere acceptate:\n- DXF standard — atât ASCII cât și binar\n- Desene stratificate — fiecare strat păstrat și comutabil\n- Entități 2D — linii, polilinie, arce, cercuri, spline, hachuri, text\n- Referințe de blocuri, dimensiuni și note\n\n🔒 Confidențialitatea ta contează. Vizualizator fișiere DXF procesează desene local în browserul tău. Ele nu părăsesc niciodată dispozitivul tău. Fără încărcare, fără cloud, fără urmărire.\n\n💡 Ce este un fișier DXF?\nUn fișier DXF (Drawing Exchange Format) este un format CAD de la Autodesk pentru partajarea datelor între aplicații. Spre deosebire de formatele binare, este bazat pe text și ușor de partajat. Deschide desene exportate din orice instrument CAD care suportă DXF.\n\n⚙️ Vizualizator fișiere DXF vs software CAD greu:\n▸ Fără instalare — se deschide în browserul tău\n▸ Fără licență — funcționează fără abonamente AutoCAD\n▸ Ușor — rulează complet în browser\n▸ Cross-platform — Windows, macOS, Linux, ChromeOS\n\n🛠 Cazuri de utilizare în lumea reală:\n• Previziune rapidă a desenelor trimise prin email de clienți\n• Revizuirea muncii CAD în întâlniri fără a porni AutoCAD\n• Învățarea studenților cum să vizualizeze fișiere dxf în clasă\n• Deschiderea fișierelor pe o tabletă sau Chromebook\n• Utilizarea ca cititor dxf de rezervă atunci când AutoCAD este offline\n• Vizualizarea CAD online fără configurare\n\n🧱 Creat pentru fluxuri de lucru CAD de zi cu zi:\n1. Ronde de aprobat — verifică dimensiunile în câteva secunde\n2. Inspecție pe teren — adu un desen pe o tabletă la un șantier\n3. Acces la arhivă — răsfoiește desene vechi din email\n4. Predare între echipe — utilizatorii non-CAD citesc fișierele de inginerie\n5. Triere rapidă — sortează desenele care necesită muncă CAD completă\n\n⚡ Bazat pe randare dovedită:\nExtensia folosește biblioteci de analiză testate, de încredere de echipele de inginerie din întreaga lume. Fiecare actualizare este revizuită pentru performanță și compatibilitate înainte de lansare pe Chrome Web Store.\n\n❓ Întrebări frecvente:\nÎ: Deschide conținut 3D în fișiere DXF?\nR: Deschide orice desen 2D DXF standard, inclusiv desene produse din modele 3D în instrumente CAD. Entitățile pure 3D mesh și de suprafață au suport limitat pentru randare — cele mai bune rezultate vin din desene 2D și vederi proiectate.\n\nÎ: Vizualizatorul deschide fișiere DWG?\nR: Nu. DWG este un format binar separat de Autodesk. Cele mai multe instrumente CAD pot exporta DWG în DXF cu un singur clic — deschide fișierul .dxf rezultat aici.\n\nÎ: Ai căutat vizualizator dxf online sau vizualizare dxf online?\nR: Da, acesta este același instrument. Indiferent dacă îl numești cititor dxf sau doar o modalitate de a vizualiza desene, fișierul tău se deschide în browser.\n\n📍 Sfaturi pentru utilizarea Vizualizator fișiere DXF:\n- Trage desenul tău pe popup-ul extensiei\n- Pentru desene mari, ascunde straturile neutilizate\n- Deschide fișiere direct din email sau chat\n- Treci cu mouse-ul peste numele unui strat în panou pentru a previzualiza doar acel strat\n\n👉 Ești gata să vizualizezi dxf online?\nInstalează Vizualizator fișiere DXF, trage fișierul tău și începe să explorezi. Fără abonament, fără instalare grea, fără a aștepta. Creat pentru ingineri, arhitecți, studenți și oricine are nevoie de previzualizări CAD rapide.\n—\nAutoCAD® este un marcă înregistrată a Autodesk, Inc. Această extensie nu este afiliată cu sau aprobată de Autodesk.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Deschide un fișier .dxf" },
+  "popupDropzoneIdle": { "message": "Clic sau trage un .dxf" },
+  "popupDropzoneDragover": { "message": "Eliberează pentru a deschide" },
+  "popupStatusOpening": { "message": "Se deschide vizualizatorul…" },
+  "popupErrorInvalidFile": { "message": "Nu s-a putut citi fișierul. Alege un fișier .dxf valid." },
+  "popupErrorTooLarge": { "message": "Fișierul este prea mare. Vizualizatorul acceptă desene de până la 50 MB." },
+  "popupErrorCantOpen": { "message": "Nu s-a putut deschide vizualizatorul. Încearcă din nou." },
+
+  "viewerNoFile": { "message": "Niciun fișier" },
+  "viewerToolRecent": { "message": "Fișiere recente" },
+  "viewerToolOpenAnother": { "message": "Deschide alt fișier" },
+  "viewerToolFit": { "message": "Încadrare pe ecran" },
+  "viewerToolMeasure": { "message": "Măsoară (M) — menține Alt pentru a dezactiva snap" },
+  "viewerToolFind": { "message": "Caută text (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Imprimă (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Captură de ecran (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Comută minimapa" },
+  "viewerToolCoords": { "message": "Comută coordonatele" },
+  "viewerToolColors": { "message": "Afișează culorile DXF originale (O)" },
+  "viewerToolTheme": { "message": "Comută tema" },
+  "viewerSidebarCollapse": { "message": "Restrânge panoul de straturi" },
+  "viewerRecentEmpty": { "message": "Niciun fișier recent" },
+  "viewerLayerFilter": { "message": "Filtrează straturile" },
+  "viewerLayersEmpty": { "message": "Niciun strat în acest desen" },
+  "viewerBookmarksTitle": { "message": "Vederi salvate" },
+  "viewerBookmarksAdd": { "message": "+ Salvează vederea" },
+  "viewerBookmarksHelp": { "message": "Salvează zoom-ul și poziția curentă pentru a reveni mai târziu." },
+  "viewerBookmarksEmpty": { "message": "Nicio vedere salvată încă" },
+  "viewerFindPlaceholder": { "message": "Caută text în desen" },
+
+  "viewerCompareLabel": { "message": "Comparare desene" },
+  "viewerCompareNamed": {
+    "message": "Comparare: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Comută suprapunerea" },
+  "viewerCompareExit": { "message": "Ieșire" },
+  "viewerCompareError": { "message": "Nu s-a putut încărca fișierul pentru comparare" },
+  "viewerDropToOpen": { "message": "Trage pentru a deschide într-un tab nou" },
+  "viewerOverlayDropHint": { "message": "Trage un fișier .dxf aici\nsau clic pe Deschide alt fișier" },
+  "viewerOverlayActionOpen": { "message": "Deschide alt fișier" },
+  "viewerOverlayLoading": { "message": "Se încarcă desenul…" },
+  "viewerOverlayLoadingFonts": { "message": "Se încarcă fonturile…" },
+  "viewerOverlayParsing": { "message": "Se analizează desenul…" },
+  "viewerOverlayPreparing": { "message": "Se pregătește geometria…" },
+  "viewerOverlayErrorExpired": { "message": "Nu s-a putut deschide acest desen.\nFișierul ar fi putut expira." },
+  "viewerOverlayErrorInvalid": { "message": "Nu s-a putut citi fișierul.\nAlege un fișier .dxf valid." },
+  "viewerOverlayErrorTooLarge": { "message": "Fișierul este prea mare.\nVizualizatorul acceptă desene de până la 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Nu s-a putut deschide acest desen.\nFișierul poate fi corupt sau neacceptat." },
+  "viewerToastScreenshotSaved": { "message": "Captură copiată și salvată" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Captură salvată (clipboard blocat)" },
+  "viewerToastScreenshotError": { "message": "Nu s-a putut salva captura" },
+
+  "viewerRecentBadgeOpen": { "message": "Deschide" },
+  "viewerRecentRemoveTitle": { "message": "Elimină din recente" },
+  "viewerRecentCompareTitle": { "message": "Compară cu desenul curent" },
+  "viewerLayerToggleTitle": { "message": "Comută stratul" },
+  "viewerLayerSoloTitle": { "message": "Afișează doar acest strat" },
+  "viewerBookmarkPromptName": { "message": "Numele marcajului" },
+  "viewerBookmarkPromptRename": { "message": "Redenumește marcajul" }
+}

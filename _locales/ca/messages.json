@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "Visualitzador de fitxers DXF",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Utilitza el Visualitzador de fitxers DXF per obrir i veure fitxers .dxf en línia — un visualitzador DXF compatible amb AutoCAD ràpid al teu navegador.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Utilitza el Visualitzador de fitxers DXF per obrir i veure fitxers .dxf instantàniament al teu navegador. L'extensió ofereix accés ràpid i lleuger a dibuixos sense instal·lar cap programari CAD pesat.\n\n✨ El que fa el Visualitzador de fitxers DXF:\n1. Obre dibuixos en segons — arrossega, deixa caure o fes clic\n2. Mostra línies, capes, blocs, dimensions i anotacions\n3. Et permet desplaçar-te i fer zoom en cada detall del dibuix\n4. Alterna capes per centrar-te en parts específiques, amb una vista prèvia a l'vol per aïllar qualsevol capa\n5. Funciona completament al teu navegador — sense instal·lar, sense compte\n6. Temes clars i foscos, amb coordenades del cursor en temps real\n\n📌 Qui necessita un visualitzador de dxf en línia:\n➤ Enginyers i arquitectes que veuen dxf en línia sense AutoCAD\n➤ Estudiants que aprenen CAD i volen un visualitzador .dxf senzill al navegador\n➤ Gestors de construcció que reben dibuixos de dissenyadors\n➤ Autònoms que previsualitzen fitxers abans d'obrir eines CAD pesades\n➤ Qualsevol que es pregunti com veure fitxers dxf ràpidament en qualsevol dispositiu\n\n🎯 Per què la gent tria aquesta eina dxf:\nEl problema amb els dibuixos CAD és comprar una llicència de visualitzador dxf d'AutoCAD o instal·lar eines similars només per fer una ullada. El Visualitzador de fitxers DXF funciona al teu navegador i obre qualsevol fitxer .dxf estàndard en segons.\n\n🚀 Com funciona el visualitzador de fitxers dxf en línia:\n1️⃣ Instal·la l'extensió des de la Chrome Web Store\n2️⃣ Fes clic a la icona a la teva barra d'eines\n3️⃣ Arrossega el teu dibuix a la vista\n4️⃣ Desplaça't i fes zoom per inspeccionar l'estructura\n5️⃣ Alterna capes i explora cada part\n\n📂 Fitxers compatibles:\n- DXF estàndard — tant ASCII com binari\n- Dibuxos amb capes — cada capa preservada i alternable\n- Entitats 2D — línies, polilínies, arcs, cercles, splines, hatches, text\n- Referències de blocs, dimensions i anotacions\n\n🔒 La teva privadesa és important. El Visualitzador de fitxers DXF processa dibuixos localment al teu navegador. Mai abandonen el teu dispositiu. Sense pujar, sense núvol, sense seguiment.\n\n💡 Què és un fitxer DXF?\nUn fitxer DXF (Drawing Exchange Format) és un format CAD d'Autodesk per compartir dades entre aplicacions. A diferència dels formats binaris, és basat en text i fàcil de compartir. Obre dibuixos exportats des de qualsevol eina CAD que suporti DXF.\n\n⚙️ Visualitzador de fitxers DXF vs programari CAD pesat:\n▸ Sense instal·lar — s'obre al teu navegador\n▸ Sense llicència — funciona sense subscripcions d'AutoCAD\n▸ Lleuger — funciona completament al navegador\n▸ Multiplataforma — Windows, macOS, Linux, ChromeOS\n\n🛠 Casos d'ús del món real:\n• Previsualitza ràpidament dibuixos enviats per correu electrònic pels clients\n• Revisa treballs CAD en reunions sense obrir AutoCAD\n• Ensenya als estudiants com veure fitxers dxf a classe\n• Obre fitxers en una tauleta o Chromebook\n• Utilitza com a lector dxf de reserva quan AutoCAD està fora de línia\n• Veure CAD en línia sense configuració\n\n🧱 Construït per a fluxos de treball CAD quotidians:\n1. Rounds d'aprovació — comprova dimensions en segons\n2. Inspecció de camp — porta un dibuix en una tauleta a un lloc de treball\n3. Accés a arxius — navega per dibuixos antics des del correu electrònic\n4. Transferència entre equips — usuaris no CAD llegeixen fitxers d'enginyeria\n5. Triage ràpid — classifica dibuixos que necessiten treball CAD complet\n\n⚡ Construït sobre renderització provada:\nL'extensió utilitza biblioteques de parsing provades i de confiança per equips d'enginyeria de tot el món. Cada actualització es revisa per rendiment i compatibilitat abans del llançament a la Chrome Web Store.\n\n❓ Preguntes freqüents:\nQ: Obre contingut 3D en fitxers DXF?\nA: Obre qualsevol dibuix DXF 2D estàndard, incloent dibuixos produïts a partir de models 3D en eines CAD. Les entitats de malla i superfície 3D purament tenen un suport de renderització limitat — els millors resultats provenen de dibuixos 2D i vistes projectades.\n\nQ: El visualitzador obre fitxers DWG?\nA: No. DWG és un format binari separat d'Autodesk. La majoria d'eines CAD poden exportar DWG a DXF amb un clic — obre el fitxer resultant .dxf aquí.\n\nQ: Has buscat visualitzador dxf en línia o veure dxf en línia?\nA: Sí, aquesta és la mateixa eina. Tant si ho anomenes lector dxf com si és només una manera de veure dibuixos, el teu fitxer s'obre al navegador.\n\n📍 Consells per utilitzar el Visualitzador de fitxers DXF:\n- Deixa caure el teu dibuix a la finestra emergent de l'extensió\n- Per a dibuixos grans, amaga capes no utilitzades\n- Obre fitxers directament des del correu electrònic o xat\n- Passa el cursor sobre el nom d'una capa al panell per previsualitzar només aquella capa\n\n👉 Preparat per veure dxf en línia?\nInstal·la el Visualitzador de fitxers DXF, deixa caure el teu fitxer i comença a explorar. Sense subscripció, sense instal·lació pesada, sense esperar. Construït per a enginyers, arquitectes, estudiants i qualsevol que necessiti previsualitzacions CAD ràpides.\n—\nAutoCAD® és una marca registrada d'Autodesk, Inc. Aquesta extensió no està afiliada ni avalada per Autodesk.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Obre un fitxer .dxf" },
+  "popupDropzoneIdle": { "message": "Fes clic o deixa caure un .dxf" },
+  "popupDropzoneDragover": { "message": "Deixa anar per obrir" },
+  "popupStatusOpening": { "message": "Obrint el visualitzador…" },
+  "popupErrorInvalidFile": { "message": "No s'ha pogut llegir el fitxer. Si us plau, trieu un fitxer .dxf vàlid." },
+  "popupErrorTooLarge": { "message": "El fitxer és massa gran. El visualitzador admet dibuixos de fins a 50 MB." },
+  "popupErrorCantOpen": { "message": "No s'ha pogut obrir el visualitzador. Si us plau, torneu-ho a provar." },
+
+  "viewerNoFile": { "message": "Cap fitxer" },
+  "viewerToolRecent": { "message": "Fitxers recents" },
+  "viewerToolOpenAnother": { "message": "Obre un altre fitxer" },
+  "viewerToolFit": { "message": "Ajusta a la pantalla" },
+  "viewerToolMeasure": { "message": "Mesura (M) — manteniu Alt per desactivar l'ajust" },
+  "viewerToolFind": { "message": "Cerca text (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Imprimeix (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Captura de pantalla (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Commuta el minimapa" },
+  "viewerToolCoords": { "message": "Commuta les coordenades" },
+  "viewerToolColors": { "message": "Mostra els colors DXF originals (O)" },
+  "viewerToolTheme": { "message": "Commuta el tema" },
+  "viewerSidebarCollapse": { "message": "Replega el panell de capes" },
+  "viewerRecentEmpty": { "message": "Cap fitxer recent" },
+  "viewerLayerFilter": { "message": "Filtra capes" },
+  "viewerLayersEmpty": { "message": "No hi ha capes en aquest dibuix" },
+  "viewerBookmarksTitle": { "message": "Vistes desades" },
+  "viewerBookmarksAdd": { "message": "+ Desa la vista" },
+  "viewerBookmarksHelp": { "message": "Deseu el zoom i la posició actuals per tornar-hi més tard." },
+  "viewerBookmarksEmpty": { "message": "Encara no hi ha vistes desades" },
+  "viewerFindPlaceholder": { "message": "Cerca text al dibuix" },
+
+  "viewerCompareLabel": { "message": "Comparant dibuixos" },
+  "viewerCompareNamed": {
+    "message": "Comparant: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Commuta la superposició" },
+  "viewerCompareExit": { "message": "Surt" },
+  "viewerCompareError": { "message": "No s'ha pogut carregar el fitxer per a la comparació" },
+  "viewerDropToOpen": { "message": "Deixa caure per obrir en una pestanya nova" },
+  "viewerOverlayDropHint": { "message": "Deixa caure un fitxer .dxf aquí\no fes clic a Obre un altre" },
+  "viewerOverlayActionOpen": { "message": "Obre un altre fitxer" },
+  "viewerOverlayLoading": { "message": "Carregant el dibuix…" },
+  "viewerOverlayLoadingFonts": { "message": "Carregant les fonts…" },
+  "viewerOverlayParsing": { "message": "Analitzant el dibuix…" },
+  "viewerOverlayPreparing": { "message": "Preparant la geometria…" },
+  "viewerOverlayErrorExpired": { "message": "No s'ha pogut obrir aquest dibuix.\nEl fitxer pot haver caducat." },
+  "viewerOverlayErrorInvalid": { "message": "No s'ha pogut llegir el fitxer.\nSi us plau, trieu un fitxer .dxf vàlid." },
+  "viewerOverlayErrorTooLarge": { "message": "El fitxer és massa gran.\nEl visualitzador admet dibuixos de fins a 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "No s'ha pogut obrir aquest dibuix.\nEl fitxer pot estar malmès o no ser compatible." },
+  "viewerToastScreenshotSaved": { "message": "Captura de pantalla copiada i desada" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Captura de pantalla desada (porta-retalls bloquejat)" },
+  "viewerToastScreenshotError": { "message": "No s'ha pogut desar la captura de pantalla" },
+
+  "viewerRecentBadgeOpen": { "message": "Obre" },
+  "viewerRecentRemoveTitle": { "message": "Elimina dels recents" },
+  "viewerRecentCompareTitle": { "message": "Compara amb l'actual" },
+  "viewerLayerToggleTitle": { "message": "Commuta la capa" },
+  "viewerLayerSoloTitle": { "message": "Mostra només aquesta capa" },
+  "viewerBookmarkPromptName": { "message": "Nom del marcador" },
+  "viewerBookmarkPromptRename": { "message": "Reanomena el marcador" }
+}

@@ -1,15 +1,8 @@
+import { normalizeDxfText } from "../lib/dxfText";
 import { state } from "./state";
 import { dom } from "./dom";
 import { getParsedDxf } from "./types";
 import { focusOnWorld } from "./coords";
-
-function normalizeDxfText(text: string): string {
-  return text
-    .replace(/\\[A-Za-z][^;]*;/g, "")
-    .replace(/\\P/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 export function toggleFindBar(open: boolean): void {
   dom.findBar.classList.toggle("hidden", !open);

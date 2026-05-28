@@ -1,0 +1,74 @@
+{
+  "appName": {
+    "message": "Prehliadač súborov DXF"
+  },
+  "shortDesc": {
+    "message": "Použite Prehliadač súborov DXF na otvorenie a zobrazenie .dxf súborov online — rýchly prehliadač DXF kompatibilný s AutoCADom vo vašom prehliadači."
+  },
+  "storeDesc": {
+    "message": "Použite Prehliadač súborov DXF na okamžité otvorenie a zobrazenie .dxf súborov vo vašom prehliadači. Rozšírenie poskytuje rýchly a ľahký prístup k výkresom bez inštalácie akéhokoľvek ťažkého CAD softvéru.\n\n✨ Čo robí Prehliadač súborov DXF:\n1. Otvorí výkresy za sekundy — ťahajte, pustite alebo kliknite\n2. Zobrazuje línie, vrstvy, bloky, rozmery a anotácie\n3. Umožňuje posúvať a priblížiť každý detail výkresu\n4. Prepína vrstvy, aby sa zameralo na konkrétne časti, s náhľadom pri prechode myšou na izoláciu akejkoľvek vrstvy\n5. Funguje úplne vo vašom prehliadači — žiadna inštalácia, žiadny účet\n6. Svetlé a tmavé témy, s živými súradnicami kurzora\n\n📌 Kto potrebuje online prehliadač dxf:\n➤ Inžinieri a architekti, ktorí si prezerajú dxf online bez AutoCADu\n➤ Študenti učící sa CAD, ktorí chcú jednoduchý .dxf prehliadač v prehliadači\n➤ Manažéri výstavby prijímajúci výkresy od dizajnérov\n➤ Freelanceri, ktorí si prezerajú súbory pred otvorením ťažkých CAD nástrojov\n➤ Každý, kto sa zaujíma, ako rýchlo zobraziť dxf súbory na akomkoľvek zariadení\n\n🎯 Prečo si ľudia vyberajú tento dxf nástroj:\nProblém s CAD výkresmi spočíva v kúpe licencie na prehliadač autocad dxf alebo inštalácii podobných nástrojov len na nahliadnutie. Prehliadač súborov DXF beží vo vašom prehliadači a otvorí akýkoľvek štandardný .dxf súbor za sekundy.\n\n🚀 Ako funguje online prehliadač dxf súborov:\n1️⃣ Nainštalujte rozšírenie z Chrome Web Store\n2️⃣ Kliknite na ikonu vo vašej lište\n3️⃣ ťahajte svoj výkres do prehliadača\n4️⃣ Posúvajte a priblížte, aby ste preskúmali štruktúru\n5️⃣ Prepínajte vrstvy a preskúmajte každú časť\n\n📂 Podporované súbory:\n- Štandardný DXF — ASCII aj binárny\n- Vrstvené výkresy — každá vrstva zachovaná a prepínateľná\n- 2D entity — línie, polylínie, oblúky, kruhy, spline, hatches, text\n- Odkazy na bloky, rozmery a anotácie\n\n🔒 Vaša súkromie je dôležité. Prehliadač súborov DXF spracováva výkresy lokálne vo vašom prehliadači. Nikdy neopustia vaše zariadenie. Žiadne nahrávanie, žiadny cloud, žiadne sledovanie.\n\n💡 Čo je to DXF súbor?\nDXF súbor (Drawing Exchange Format) je CAD formát od spoločnosti Autodesk na zdieľanie údajov medzi aplikáciami. Na rozdiel od binárnych formátov je textový a ľahko sa zdieľa. Otvorte výkresy exportované z akéhokoľvek CAD nástroja, ktorý podporuje DXF.\n\n⚙️ Prehliadač súborov DXF vs ťažký CAD softvér:\n▸ Žiadna inštalácia — otvára sa vo vašom prehliadači\n▸ Žiadna licencia — funguje bez predplatného AutoCAD\n▸ Ľahký — beží úplne v prehliadači\n▸ Viacplatformový — Windows, macOS, Linux, ChromeOS\n\n🛠 Príklady použitia v reálnom svete:\n• Rýchlo si prezrite výkresy zaslané klientmi\n• Prehodnoťte CAD prácu na stretnutiach bez spúšťania AutoCADu\n• Učte študentov, ako zobraziť dxf súbory v triede\n• Otvorte súbory na tablete alebo Chromebooku\n• Použite ako záložný dxf čítač, keď je AutoCAD offline\n• Zobrazte CAD online bez akejkoľvek konfigurácie\n\n🧱 Vytvorené pre každodenné CAD pracovné postupy:\n1. Schvaľovacie kolá — skontrolujte rozmery za sekundy\n2. Kontrola na mieste — vezmite výkres na tablet na pracovisko\n3. Prístup k archívu — prehliadajte staré výkresy z e-mailu\n4. Odovzdanie medzi tímami — ne-CAD používatelia čítajú inžinierske súbory\n5. Rýchla triáž — triedte výkresy, ktoré potrebujú plnú CAD prácu\n\n⚡ Postavené na overenom renderovaní:\nRozšírenie používa testované knižnice na analýzu, ktorým dôverujú inžinierske tímy po celom svete. Každá aktualizácia je kontrolovaná z hľadiska výkonu a kompatibility pred vydaním na Chrome Web Store.\n\n❓ Často kladené otázky:\nQ: Otvára 3D obsah v DXF súboroch?\nA: Otvára akýkoľvek štandardný 2D DXF výkres, vrátane výkresov vytvorených z 3D modelov v CAD nástrojoch. Čisté 3D mriežky a povrchové entity majú obmedzenú podporu renderovania — najlepšie výsledky pochádzajú z 2D výkresov a projektovaných pohľadov.\n\nQ: Otvára prehliadač DWG súbory?\nA: Nie. DWG je samostatný binárny formát od spoločnosti Autodesk. Väčšina CAD nástrojov môže exportovať DWG do DXF jedným kliknutím — otvorte výsledný .dxf tu.\n\nQ: Hľadali ste online prehliadač dxf alebo dxf zobrazenie online?\nA: Áno, toto je ten istý nástroj. Či už to nazývate dxf čítač alebo len spôsob, ako zobraziť výkresy, váš súbor sa otvorí v prehliadači.\n\n📍 Tipy na používanie Prehliadača súborov DXF:\n- Pustite svoj výkres na vyskakovacie okno rozšírenia\n- Pre veľké výkresy skryte nepoužívané vrstvy\n- Otvorte súbory priamo z e-mailu alebo chatu\n- Prejdite názov vrstvy v paneli, aby ste si prezreli iba túto vrstvu\n\n👉 Pripravení zobraziť dxf online?\nNainštalujte Prehliadač súborov DXF, pustte svoj súbor a začnite preskúmavať. Žiadne predplatné, žiadna ťažká inštalácia, žiadne čakanie. Vytvorené pre inžinierov, architektov, študentov a každého, kto potrebuje rýchle CAD náhľady.\n—\nAutoCAD® je registrovaná ochranná známka spoločnosti Autodesk, Inc. Toto rozšírenie nie je spojené s ani schválené spoločnosťou Autodesk."
+  },
+  "popupAriaOpenFile": { "message": "Otvoriť súbor .dxf" },
+  "popupDropzoneIdle": { "message": "Kliknite alebo pustite .dxf" },
+  "popupDropzoneDragover": { "message": "Pustite na otvorenie" },
+  "popupStatusOpening": { "message": "Otvára sa prehliadač…" },
+  "popupErrorInvalidFile": { "message": "Súbor sa nepodarilo prečítať. Vyberte platný súbor .dxf." },
+  "popupErrorTooLarge": { "message": "Súbor je príliš veľký. Prehliadač podporuje výkresy do 50 MB." },
+  "popupErrorCantOpen": { "message": "Prehliadač sa nepodarilo otvoriť. Skúste to znova." },
+
+  "viewerNoFile": { "message": "Žiadny súbor" },
+  "viewerToolRecent": { "message": "Posledné súbory" },
+  "viewerToolOpenAnother": { "message": "Otvoriť ďalší súbor" },
+  "viewerToolFit": { "message": "Prispôsobiť obrazovke" },
+  "viewerToolMeasure": { "message": "Meranie (M) — podržte Alt na vypnutie prichytávania" },
+  "viewerToolFind": { "message": "Hľadať text (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Tlačiť (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Snímka zobrazenia (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Prepnúť minimapu" },
+  "viewerToolCoords": { "message": "Prepnúť súradnice" },
+  "viewerToolColors": { "message": "Zobraziť pôvodné farby DXF (O)" },
+  "viewerToolTheme": { "message": "Prepnúť tému" },
+  "viewerSidebarCollapse": { "message": "Zbaliť panel vrstiev" },
+  "viewerRecentEmpty": { "message": "Žiadne posledné súbory" },
+  "viewerLayerFilter": { "message": "Filtrovať vrstvy" },
+  "viewerLayersEmpty": { "message": "Tento výkres nemá žiadne vrstvy" },
+  "viewerBookmarksTitle": { "message": "Uložené pohľady" },
+  "viewerBookmarksAdd": { "message": "+ Uložiť pohľad" },
+  "viewerBookmarksHelp": { "message": "Uložte aktuálnu polohu a priblíženie, aby ste sa neskôr mohli vrátiť." },
+  "viewerBookmarksEmpty": { "message": "Zatiaľ žiadne uložené pohľady" },
+  "viewerFindPlaceholder": { "message": "Hľadať text vo výkrese" },
+
+  "viewerCompareLabel": { "message": "Porovnávanie výkresov" },
+  "viewerCompareNamed": {
+    "message": "Porovnávanie: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Prepnúť prekrytie" },
+  "viewerCompareExit": { "message": "Zatvoriť" },
+  "viewerCompareError": { "message": "Nepodarilo sa načítať súbor na porovnanie" },
+  "viewerDropToOpen": { "message": "Pustite na otvorenie v novej karte" },
+  "viewerOverlayDropHint": { "message": "Pustite súbor .dxf sem\nalebo kliknite Otvoriť ďalší" },
+  "viewerOverlayActionOpen": { "message": "Otvoriť ďalší súbor" },
+  "viewerOverlayLoading": { "message": "Načítava sa výkres…" },
+  "viewerOverlayLoadingFonts": { "message": "Načítavajú sa písma…" },
+  "viewerOverlayParsing": { "message": "Analyzuje sa výkres…" },
+  "viewerOverlayPreparing": { "message": "Pripravuje sa geometria…" },
+  "viewerOverlayErrorExpired": { "message": "Tento výkres sa nepodarilo otvoriť.\nSúbor mohol expirovať." },
+  "viewerOverlayErrorInvalid": { "message": "Súbor sa nepodarilo prečítať.\nVyberte platný súbor .dxf." },
+  "viewerOverlayErrorTooLarge": { "message": "Súbor je príliš veľký.\nPrehliadač podporuje výkresy do 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Tento výkres sa nepodarilo otvoriť.\nSúbor môže byť poškodený alebo nepodporovaný." },
+  "viewerToastScreenshotSaved": { "message": "Snímka skopírovaná a uložená" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Snímka uložená (schránka blokovaná)" },
+  "viewerToastScreenshotError": { "message": "Nepodarilo sa uložiť snímku" },
+
+  "viewerRecentBadgeOpen": { "message": "Otvoriť" },
+  "viewerRecentRemoveTitle": { "message": "Odstrániť z posledných" },
+  "viewerRecentCompareTitle": { "message": "Porovnať s aktuálnym" },
+  "viewerLayerToggleTitle": { "message": "Prepnúť vrstvu" },
+  "viewerLayerSoloTitle": { "message": "Zobraziť iba túto vrstvu" },
+  "viewerBookmarkPromptName": { "message": "Názov záložky" },
+  "viewerBookmarkPromptRename": { "message": "Premenovať záložku" }
+}

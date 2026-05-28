@@ -1,0 +1,75 @@
+{
+  "appName": {
+    "message": "DXFファイルビューア"
+  },
+  "shortDesc": {
+    "message": "DXFファイルビューアを使用して、オンラインで.dxfファイルを開いて表示します — ブラウザ内で動作する高速なAutoCAD互換のDXFビューワーです。"
+  },
+  "storeDesc": {
+    "message": "DXFファイルビューアを使用して、ブラウザで.dxfファイルを瞬時に開いて表示します。この拡張機能は、重いCADソフトウェアをインストールすることなく、図面に迅速かつ軽量にアクセスできます。\n\n✨ DXFファイルビューアの機能:\n1. 数秒で図面を開く — ドラッグ、ドロップ、またはクリック\n2. 線、レイヤー、ブロック、寸法、注釈を表示\n3. 図面のすべての詳細をパンおよびズーム\n4. 特定の部分に焦点を当てるためにレイヤーを切り替え、任意のレイヤーを孤立させるためのホバープレビュー\n5. ブラウザ内で完全に動作 — インストール不要、アカウント不要\n6. ライトテーマとダークテーマ、ライブカーソル座標\n\n📌 誰がオンラインでdxfビューアを必要とするか:\n➤ AutoCADなしでオンラインでdxfを表示するエンジニアや建築家\n➤ ブラウザでシンプルな.dxfビューアを求めるCADを学ぶ学生\n➤ デザイナーから図面を受け取る建設マネージャー\n➤ 重いCADツールを開く前にファイルをプレビューするフリーランサー\n➤ どのデバイスでもdxfファイルを迅速に表示する方法を探している人\n\n🎯 人々がこのdxfツールを選ぶ理由:\nCAD図面の問題は、内部を覗くためだけにAutoCAD dxfビューアライセンスを購入したり、同様のツールをインストールしたりすることです。DXFファイルビューアはブラウザで動作し、標準の.dxfファイルを数秒で開きます。\n\n🚀 オンラインのdxfファイルビューアの使い方:\n1️⃣ Chromeウェブストアから拡張機能をインストール\n2️⃣ ツールバーのアイコンをクリック\n3️⃣ 図面をビューアにドラッグ\n4️⃣ 構造を検査するためにパンおよびズーム\n5️⃣ レイヤーを切り替えて各部分を探る\n\n📂 対応ファイル:\n- 標準DXF — ASCIIおよびバイナリの両方\n- レイヤー付き図面 — すべてのレイヤーが保持され、切り替え可能\n- 2Dエンティティ — 線、ポリライン、弧、円、スプライン、ハッチ、テキスト\n- ブロック参照、寸法、注釈\n\n🔒 あなたのプライバシーは重要です。DXFファイルビューアは、ブラウザ内で図面をローカルに処理します。それらはあなたのデバイスから決して離れません。アップロードなし、クラウドなし、追跡なし。\n\n💡 DXFファイルとは何ですか？\nDXFファイル（Drawing Exchange Format）は、アプリケーション間でデータを共有するためのAutodeskのCADフォーマットです。バイナリ形式とは異なり、テキストベースで共有が容易です。DXFをサポートする任意のCADツールからエクスポートされた図面を開きます。\n\n⚙️ DXFファイルビューアと重いCADソフトウェアの違い:\n▸ インストール不要 — ブラウザで開く\n▸ ライセンス不要 — AutoCADのサブスクリプションなしで動作\n▸ 軽量 — 完全にブラウザ内で動作\n▸ クロスプラットフォーム — Windows、macOS、Linux、ChromeOS\n\n🛠 実際の使用例:\n• クライアントからメールで送られた図面を迅速にプレビュー\n• AutoCADを起動せずに会議でCAD作業をレビュー\n• クラスで学生にdxfファイルの表示方法を教える\n• タブレットやChromebookでファイルを開く\n• AutoCADがオフラインのときのバックアップdxfリーダーとして使用\n• セットアップゼロでCADをオンラインで表示\n\n🧱 日常のCADワークフローに最適:\n1. 承認ラウンド — 数秒で寸法を確認\n2. 現場検査 — タブレットで図面を持って現場へ\n3. アーカイブアクセス — メールから古い図面を閲覧\n4. チーム間の引き継ぎ — 非CADユーザーがエンジニアリングファイルを読む\n5. 迅速なトリアージ — フルCAD作業が必要な図面を整理\n\n⚡ 実績のあるレンダリングに基づいて構築:\nこの拡張機能は、世界中のエンジニアリングチームに信頼されているテスト済みのパースライブラリを使用しています。すべてのアップデートは、Chromeウェブストアでのリリース前にパフォーマンスと互換性のためにレビューされます。\n\n❓ よくある質問:\nQ: DXFファイルの3Dコンテンツを開けますか？\nA: 標準の2D DXF図面を開きます。CADツールで生成された3Dモデルからの図面も含まれます。純粋な3Dメッシュやサーフェスエンティティはレンダリングサポートが限られており、最良の結果は2D図面と投影ビューから得られます。\n\nQ: ビューアはDWGファイルを開けますか？\nA: いいえ。DWGはAutodeskの別のバイナリ形式です。ほとんどのCADツールは、ワンクリックでDWGをDXFにエクスポートできます — 結果の.dxfをここで開いてください。\n\nQ: オンラインdxfビューアやdxfビューオンラインを検索しましたか？\nA: はい、これは同じツールです。dxfリーダーと呼ぶか、図面を表示する方法と呼ぶかにかかわらず、あなたのファイルはブラウザで開きます。\n\n📍 DXFファイルビューアの使用に関するヒント:\n- 図面を拡張機能のポップアップにドロップ\n- 大きな図面の場合は、未使用のレイヤーを非表示に\n- メールやチャットから直接ファイルを開く\n- パネルでレイヤー名にホバーして、そのレイヤーのみをプレビュー\n\n👉 オンラインでdxfを表示する準備はできましたか？\nDXFファイルビューアをインストールし、ファイルをドロップして探索を開始してください。サブスクリプションなし、重いインストールなし、待機なし。エンジニア、建築家、学生、迅速なCADプレビューを必要とするすべての人のために構築されています。\n—\nAutoCAD®はAutodesk, Inc.の登録商標です。この拡張機能はAutodeskとは提携しておらず、承認もされていません。"
+  },
+
+  "popupAriaOpenFile": { "message": ".dxfファイルを開きます" },
+  "popupDropzoneIdle": { "message": "クリックまたは.dxfをドロップ" },
+  "popupDropzoneDragover": { "message": "放すと開きます" },
+  "popupStatusOpening": { "message": "ビューアを開いています…" },
+  "popupErrorInvalidFile": { "message": "ファイルを読み取れませんでした。有効な.dxfファイルを選択してください。" },
+  "popupErrorTooLarge": { "message": "ファイルが大きすぎます。ビューアは50 MBまでの図面に対応しています。" },
+  "popupErrorCantOpen": { "message": "ビューアを開けませんでした。もう一度お試しください。" },
+
+  "viewerNoFile": { "message": "ファイルなし" },
+  "viewerToolRecent": { "message": "最近のファイル" },
+  "viewerToolOpenAnother": { "message": "別のファイルを開きます" },
+  "viewerToolFit": { "message": "画面に合わせます" },
+  "viewerToolMeasure": { "message": "計測 (M) — Altを押すとスナップが無効になります" },
+  "viewerToolFind": { "message": "テキスト検索 (Ctrl+F)" },
+  "viewerToolPrint": { "message": "印刷 (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "表示のスクリーンショット (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "ミニマップを切り替えます" },
+  "viewerToolCoords": { "message": "座標を切り替えます" },
+  "viewerToolColors": { "message": "DXFの元の色を表示します (O)" },
+  "viewerToolTheme": { "message": "テーマを切り替えます" },
+  "viewerSidebarCollapse": { "message": "レイヤーパネルを折りたたみます" },
+  "viewerRecentEmpty": { "message": "最近のファイルはありません" },
+  "viewerLayerFilter": { "message": "レイヤーの絞り込み" },
+  "viewerLayersEmpty": { "message": "この図面にレイヤーはありません" },
+  "viewerBookmarksTitle": { "message": "保存したビュー" },
+  "viewerBookmarksAdd": { "message": "+ ビューを保存" },
+  "viewerBookmarksHelp": { "message": "現在のズームと位置を保存して、後で戻ることができます。" },
+  "viewerBookmarksEmpty": { "message": "保存したビューはまだありません" },
+  "viewerFindPlaceholder": { "message": "図面内のテキストを検索" },
+
+  "viewerCompareLabel": { "message": "図面を比較しています" },
+  "viewerCompareNamed": {
+    "message": "比較中: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "オーバーレイを切り替えます" },
+  "viewerCompareExit": { "message": "終了" },
+  "viewerCompareError": { "message": "比較用のファイルを読み込めませんでした" },
+  "viewerDropToOpen": { "message": "ドロップして新しいタブで開きます" },
+  "viewerOverlayDropHint": { "message": ".dxfファイルをここにドロップ\nまたは「別のファイルを開く」をクリック" },
+  "viewerOverlayActionOpen": { "message": "別のファイルを開きます" },
+  "viewerOverlayLoading": { "message": "図面を読み込んでいます…" },
+  "viewerOverlayLoadingFonts": { "message": "フォントを読み込んでいます…" },
+  "viewerOverlayParsing": { "message": "図面を解析しています…" },
+  "viewerOverlayPreparing": { "message": "ジオメトリを準備しています…" },
+  "viewerOverlayErrorExpired": { "message": "この図面を開けませんでした。\nファイルの有効期限が切れている可能性があります。" },
+  "viewerOverlayErrorInvalid": { "message": "ファイルを読み取れませんでした。\n有効な.dxfファイルを選択してください。" },
+  "viewerOverlayErrorTooLarge": { "message": "ファイルが大きすぎます。\nビューアは50 MBまでの図面に対応しています。" },
+  "viewerOverlayErrorCorrupted": { "message": "この図面を開けませんでした。\nファイルが破損しているか、サポートされていない可能性があります。" },
+  "viewerToastScreenshotSaved": { "message": "スクリーンショットをコピーして保存しました" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "スクリーンショットを保存しました（クリップボードは利用できません）" },
+  "viewerToastScreenshotError": { "message": "スクリーンショットを保存できませんでした" },
+
+  "viewerRecentBadgeOpen": { "message": "開く" },
+  "viewerRecentRemoveTitle": { "message": "最近のファイルから削除します" },
+  "viewerRecentCompareTitle": { "message": "現在の図面と比較します" },
+  "viewerLayerToggleTitle": { "message": "レイヤーを切り替えます" },
+  "viewerLayerSoloTitle": { "message": "このレイヤーのみ表示します" },
+  "viewerBookmarkPromptName": { "message": "ブックマーク名" },
+  "viewerBookmarkPromptRename": { "message": "ブックマークの名前を変更します" }
+}

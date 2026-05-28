@@ -1,7 +1,10 @@
 import { DxfViewer } from "dxf-viewer";
 import { Color } from "three";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
+import { MAX_BYTES } from "../lib/constants";
 import { computeFileKey } from "../lib/fileKey";
+import { applyI18n, setHtmlLang, t } from "../lib/i18n";
+import { openTabSafely } from "../lib/openTab";
 import { claimPending, purgeStalePending, savePending } from "../lib/pendingFiles";
 import { getRecentBuffer, listRecent, removeRecent, saveRecent, type RecentFile } from "../lib/recentFiles";
 import DxfWorkerFactory from "../worker/dxf.worker.ts?worker";
@@ -13,7 +16,6 @@ import {
   applyColorMode,
   DARK_CC_PARAMS,
   DARK_PALETTE,
-  getClearColor,
   LIGHT_CC_PARAMS,
   LIGHT_PALETTE,
   refreshLayerSwatches,
@@ -39,9 +41,11 @@ import { buildSnapIndex } from "./snap";
 import { findNearestSnap } from "./spatialIndex";
 import { setScreenshotEnabled, takeScreenshot } from "./screenshot";
 
-const MAX_BYTES = 50 * 1024 * 1024;
 const HOVER_TOOLTIP_DELAY_MS = 450;
 const HOVER_TOOLTIP_STILL_PX = 6;
+
+setHtmlLang();
+applyI18n();
 
 bindUi();
 void bootstrap();
@@ -329,15 +333,15 @@ async function bootstrap(): Promise<void> {
   }
 
   if (!fileId) {
-    showOverlay("Drop a .dxf file here\nor click Open another", { loading: false, showAction: true });
+    showOverlay(t("viewerOverlayDropHint"), { loading: false, showAction: true });
     return;
   }
 
-  showOverlay("Loading drawing…", { loading: true, showAction: false });
+  showOverlay(t("viewerOverlayLoading"), { loading: true, showAction: false });
 
   const pendingFile = await claimPending(fileId);
   if (!pendingFile) {
-    showOverlay("Could not open this drawing.\nThe file may have expired.", { loading: false, showAction: true });
+    showOverlay(t("viewerOverlayErrorExpired"), { loading: false, showAction: true });
     return;
   }
 
@@ -347,33 +351,18 @@ async function bootstrap(): Promise<void> {
 async function openInNewTab(file: File | { name: string; size: number; buffer: ArrayBuffer }): Promise<void> {
   const name = "name" in file ? file.name : "(unknown)";
   if (name && !name.toLowerCase().endsWith(".dxf")) {
-    showOverlay("Could not read file.\nPlease choose a valid .dxf file.", { loading: false, showAction: true });
+    showOverlay(t("viewerOverlayErrorInvalid"), { loading: false, showAction: true });
     return;
   }
   const buffer = file instanceof File ? await file.arrayBuffer() : file.buffer;
   if (buffer.byteLength > MAX_BYTES) {
-    showOverlay("File is too large.\nThe viewer supports drawings up to 50 MB.", { loading: false, showAction: true });
+    showOverlay(t("viewerOverlayErrorTooLarge"), { loading: false, showAction: true });
     return;
   }
   const fileId = crypto.randomUUID();
   await savePending({ id: fileId, name, size: buffer.byteLength, buffer, createdAt: Date.now() });
   const tabUrl = chrome.runtime.getURL(`src/viewer/viewer.html?id=${fileId}`);
-  await createTabSafely(tabUrl);
-}
-
-async function createTabSafely(url: string): Promise<void> {
-  let lastError: unknown = null;
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    try {
-      await chrome.tabs.create({ url });
-      return;
-    } catch (err) {
-      lastError = err;
-      await new Promise((resolve) => setTimeout(resolve, 150 * (attempt + 1)));
-    }
-  }
-  const fallback = window.open(url, "_blank");
-  if (!fallback) throw lastError ?? new Error("Failed to open viewer tab");
+  await openTabSafely(tabUrl);
 }
 
 async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): Promise<void> {
@@ -381,7 +370,6 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
   state.minimapPreviewReady = false;
   state.minimapPreviewDirty = true;
   state.minimap?.setPreview(null);
-  if (buffer !== state.currentBuffer) state.currentBuffer = buffer;
   state.currentName = name;
   state.currentSize = size;
 
@@ -443,7 +431,7 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
       URL.revokeObjectURL(state.currentBlobUrl);
       state.currentBlobUrl = null;
     }
-    showOverlay("Could not open this drawing.\nThe file may be corrupted or unsupported.", {
+    showOverlay(t("viewerOverlayErrorCorrupted"), {
       loading: false,
       showAction: true,
     });
@@ -498,15 +486,15 @@ function buildRecentRow(item: RecentFile, isCurrent: boolean): HTMLLIElement {
   if (isCurrent) {
     const activeTag = document.createElement("span");
     activeTag.className = "recent-item-active-tag";
-    activeTag.textContent = "Open";
+    activeTag.textContent = t("viewerRecentBadgeOpen");
     info.append(activeTag);
   }
 
   const remove = document.createElement("button");
   remove.type = "button";
   remove.className = "recent-remove";
-  remove.title = "Remove from recents";
-  remove.setAttribute("aria-label", "Remove from recents");
+  remove.title = t("viewerRecentRemoveTitle");
+  remove.setAttribute("aria-label", t("viewerRecentRemoveTitle"));
   remove.innerHTML =
     '<svg viewBox="0 0 16 16" width="12" height="12"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
   remove.addEventListener("click", async (event) => {
@@ -518,8 +506,8 @@ function buildRecentRow(item: RecentFile, isCurrent: boolean): HTMLLIElement {
   const compare = document.createElement("button");
   compare.type = "button";
   compare.className = "recent-remove";
-  compare.title = "Compare with current";
-  compare.setAttribute("aria-label", "Compare with current");
+  compare.title = t("viewerRecentCompareTitle");
+  compare.setAttribute("aria-label", t("viewerRecentCompareTitle"));
   compare.textContent = "⇄";
   compare.style.opacity = "1";
   compare.addEventListener("click", async (event) => {
@@ -549,14 +537,16 @@ function isCurrentRecent(item: RecentFile): boolean {
 }
 
 function relativeTime(timestamp: number): string {
+  const rtf = new Intl.RelativeTimeFormat(chrome.i18n.getUILanguage(), { numeric: "auto" });
   const diff = Date.now() - timestamp;
-  const min = Math.floor(diff / 60000);
-  if (min < 1) return "just now";
-  if (min < 60) return `${min} min ago`;
+  const sec = Math.floor(diff / 1000);
+  if (sec < 60) return rtf.format(-sec, "second");
+  const min = Math.floor(sec / 60);
+  if (min < 60) return rtf.format(-min, "minute");
   const hr = Math.floor(min / 60);
-  if (hr < 24) return `${hr} h ago`;
+  if (hr < 24) return rtf.format(-hr, "hour");
   const day = Math.floor(hr / 24);
-  return `${day}d ago`;
+  return rtf.format(-day, "day");
 }
 
 function handleProgress(phase: "font" | "fetch" | "parse" | "prepare", processed: number, total: number): void {
@@ -568,13 +558,13 @@ function handleProgress(phase: "font" | "fetch" | "parse" | "prepare", processed
 function phaseLabel(phase: "font" | "fetch" | "parse" | "prepare"): string {
   switch (phase) {
     case "font":
-      return "Loading fonts…";
+      return t("viewerOverlayLoadingFonts");
     case "fetch":
-      return "Loading drawing…";
+      return t("viewerOverlayLoading");
     case "parse":
-      return "Parsing drawing…";
+      return t("viewerOverlayParsing");
     case "prepare":
-      return "Preparing geometry…";
+      return t("viewerOverlayPreparing");
     default: {
       const _exhaustive: never = phase;
       return _exhaustive;

@@ -1,15 +1,8 @@
+import { normalizeDxfText } from "../lib/dxfText";
 import { state } from "./state";
 import { dom } from "./dom";
 import { getWorldFromPointer, worldToScreen } from "./coords";
 import { getParsedDxf } from "./types";
-
-function normalizeDxfText(text: string): string {
-  return text
-    .replace(/\\[A-Za-z][^;]*;/g, "")
-    .replace(/\\P/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 export function hideEntityTooltip(): void {
   state.hoverTooltipAnchor = null;

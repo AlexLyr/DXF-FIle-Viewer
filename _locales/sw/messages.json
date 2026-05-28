@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "Kiangazaji cha Faili ya DXF",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Tumia Kiangazaji cha Faili ya DXF kufungua na kuangalia faili za .dxf mtandaoni — kiangazaji cha DXF kinachofanya kazi kwa haraka kinachofaa na AutoCAD katika kivinjari chako.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Tumia Kiangazaji cha Faili ya DXF kufungua na kuangalia faili za .dxf mara moja kwenye kivinjari chako. Kiendelezi hiki kinatoa ufikiaji wa haraka na mwepesi wa michoro bila kufunga programu nzito za CAD.\n\n✨ Kile Kiangazaji cha Faili ya DXF hufanya:\n1. Hufungua michoro kwa sekunde — buruta, achia, au bonyeza\n2. Inaonyesha mistari, tabaka, vizuizi, vipimo, na maelezo\n3. Inakuwezesha kuhamasisha na kupanua kila undani wa mchoro\n4. Hubadilisha tabaka ili kuzingatia sehemu maalum, ikiwa na muonekano wa juu ili kutenga tabaka lolote\n5. Inafanya kazi kikamilifu kwenye kivinjari chako — hakuna usakinishaji, hakuna akaunti\n6. Mandhari nyepesi na giza, ikiwa na co-ordinates za kipanya za moja kwa moja\n\n📌 Nani anahitaji kiangazaji cha dxf mtandaoni:\n➤ Wahandisi na wasanifu ambao wanaangalia dxf mtandaoni bila AutoCAD\n➤ Wanafunzi wanaojifunza CAD ambao wanataka kiangazaji rahisi cha .dxf kwenye kivinjari\n➤ Wasimamizi wa ujenzi wanaopokea michoro kutoka kwa wabunifu\n➤ Wajira wa kujitegemea wanaopitia faili kabla ya kufungua zana nzito za CAD\n➤ Mtu yeyote anayejua jinsi ya kuangalia faili za dxf haraka kwenye kifaa chochote\n\n🎯 Kwa nini watu wanachagua zana hii ya dxf:\nMaumivu na michoro ya CAD ni kununua leseni ya kiangazaji cha autocad dxf au kufunga zana zinazofanana ili tu kuangalia ndani. Kiangazaji cha Faili ya DXF kinakimbia kwenye kivinjari chako na kufungua faili yoyote ya kawaida ya .dxf kwa sekunde.\n\n🚀 Jinsi kiangazaji cha faili ya dxf mtandaoni kinavyofanya kazi:\n1️⃣ Sakinisha kiendelezi kutoka Duka la Mtandao la Chrome\n2️⃣ Bonyeza ikoni kwenye bar ya zana yako\n3️⃣ Buruta mchoro wako kwenye kiangazaji\n4️⃣ Hamasa na panua ili kukagua muundo\n5️⃣ Badilisha tabaka na kuchunguza kila sehemu\n\n📂 Faili zinazoungwa mkono:\n- DXF ya Kawaida — ASCII na binary\n- Michoro yenye tabaka — kila tabaka limehifadhiwa na linaweza kubadilishwa\n- Vitu vya 2D — mistari, polylines, arcs, mizunguko, splines, hatches, maandiko\n- Marejeo ya vizuizi, vipimo, na maelezo\n\n🔒 Faragha yako ni muhimu. Kiangazaji cha Faili ya DXF kinashughulikia michoro kwa ndani kwenye kivinjari chako. Hazitoki kwenye kifaa chako. Hakuna kupakia, hakuna wingu, hakuna ufuatiliaji.\n\n💡 Faili ya DXF ni nini?\nFaili ya DXF (Muundo wa Kubadilishana Mchoro) ni muundo wa CAD kutoka Autodesk kwa kushiriki data kati ya programu. Tofauti na muundo wa binary, ni wa maandiko na rahisi kushiriki. Fungua michoro iliyosafirishwa kutoka zana yoyote ya CAD inayounga mkono DXF.\n\n⚙️ Kiangazaji cha Faili ya DXF vs programu nzito za CAD:\n▸ Hakuna usakinishaji — hufungua kwenye kivinjari chako\n▸ Hakuna leseni — inafanya kazi bila usajili wa AutoCAD\n▸ Nyepesi — inakimbia kabisa kwenye kivinjari\n▸ Inapatikana kwenye majukwaa mbalimbali — Windows, macOS, Linux, ChromeOS\n\n🛠 Matumizi halisi ya ulimwengu:\n• Angalia haraka michoro iliyotumwa na wateja\n• Kagua kazi za CAD kwenye mikutano bila kuwasha AutoCAD\n• Wafundishe wanafunzi jinsi ya kuangalia faili za dxf darasani\n• Fungua faili kwenye kibao au Chromebook\n• Tumia kama msomaji wa dxf wa akiba wakati AutoCAD haipo mtandaoni\n• Angalia cad mtandaoni bila mipangilio yoyote\n\n🧱 Imejengwa kwa michakato ya kila siku ya CAD:\n1. Mizunguko ya idhini — angalia vipimo kwa sekunde\n2. Ukaguzi wa uwanja — leta mchoro kwenye kibao kwenye eneo la kazi\n3. Ufikiaji wa kumbukumbu — pitia michoro ya zamani kutoka kwa barua pepe\n4. Uhamisho wa timu — watumiaji wasiokuwa na CAD wasome faili za uhandisi\n5. Tathmini ya haraka — panga michoro inayohitaji kazi kamili ya CAD\n\n⚡ Imejengwa kwa uwasilishaji uliojaribiwa:\nKiendelezi hiki kinatumia maktaba za uchambuzi zilizojaribiwa ambazo zinatumiwa na timu za uhandisi duniani kote. Kila sasisho linakaguliwa kwa utendaji na ulinganifu kabla ya kutolewa kwenye Duka la Mtandao la Chrome.\n\n❓ Maswali yanayoulizwa mara kwa mara:\nQ: Je, inafungua maudhui ya 3D katika faili za DXF?\nA: Inafungua mchoro wowote wa kawaida wa 2D DXF, ikiwa ni pamoja na michoro iliyotengenezwa kutoka kwa mifano ya 3D katika zana za CAD. Vitu vya 3D safi na uso vina msaada mdogo wa uwasilishaji — matokeo bora yanapatikana kutoka kwa michoro ya 2D na maoni yaliyopangwa.\n\nQ: Je, kiangazaji kinafungua faili za DWG?\nA: Hapana. DWG ni muundo tofauti wa binary kutoka Autodesk. Zana nyingi za CAD zinaweza kusafirisha DWG hadi DXF kwa bonyeza moja — fungua .dxf inayotokana hapa.\n\nQ: Je, umepata kiangazaji cha dxf mtandaoni au dxf angalia mtandaoni?\nA: Ndio, hii ni zana ile ile. Iwe unaiita msomaji wa dxf au njia tu ya kuangalia michoro, faili yako inafunguliwa kwenye kivinjari.\n\n📍 Vidokezo vya kutumia Kiangazaji cha Faili ya DXF:\n- Achia mchoro wako kwenye popup ya kiendelezi\n- Kwa michoro mikubwa, ficha tabaka zisizotumika\n- Fungua faili moja kwa moja kutoka kwa barua pepe au gumzo\n- Pita jina la tabaka kwenye paneli ili kuangalia tabaka hilo pekee\n\n👉 Tayari kuangalia dxf mtandaoni?\nSakinisha Kiangazaji cha Faili ya DXF, achia faili yako, na anza kuchunguza. Hakuna usajili, hakuna usakinishaji mzito, hakuna kusubiri. Imejengwa kwa wahandisi, wasanifu, wanafunzi, na mtu yeyote anaye hitaji mapitio ya haraka ya CAD.\n—\nAutoCAD® ni alama ya biashara iliyosajiliwa ya Autodesk, Inc. Kiendelezi hiki hakihusiani na au kuungwa mkono na Autodesk.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Fungua faili ya .dxf" },
+  "popupDropzoneIdle": { "message": "Bonyeza au achia .dxf" },
+  "popupDropzoneDragover": { "message": "Achia ili kufungua" },
+  "popupStatusOpening": { "message": "Inafungua kiangazaji…" },
+  "popupErrorInvalidFile": { "message": "Imeshindwa kusoma faili. Tafadhali chagua faili halali ya .dxf." },
+  "popupErrorTooLarge": { "message": "Faili ni kubwa sana. Kiangazaji kinaunga mkono michoro hadi 50 MB." },
+  "popupErrorCantOpen": { "message": "Imeshindwa kufungua kiangazaji. Tafadhali jaribu tena." },
+
+  "viewerNoFile": { "message": "Hakuna faili" },
+  "viewerToolRecent": { "message": "Faili za hivi karibuni" },
+  "viewerToolOpenAnother": { "message": "Fungua faili nyingine" },
+  "viewerToolFit": { "message": "Linganisha na skrini" },
+  "viewerToolMeasure": { "message": "Pima (M) — shikilia Alt ili kuzima snap" },
+  "viewerToolFind": { "message": "Tafuta maandishi (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Chapisha (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Picha ya skrini (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Badilisha ramani ndogo" },
+  "viewerToolCoords": { "message": "Badilisha viwianishi" },
+  "viewerToolColors": { "message": "Onyesha rangi asili za DXF (O)" },
+  "viewerToolTheme": { "message": "Badilisha mandhari" },
+  "viewerSidebarCollapse": { "message": "Kunja paneli ya tabaka" },
+  "viewerRecentEmpty": { "message": "Hakuna faili za hivi karibuni" },
+  "viewerLayerFilter": { "message": "Chuja tabaka" },
+  "viewerLayersEmpty": { "message": "Hakuna tabaka katika mchoro huu" },
+  "viewerBookmarksTitle": { "message": "Maoni yaliyohifadhiwa" },
+  "viewerBookmarksAdd": { "message": "+ Hifadhi mwonekano" },
+  "viewerBookmarksHelp": { "message": "Hifadhi ukuzaji na nafasi ya sasa ili kurudi baadaye." },
+  "viewerBookmarksEmpty": { "message": "Hakuna maoni yaliyohifadhiwa bado" },
+  "viewerFindPlaceholder": { "message": "Tafuta maandishi kwenye mchoro" },
+
+  "viewerCompareLabel": { "message": "Inalinganisha michoro" },
+  "viewerCompareNamed": {
+    "message": "Inalinganisha: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Badilisha tabaka la juu" },
+  "viewerCompareExit": { "message": "Ondoka" },
+  "viewerCompareError": { "message": "Imeshindwa kupakia faili kwa ulinganisho" },
+  "viewerDropToOpen": { "message": "Achia ili kufungua kwenye kichupo kipya" },
+  "viewerOverlayDropHint": { "message": "Achia faili ya .dxf hapa\nau bonyeza Fungua nyingine" },
+  "viewerOverlayActionOpen": { "message": "Fungua faili nyingine" },
+  "viewerOverlayLoading": { "message": "Inapakia mchoro…" },
+  "viewerOverlayLoadingFonts": { "message": "Inapakia fonti…" },
+  "viewerOverlayParsing": { "message": "Inachambua mchoro…" },
+  "viewerOverlayPreparing": { "message": "Inaandaa jiometri…" },
+  "viewerOverlayErrorExpired": { "message": "Imeshindwa kufungua mchoro huu.\nFaili huenda imekwisha muda." },
+  "viewerOverlayErrorInvalid": { "message": "Imeshindwa kusoma faili.\nTafadhali chagua faili halali ya .dxf." },
+  "viewerOverlayErrorTooLarge": { "message": "Faili ni kubwa sana.\nKiangazaji kinaunga mkono michoro hadi 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Imeshindwa kufungua mchoro huu.\nFaili huenda imeharibika au haiaungwi mkono." },
+  "viewerToastScreenshotSaved": { "message": "Picha ya skrini imenakiliwa na kuhifadhiwa" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Picha ya skrini imehifadhiwa (ubao wa kunakili umezuiwa)" },
+  "viewerToastScreenshotError": { "message": "Imeshindwa kuhifadhi picha ya skrini" },
+
+  "viewerRecentBadgeOpen": { "message": "Fungua" },
+  "viewerRecentRemoveTitle": { "message": "Ondoa kutoka za hivi karibuni" },
+  "viewerRecentCompareTitle": { "message": "Linganisha na ya sasa" },
+  "viewerLayerToggleTitle": { "message": "Badilisha tabaka" },
+  "viewerLayerSoloTitle": { "message": "Onyesha tabaka hili pekee" },
+  "viewerBookmarkPromptName": { "message": "Jina la alama" },
+  "viewerBookmarkPromptRename": { "message": "Badilisha jina la alama" }
+}

@@ -1,0 +1,74 @@
+{
+  "appName": {
+    "message": "DXF faili vaatleja"
+  },
+  "shortDesc": {
+    "message": "Kasutage DXF faili vaatlejat .dxf failide avamiseks ja vaatamiseks veebis - kiire AutoCAD-iga ühilduv DXF vaatleja teie brauseris."
+  },
+  "storeDesc": {
+    "message": "Kasutage DXF faili vaatlejat, et avada ja vaadata .dxf faile koheselt oma brauseris. Laiendus annab kiire ja kerge juurdepääsu joonistele ilma, et peaksite installima mingeid raskeid CAD tarkvarasid.\n\n✨ Mida DXF faili vaatleja teeb:\n1. Avab joonised sekunditega — lohista, viska või kliki\n2. Näitab jooni, kihte, plokke, mõõtmeid ja märkusi\n3. Lubab sul vaadata ja suumida iga joonise detaili\n4. Lülitab kihte, et keskenduda konkreetsetele osadele, koos hõljumise eelvaatega, et isoleerida ükskõik milline kiht\n5. Töötab täielikult sinu brauseris — ei mingit installi, ei mingit kontot\n6. Heledad ja tumedad teemad, koos elavate kursorikoordinaatidega\n\n📌 Kes vajab veebipõhist dxf vaatlejat:\n➤ Insenerid ja arhitektid, kes vaatavad dxf faile veebis ilma AutoCADita\n➤ Üliõpilased, kes õpivad CADi ja soovivad lihtsat .dxf vaatlejat brauseris\n➤ Ehitusjuhid, kes saavad jooniseid disaineritelt\n➤ Vabakutselised, kes eelvaatavad faile enne raskete CAD tööriistade avamist\n➤ Igaüks, kes soovib kiiresti vaadata dxf faile igas seadmes\n\n🎯 Miks inimesed valivad selle dxf tööriista:\nCAD jooniste probleem on AutoCADi dxf vaatleja litsentsi ostmine või sarnaste tööriistade installimine, et lihtsalt sisse piiluda. DXF faili vaatleja töötab sinu brauseris ja avab iga standardse .dxf faili sekunditega.\n\n🚀 Kuidas veebipõhine dxf faili vaatleja töötab:\n1️⃣ Installi laiendus Chrome'i veebipoest\n2️⃣ Kliki ikoonil oma tööriistaribal\n3️⃣ Lohista oma joonis vaatlejasse\n4️⃣ Vaata ja suumi, et uurida struktuuri\n5️⃣ Lülita kihte ja uurige iga osa\n\n📂 Toetatud failid:\n- Standardne DXF — nii ASCII kui ka binaarne\n- Kihtidega joonised — iga kiht säilitatud ja lülitatav\n- 2D üksused — jooned, polüjooned, kaared, ringid, splainid, mustrid, tekst\n- Plokiviidatud, mõõtmed ja märkused\n\n🔒 Sinu privaatsus on oluline. DXF faili vaatleja töötleb jooniseid kohalikult sinu brauseris. Need ei lahku kunagi sinu seadmest. Ei mingit üleslaadimist, ei mingit pilve, ei mingit jälgimist.\n\n💡 Mis on DXF fail?\nDXF fail (Drawing Exchange Format) on Autodeskilt pärit CAD formaat, mis võimaldab andmeid rakenduste vahel jagada. Erinevalt binaarsetest formaatidest on see tekstipõhine ja lihtne jagada. Ava joonised, mis on eksporditud mistahes CAD tööriistast, mis toetab DXF.\n\n⚙️ DXF faili vaatleja vs rasked CAD tarkvarad:\n▸ Ei mingit installi — avab sinu brauseris\n▸ Ei mingit litsentsi — töötab ilma AutoCADi tellimusteta\n▸ Kergete — töötab täielikult brauseris\n▸ Platvormidevaheline — Windows, macOS, Linux, ChromeOS\n\n🛠 Reaalsed kasutusjuhtumid:\n• Kiire eelvaade joonistest, mille on saatnud kliendid\n• CAD töö ülevaatamine koosolekutel ilma AutoCADi käivitamata\n• Õpetada üliõpilastele, kuidas vaadata dxf faile klassis\n• Avada faile tahvelarvutis või Chromebookis\n• Kasutada varu dxf lugejana, kui AutoCAD on offline\n• Vaata CADi veebis nullseadistusega\n\n🧱 Ehitatud igapäevaste CAD töövoogude jaoks:\n1. Kinnitusringid — kontrolli mõõtmeid sekunditega\n2. Välitööd — too joonis tahvelarvutisse tööplatsile\n3. Arhiivi juurdepääs — sirvi vanu jooniseid e-kirjast\n4. Ristmeeskonna edastamine — mitte-CAD kasutajad loevad insenerifailide\n5. Kiire triage — sorteeri joonised, mis vajavad täis CAD tööd\n\n⚡ Ehitatud tõestatud renderdamise peale:\nLaiendus kasutab testitud analüüsi raamatukogusid, mida usaldavad insenerimeeskonnad üle kogu maailma. Iga uuendus vaadatakse üle jõudluse ja ühilduvuse osas enne Chrome'i veebipoes väljaandmist.\n\n❓ Korduma kippuvad küsimused:\nK: Kas see avab 3D sisu DXF failides?\nV: See avab iga standardse 2D DXF joonise, sealhulgas joonised, mis on toodetud 3D mudelitest CAD tööriistades. Puhtad 3D võrgud ja pinnad on piiratud renderdamise toega — parimad tulemused tulevad 2D joonistest ja projekteeritud vaadetest.\n\nK: Kas vaatleja avab DWG faile?\nV: Ei. DWG on Autodeskilt eraldi binaarne formaat. Enamik CAD tööriistu saavad DWG-d ühe klõpsuga DXF-iks eksportida — ava saadud .dxf siin.\n\nK: Kas otsisite veebipõhist dxf vaatlejat või dxf vaadet veebis?\nV: Jah, see on sama tööriist. Olgu see dxf lugeja või lihtsalt viis jooniste vaatamiseks, sinu fail avatakse brauseris.\n\n📍 Näpunäited DXF faili vaatleja kasutamiseks:\n- Viska oma joonis laienduse hüpikaknale\n- Suurte jooniste puhul peida kasutamata kihid\n- Ava faile otse e-kirjast või vestlusest\n- Hõljuta kihi nime paneelis, et eelvaadata ainult seda kihti\n\n👉 Kas oled valmis vaatama dxf faile veebis?\nInstalli DXF faili vaatleja, viska oma fail ja alusta uurimist. Ei mingit tellimust, ei mingit rasket installi, ei mingit ootamist. Ehitatud inseneridele, arhitektidele, üliõpilastele ja kõigile, kes vajavad kiireid CAD eelvaateid.\n—\nAutoCAD® on Autodesk, Inc. registreeritud kaubamärk. See laiendus ei ole seotud ega toetatud Autodeskiga."
+  },
+  "popupAriaOpenFile": { "message": "Ava .dxf fail" },
+  "popupDropzoneIdle": { "message": "Kliki või lohista .dxf" },
+  "popupDropzoneDragover": { "message": "Vabasta avamiseks" },
+  "popupStatusOpening": { "message": "Vaatleja avamine…" },
+  "popupErrorInvalidFile": { "message": "Faili ei saanud lugeda. Palun vali kehtiv .dxf fail." },
+  "popupErrorTooLarge": { "message": "Fail on liiga suur. Vaatleja toetab jooniseid kuni 50 MB." },
+  "popupErrorCantOpen": { "message": "Vaatlejat ei saanud avada. Palun proovi uuesti." },
+
+  "viewerNoFile": { "message": "Fail puudub" },
+  "viewerToolRecent": { "message": "Hiljutised failid" },
+  "viewerToolOpenAnother": { "message": "Ava teine fail" },
+  "viewerToolFit": { "message": "Mahuta ekraanile" },
+  "viewerToolMeasure": { "message": "Mõõda (M) — hoia Alt, et keelata haardumine" },
+  "viewerToolFind": { "message": "Leia tekst (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Prindi (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Ekraanipilt vaatest (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Lülita minikaart" },
+  "viewerToolCoords": { "message": "Lülita koordinaadid" },
+  "viewerToolColors": { "message": "Näita algupäraseid DXF värve (O)" },
+  "viewerToolTheme": { "message": "Lülita teema" },
+  "viewerSidebarCollapse": { "message": "Ahenda kihtide paneel" },
+  "viewerRecentEmpty": { "message": "Hiljutisi faile pole" },
+  "viewerLayerFilter": { "message": "Filtreeri kihte" },
+  "viewerLayersEmpty": { "message": "Selles joonises pole kihte" },
+  "viewerBookmarksTitle": { "message": "Salvestatud vaated" },
+  "viewerBookmarksAdd": { "message": "+ Salvesta vaade" },
+  "viewerBookmarksHelp": { "message": "Salvesta praegune suurendus ja asukoht, et hiljem tagasi hüpata." },
+  "viewerBookmarksEmpty": { "message": "Salvestatud vaateid pole veel" },
+  "viewerFindPlaceholder": { "message": "Leia tekst jooniselt" },
+
+  "viewerCompareLabel": { "message": "Jooniste võrdlemine" },
+  "viewerCompareNamed": {
+    "message": "Võrdlus: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Lülita ülekate" },
+  "viewerCompareExit": { "message": "Välju" },
+  "viewerCompareError": { "message": "Faili ei saanud võrdluseks laadida" },
+  "viewerDropToOpen": { "message": "Lohista uuel vahelehel avamiseks" },
+  "viewerOverlayDropHint": { "message": "Lohista .dxf fail siia\nvõi kliki Ava teine" },
+  "viewerOverlayActionOpen": { "message": "Ava teine fail" },
+  "viewerOverlayLoading": { "message": "Joonise laadimine…" },
+  "viewerOverlayLoadingFonts": { "message": "Fontide laadimine…" },
+  "viewerOverlayParsing": { "message": "Joonise parsimine…" },
+  "viewerOverlayPreparing": { "message": "Geomeetria ettevalmistamine…" },
+  "viewerOverlayErrorExpired": { "message": "Seda joonist ei saanud avada.\nFail võib olla aegunud." },
+  "viewerOverlayErrorInvalid": { "message": "Faili ei saanud lugeda.\nPalun vali kehtiv .dxf fail." },
+  "viewerOverlayErrorTooLarge": { "message": "Fail on liiga suur.\nVaatleja toetab jooniseid kuni 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Seda joonist ei saanud avada.\nFail võib olla rikutud või toetamata." },
+  "viewerToastScreenshotSaved": { "message": "Ekraanipilt kopeeritud ja salvestatud" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Ekraanipilt salvestatud (lõikelaud blokeeritud)" },
+  "viewerToastScreenshotError": { "message": "Ekraanipilti ei saanud salvestada" },
+
+  "viewerRecentBadgeOpen": { "message": "Ava" },
+  "viewerRecentRemoveTitle": { "message": "Eemalda hiljutistest" },
+  "viewerRecentCompareTitle": { "message": "Võrdle praegusega" },
+  "viewerLayerToggleTitle": { "message": "Lülita kiht" },
+  "viewerLayerSoloTitle": { "message": "Näita ainult seda kihti" },
+  "viewerBookmarkPromptName": { "message": "Järjehoidja nimi" },
+  "viewerBookmarkPromptRename": { "message": "Nimeta järjehoidja ümber" }
+}

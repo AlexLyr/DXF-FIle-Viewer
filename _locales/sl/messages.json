@@ -1,0 +1,77 @@
+{
+  "appName": {
+    "message": "Ogledovalnik DXF datotek",
+    "description": "Extension name (CWS + Chrome)"
+  },
+  "shortDesc": {
+    "message": "Uporabite ogledovalnik DXF datotek za odpiranje in ogled .dxf datotek prek spleta — hiter ogledovalnik DXF, združljiv z AutoCAD-om, v vašem brskalniku.",
+    "description": "Manifest description (max 132 chars)"
+  },
+  "storeDesc": {
+    "message": "Uporabite ogledovalnik DXF datotek za takojšnje odpiranje in ogled .dxf datotek v vašem brskalniku. Razširitev omogoča hiter, lahek dostop do risb brez nameščanja težke CAD programske opreme.\n\n✨ Kaj počne ogledovalnik DXF datotek:\n1. Odpira risbe v sekundah — povlecite, spustite ali kliknite\n2. Prikazuje črte, plasti, bloke, dimenzije in opombe\n3. Omogoča pomikanje in povečavo vsakega detajla risbe\n4. Preklaplja plasti, da se osredotočite na specifične dele, s predogledom ob prehodu za izolacijo katerekoli plasti\n5. Deluje popolnoma v vašem brskalniku — brez namestitve, brez računa\n6. Svetle in temne teme, z živimi koordinatami kurzorja\n\n📌 Kdo potrebuje spletni ogledovalnik dxf:\n➤ Inženirji in arhitekti, ki si ogledajo dxf spletno brez AutoCAD-a\n➤ Študenti, ki se učijo CAD in želijo preprost .dxf ogledovalnik v brskalniku\n➤ Vodje gradnje, ki prejemajo risbe od oblikovalcev\n➤ Samostojni izvajalci, ki si ogledajo datoteke pred odpiranjem težkih CAD orodij\n➤ Kdor koli, ki se sprašuje, kako hitro ogledati dxf datoteke na katerikoli napravi\n\n🎯 Zakaj ljudje izbirajo to dxf orodje:\nTežava pri CAD risbah je nakup licence za AutoCAD dxf ogledovalnik ali nameščanje podobnih orodij samo za vpogled. Ogledovalnik DXF datotek deluje v vašem brskalniku in odpre katerokoli standardno .dxf datoteko v sekundah.\n\n🚀 Kako deluje spletni ogledovalnik dxf datotek:\n1️⃣ Namestite razširitev iz Chrome Web Store\n2️⃣ Kliknite ikono v vaši orodni vrstici\n3️⃣ Povlecite svojo risbo v ogledovalnik\n4️⃣ Pomikajte se in povečajte, da pregledate strukturo\n5️⃣ Preklapljajte plasti in raziskujte vsak del\n\n📂 Podprte datoteke:\n- Standardni DXF — tako ASCII kot binarni\n- Plastične risbe — vsaka plast ohranjena in preklopna\n- 2D entitete — črte, polilinije, loki, krogi, spline, vzorci, besedilo\n- Blokovne reference, dimenzije in opombe\n\n🔒 Vaša zasebnost je pomembna. Ogledovalnik DXF datotek obdeluje risbe lokalno v vašem brskalniku. Nikoli ne zapustijo vaše naprave. Brez nalaganja, brez oblaka, brez sledenja.\n\n💡 Kaj je DXF datoteka?\nDXF datoteka (Drawing Exchange Format) je CAD format podjetja Autodesk za izmenjavo podatkov med aplikacijami. Za razliko od binarnih formatov je besedilno osnovana in enostavna za deljenje. Odprite risbe, izvožene iz kateregakoli CAD orodja, ki podpira DXF.\n\n⚙️ Ogledovalnik DXF datotek proti težki CAD programski opremi:\n▸ Brez namestitve — odpre se v vašem brskalniku\n▸ Brez licence — deluje brez naročnin na AutoCAD\n▸ Lahek — deluje popolnoma v brskalniku\n▸ Večplatformski — Windows, macOS, Linux, ChromeOS\n\n🛠 Primeri uporabe v resničnem svetu:\n• Hitro predogledovanje risb, ki jih pošljejo stranke\n• Pregled CAD dela na sestankih brez zagon AutoCAD-a\n• Učenje študentov, kako ogledati dxf datoteke v razredu\n• Odprite datoteke na tabličnem računalniku ali Chromebooku\n• Uporabite kot rezervni dxf bralnik, ko je AutoCAD brez povezave\n• Ogled CAD-a na spletu brez nastavitve\n\n🧱 Zasnovano za vsakodnevne CAD delovne tokove:\n1. Krog odobritev — preverite dimenzije v sekundah\n2. Inšpekcija na terenu — prinesite risbo na tabličnem računalniku na gradbišče\n3. Dostop do arhivov — brskajte po starih risbah iz e-pošte\n4. Predaja med ekipami — uporabniki, ki ne uporabljajo CAD, preberejo inženirske datoteke\n5. Hitro razvrščanje — razvrstite risbe, ki potrebujejo celotno CAD delo\n\n⚡ Zgrajeno na preverjeni upodabljanju:\nRazširitev uporablja preizkušene knjižnice za razčlenjevanje, ki jim zaupajo inženirske ekipe po vsem svetu. Vsaka posodobitev je pregledana glede zmogljivosti in združljivosti pred izdajo v Chrome Web Store.\n\n❓ Pogosto zastavljena vprašanja:\nV: Ali odpre 3D vsebine v DXF datotekah?\nO: Odpira katerokoli standardno 2D DXF risbo, vključno z risbami, proizvedenimi iz 3D modelov v CAD orodjih. Čiste 3D mreže in površinske entitete imajo omejeno podporo za upodabljanje — najboljši rezultati prihajajo iz 2D risb in projekcij.\n\nV: Ali ogledovalnik odpre DWG datoteke?\nO: Ne. DWG je ločen binarni format podjetja Autodesk. Večina CAD orodij lahko izvozi DWG v DXF z enim klikom — odprite nastalo .dxf tukaj.\n\nV: Ali ste iskali spletni ogledovalnik dxf ali dxf ogled na spletu?\nO: Da, to je isto orodje. Ne glede na to, ali ga imenujete dxf bralnik ali preprosto način za ogled risb, se vaša datoteka odpre v brskalniku.\n\n📍 Nasveti za uporabo ogledovalnika DXF datotek:\n- Spustite svojo risbo na pojavnem oknu razširitve\n- Za velike risbe skrijte neuporabljene plasti\n- Odprite datoteke neposredno iz e-pošte ali klepeta\n- Prehodite ime plasti v panelu, da predogledate samo to plast\n\n👉 Pripravljeni na ogled dxf na spletu?\nNamestite ogledovalnik DXF datotek, spustite svojo datoteko in začnite raziskovati. Brez naročnine, brez težke namestitve, brez čakanja. Zasnovano za inženirje, arhitekte, študente in vsakogar, ki potrebuje hitre CAD predoglede.\n—\nAutoCAD® je registrirana blagovna znamka podjetja Autodesk, Inc. Ta razširitev ni povezana z Autodeskom ali ga ne podpira.",
+    "description": "CWS detailed description"
+  },
+  "popupAriaOpenFile": { "message": "Odprite datoteko .dxf" },
+  "popupDropzoneIdle": { "message": "Kliknite ali spustite .dxf" },
+  "popupDropzoneDragover": { "message": "Spustite za odpiranje" },
+  "popupStatusOpening": { "message": "Odpiranje ogledovalnika…" },
+  "popupErrorInvalidFile": { "message": "Datoteke ni mogoče prebrati. Izberite veljavno datoteko .dxf." },
+  "popupErrorTooLarge": { "message": "Datoteka je prevelika. Ogledovalnik podpira risbe do 50 MB." },
+  "popupErrorCantOpen": { "message": "Ogledovalnika ni mogoče odpreti. Poskusite znova." },
+
+  "viewerNoFile": { "message": "Ni datoteke" },
+  "viewerToolRecent": { "message": "Nedavne datoteke" },
+  "viewerToolOpenAnother": { "message": "Odpri drugo datoteko" },
+  "viewerToolFit": { "message": "Prilagodi zaslonu" },
+  "viewerToolMeasure": { "message": "Merjenje (M) — držite Alt za izklop pripenjanja" },
+  "viewerToolFind": { "message": "Najdi besedilo (Ctrl+F)" },
+  "viewerToolPrint": { "message": "Natisni (Ctrl+P)" },
+  "viewerToolScreenshot": { "message": "Posnetek pogleda (Ctrl+Shift+S)" },
+  "viewerToolMinimap": { "message": "Preklopi mini zemljevid" },
+  "viewerToolCoords": { "message": "Preklopi koordinate" },
+  "viewerToolColors": { "message": "Pokaži izvorne DXF barve (O)" },
+  "viewerToolTheme": { "message": "Preklopi temo" },
+  "viewerSidebarCollapse": { "message": "Strni ploščo plasti" },
+  "viewerRecentEmpty": { "message": "Ni nedavnih datotek" },
+  "viewerLayerFilter": { "message": "Filtriraj plasti" },
+  "viewerLayersEmpty": { "message": "V tej risbi ni plasti" },
+  "viewerBookmarksTitle": { "message": "Shranjeni pogledi" },
+  "viewerBookmarksAdd": { "message": "+ Shrani pogled" },
+  "viewerBookmarksHelp": { "message": "Shranite trenutno povečavo in položaj, da se pozneje vrnete." },
+  "viewerBookmarksEmpty": { "message": "Še ni shranjenih pogledov" },
+  "viewerFindPlaceholder": { "message": "Najdi besedilo v risbi" },
+
+  "viewerCompareLabel": { "message": "Primerjanje risb" },
+  "viewerCompareNamed": {
+    "message": "Primerjava: $1 vs $2",
+    "placeholders": {
+      "1": { "content": "$1", "example": "drawing-old.dxf" },
+      "2": { "content": "$2", "example": "drawing-new.dxf" }
+    }
+  },
+  "viewerCompareToggle": { "message": "Preklopi prekrivanje" },
+  "viewerCompareExit": { "message": "Izhod" },
+  "viewerCompareError": { "message": "Datoteke za primerjavo ni mogoče naložiti" },
+  "viewerDropToOpen": { "message": "Spustite za odpiranje v novem zavihku" },
+  "viewerOverlayDropHint": { "message": "Spustite datoteko .dxf sem\nali kliknite Odpri drugo" },
+  "viewerOverlayActionOpen": { "message": "Odpri drugo datoteko" },
+  "viewerOverlayLoading": { "message": "Nalaganje risbe…" },
+  "viewerOverlayLoadingFonts": { "message": "Nalaganje pisav…" },
+  "viewerOverlayParsing": { "message": "Razčlenjevanje risbe…" },
+  "viewerOverlayPreparing": { "message": "Priprava geometrije…" },
+  "viewerOverlayErrorExpired": { "message": "Te risbe ni mogoče odpreti.\nDatoteka je morda potekla." },
+  "viewerOverlayErrorInvalid": { "message": "Datoteke ni mogoče prebrati.\nIzberite veljavno datoteko .dxf." },
+  "viewerOverlayErrorTooLarge": { "message": "Datoteka je prevelika.\nOgledovalnik podpira risbe do 50 MB." },
+  "viewerOverlayErrorCorrupted": { "message": "Te risbe ni mogoče odpreti.\nDatoteka je morda poškodovana ali nepodprta." },
+  "viewerToastScreenshotSaved": { "message": "Posnetek zaslona kopiran in shranjen" },
+  "viewerToastScreenshotClipboardBlocked": { "message": "Posnetek zaslona shranjen (odložišče blokirano)" },
+  "viewerToastScreenshotError": { "message": "Posnetka zaslona ni mogoče shraniti" },
+
+  "viewerRecentBadgeOpen": { "message": "Odpri" },
+  "viewerRecentRemoveTitle": { "message": "Odstrani iz nedavnih" },
+  "viewerRecentCompareTitle": { "message": "Primerjaj s trenutno" },
+  "viewerLayerToggleTitle": { "message": "Preklopi plast" },
+  "viewerLayerSoloTitle": { "message": "Pokaži samo to plast" },
+  "viewerBookmarkPromptName": { "message": "Ime zaznamka" },
+  "viewerBookmarkPromptRename": { "message": "Preimenuj zaznamek" }
+}

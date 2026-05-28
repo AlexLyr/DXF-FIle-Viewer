@@ -6,7 +6,7 @@ import { addBookmarkFromCurrentView } from "./bookmarksUi";
 import { takeScreenshot } from "./screenshot";
 import { applyColorMode, refreshLayerSwatches } from "./colors";
 
-async function triggerPrint(): Promise<void> {
+function triggerPrint(): void {
   window.print();
 }
 

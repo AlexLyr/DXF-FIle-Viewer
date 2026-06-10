@@ -68,6 +68,7 @@
   "viewerOverlayErrorTooLarge": { "message": "Файл слишком большой.\nПросмотрщик поддерживает чертежи размером до 50 MB." },
   "viewerOverlayErrorCorrupted": { "message": "Не удалось открыть этот чертеж.\nФайл может быть повреждён или не поддерживается." },
   "errorDwgConversionFailed": { "message": "Не удалось конвертировать DWG. Попробуйте другой файл." },
+  "errorDwgVersionUnsupported": { "message": "Не удалось конвертировать файл $1. Конвертер пока не поддерживает эту версию DWG — пересохраните чертёж в более новом формате DWG (2010 или новее) или в DXF в вашей CAD-программе." },
   "viewerToastScreenshotSaved": { "message": "Снимок скопирован и сохранён" },
   "viewerToastScreenshotClipboardBlocked": { "message": "Снимок сохранён (буфер обмена заблокирован)" },
   "viewerToastScreenshotError": { "message": "Не удалось сохранить снимок" },

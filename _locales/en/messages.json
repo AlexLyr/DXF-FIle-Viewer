@@ -71,6 +71,7 @@
   "viewerOverlayErrorTooLarge": { "message": "File is too large.\nThe viewer supports drawings up to 50 MB." },
   "viewerOverlayErrorCorrupted": { "message": "Could not open this drawing.\nThe file may be corrupted or unsupported." },
   "errorDwgConversionFailed": { "message": "Could not convert DWG file. Try another drawing." },
+  "errorDwgVersionUnsupported": { "message": "Couldn't convert this $1 file. The converter doesn't support this DWG version yet — re-save the drawing as a newer DWG (2010 or later) or as DXF in your CAD app." },
   "viewerToastScreenshotSaved": { "message": "Screenshot copied & saved" },
   "viewerToastScreenshotClipboardBlocked": { "message": "Screenshot saved (clipboard blocked)" },
   "viewerToastScreenshotError": { "message": "Could not save screenshot" },

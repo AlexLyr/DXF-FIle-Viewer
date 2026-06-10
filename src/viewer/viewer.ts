@@ -6,7 +6,7 @@ import { applyI18n, getAvailableLocales, getLocale, initI18n, onLocaleChange, se
 import { openTabSafely } from "../lib/openTab";
 import { claimPending, purgeStalePending, savePending } from "../lib/pendingFiles";
 import { getRecentBuffer, listRecent, removeRecent, saveRecent, type RecentFile } from "../lib/recentFiles";
-import { dwgToDxfString } from "../lib/dwgLoader";
+import { dwgToDxfString, DwgConversionError } from "../lib/dwgLoader";
 
 import { dom } from "./dom";
 import { state } from "./state";
@@ -568,7 +568,11 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
       state.dwgHeaderOverride = converted.header;
     } catch (error) {
       console.error(error);
-      showOverlay(t("errorDwgConversionFailed"), { loading: false, showAction: true });
+      const message =
+        error instanceof DwgConversionError && error.dwgVersion
+          ? t("errorDwgVersionUnsupported", error.dwgVersion)
+          : t("errorDwgConversionFailed");
+      showOverlay(message, { loading: false, showAction: true });
       return;
     }
   } else {

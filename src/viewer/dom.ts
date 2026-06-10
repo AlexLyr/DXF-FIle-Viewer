@@ -13,6 +13,7 @@ export const dom = {
   themeToggle: mustGet<HTMLButtonElement>("#themeToggle"),
   openAnother: mustGet<HTMLButtonElement>("#openAnother"),
   fit: mustGet<HTMLButtonElement>("#fit"),
+  fitAll: mustGet<HTMLButtonElement>("#fitAll"),
   sidebarToggle: mustGet<HTMLButtonElement>("#sidebarToggle"),
   layers: mustGet<HTMLUListElement>("#layers"),
   layersEmpty: mustGet<HTMLParagraphElement>("#layersEmpty"),

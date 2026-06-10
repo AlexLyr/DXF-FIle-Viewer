@@ -31,8 +31,9 @@ export function buildSnapPoints(parsedDxf: unknown): SnapPoint[] {
     const e = raw as Record<string, unknown>;
     const type = typeof e.type === "string" ? e.type : "";
     if (type === "LINE") {
-      const s = e.start as { x?: number; y?: number } | undefined;
-      const t = e.end as { x?: number; y?: number } | undefined;
+      const verts = e.vertices as Array<{ x?: number; y?: number }> | undefined;
+      const s = (e.start ?? e.startPoint ?? verts?.[0]) as { x?: number; y?: number } | undefined;
+      const t = (e.end ?? e.endPoint ?? verts?.[1]) as { x?: number; y?: number } | undefined;
       pushPoint(points, s?.x, s?.y, "endpoint");
       pushPoint(points, t?.x, t?.y, "endpoint");
       if (typeof s?.x === "number" && typeof s?.y === "number" &&

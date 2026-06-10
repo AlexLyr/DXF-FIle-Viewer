@@ -12,7 +12,7 @@
       class="dropzone"
       role="button"
       tabindex="0"
-      aria-label="Open a .dxf file"
+      aria-label="Open a .dxf or .dwg file"
       data-i18n-aria-label="popupAriaOpenFile"
     >
       <svg
@@ -44,11 +44,11 @@
           stroke-linejoin="round"
         />
       </svg>
-      <p id="dropzoneText" class="dropzone-text" data-i18n="popupDropzoneIdle">Click or drop a .dxf</p>
+      <p id="dropzoneText" class="dropzone-text" data-i18n="popupDropzoneIdle">Click or drop a .dxf or .dwg</p>
       <p id="status" class="status hidden" data-i18n="popupStatusOpening">Opening viewer…</p>
       <p id="error" class="error" role="alert"></p>
     </main>
-    <input id="fileInput" class="hidden-input" type="file" accept=".dxf" />
+    <input id="fileInput" class="hidden-input" type="file" accept=".dxf,.dwg" />
     <script type="module" src="./popup.ts"></script>
   </body>
 </html>

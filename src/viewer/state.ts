@@ -1,6 +1,7 @@
-import type { DxfViewer } from "dxf-viewer";
 import type { Bookmark } from "../lib/bookmarks";
+import type { DwgHeaderSnapshot } from "../lib/dwgLoader";
 import type { LayerEntry, SnapKindActive, TextHit, Theme, ThemeMode } from "./types";
+import type { DrawingRenderer } from "./render/types";
 import type { SnapGrid } from "./spatialIndex";
 import { Minimap } from "./minimap";
 import { dom } from "./dom";
@@ -46,11 +47,12 @@ function readStoredCoordsVisible(): boolean {
 }
 
 class ViewerState {
-  viewer: DxfViewer | null = null;
+  viewer: DrawingRenderer | null = null;
   currentBlobUrl: string | null = null;
   currentName = "";
   currentSize = 0;
   currentFileKey: string | null = null;
+  dwgHeaderOverride: DwgHeaderSnapshot | null = null;
   theme: Theme = readStoredTheme();
   colorMode: ThemeMode = readStoredColorMode();
 
@@ -93,7 +95,7 @@ class ViewerState {
   minimapPreviewTimer = 0;
   minimapPreviewCanvas: HTMLCanvasElement | null = null;
 
-  compareViewer: DxfViewer | null = null;
+  compareViewer: DrawingRenderer | null = null;
   compareName = "";
   isSyncingCompare = false;
   compareHost: HTMLDivElement | null = null;

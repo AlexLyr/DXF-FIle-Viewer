@@ -1,5 +1,6 @@
-import type { DxfViewer } from "dxf-viewer";
+import type { DrawingRenderer } from "./render/types";
 import { getParsedDxf, type DxfHeader } from "./types";
+import { state } from "./state";
 
 /* DXF $INSUNITS codes — see Autodesk DXF Reference. */
 const INSUNITS_LABELS: Record<number, string> = {
@@ -77,22 +78,49 @@ function coerceCode(raw: unknown): number | null {
   return null;
 }
 
-export function getDxfUnitsCode(instance: DxfViewer | null): number {
+function readMeasurementCode(instance: DrawingRenderer | null): number | null {
+  const override = coerceCode(state.dwgHeaderOverride?.MEASUREMENT);
+  if (override !== null) return override;
+  if (!instance) return null;
+  const parsed = getParsedDxf(instance);
+  if (!parsed) return null;
+  const header = parsed.header ?? parsed.headers;
+  const raw = readHeaderValue(header, "$MEASUREMENT") ?? readHeaderValue(header, "MEASUREMENT");
+  return coerceCode(raw);
+}
+
+function fallbackUnitsFromMeasurement(measurementCode: number | null): number | null {
+  if (measurementCode === 1) return 4;
+  if (measurementCode === 0) return 1;
+  return null;
+}
+
+export function getDxfUnitsCode(instance: DrawingRenderer | null): number {
+  const overrideUnits = coerceCode(state.dwgHeaderOverride?.INSUNITS);
+  if (overrideUnits !== null && overrideUnits in INSUNITS_LABELS && overrideUnits !== 0) {
+    return overrideUnits;
+  }
+
   if (!instance) return 0;
   const parsed = getParsedDxf(instance);
   if (!parsed) return 0;
   const header = parsed.header ?? parsed.headers;
   const raw = readHeaderValue(header, "$INSUNITS") ?? readHeaderValue(header, "INSUNITS");
-  const code = coerceCode(raw);
-  return code !== null && code in INSUNITS_LABELS ? code : 0;
+  const parsedUnits = coerceCode(raw);
+  if (parsedUnits !== null && parsedUnits in INSUNITS_LABELS && parsedUnits !== 0) {
+    return parsedUnits;
+  }
+
+  const fallback = fallbackUnitsFromMeasurement(readMeasurementCode(instance));
+  return fallback ?? 0;
 }
 
-export function getUnitLabel(instance: DxfViewer | null): string {
+export function getUnitLabel(instance: DrawingRenderer | null): string {
   const code = getDxfUnitsCode(instance);
   return INSUNITS_LABELS[code] ?? "u";
 }
 
-export function getUnitFullName(instance: DxfViewer | null): string {
+export function getUnitFullName(instance: DrawingRenderer | null): string {
   const code = getDxfUnitsCode(instance);
   return INSUNITS_FULL[code] ?? "unitless";
 }

@@ -1,5 +1,5 @@
 import { Vector3 } from "three";
-import type { DxfViewer } from "dxf-viewer";
+import type { DrawingRenderer } from "./render/types";
 import { getViewerCanvas, type ViewerWithInternals } from "./types";
 import { state } from "./state";
 import { dom } from "./dom";
@@ -90,7 +90,9 @@ export function getWorldPerPixel(): number | null {
   if (!camera) return null;
   const rect = canvas.getBoundingClientRect();
   if (rect.width <= 0) return null;
-  return (camera.right - camera.left) / rect.width;
+  const rawZoom = (camera as { zoom?: number }).zoom;
+  const zoom = rawZoom && Number.isFinite(rawZoom) && rawZoom > 0 ? rawZoom : 1;
+  return (camera.right - camera.left) / zoom / rect.width;
 }
 
 export function setViewFromDxf(centerX: number, centerY: number, width: number): void {
@@ -132,8 +134,10 @@ export function focusOnWorld(dxfX: number, dxfY: number): void {
   focusRaf = requestAnimationFrame(tick);
 }
 
-export function fitToDrawing(instance: DxfViewer): void {
-  const bounds = instance.GetBounds();
+function fitToBoundsRect(
+  instance: DrawingRenderer,
+  bounds: { minX: number; maxX: number; minY: number; maxY: number } | null,
+): void {
   if (!bounds) return;
   const w = dom.canvasHost.clientWidth;
   const h = dom.canvasHost.clientHeight;
@@ -159,7 +163,18 @@ export function fitToDrawing(instance: DxfViewer): void {
   );
 }
 
-export function attachCoordReadout(instance: DxfViewer): void {
+// Default fit: frames the main content (strays far from the drawing are
+// ignored by the renderer's smart content bounds).
+export function fitToDrawing(instance: DrawingRenderer): void {
+  fitToBoundsRect(instance, instance.GetBounds());
+}
+
+// "Show everything" fit: frames the full extent, including distant objects.
+export function fitToDrawingFull(instance: DrawingRenderer): void {
+  fitToBoundsRect(instance, instance.GetFullBounds());
+}
+
+export function attachCoordReadout(instance: DrawingRenderer): void {
   detachCoordReadout();
   const canvas = getViewerCanvas(instance);
   if (!canvas) return;

@@ -65,7 +65,8 @@ async function bootstrap(): Promise<void> {
 async function handleFile(file: File): Promise<void> {
   clearMessages();
 
-  if (!file.name.toLowerCase().endsWith(".dxf")) {
+  const lower = file.name.toLowerCase();
+  if (!lower.endsWith(".dxf") && !lower.endsWith(".dwg")) {
     errorText.textContent = t("popupErrorInvalidFile");
     return;
   }

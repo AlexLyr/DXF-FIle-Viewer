@@ -1,4 +1,4 @@
-import type { DxfViewer, LayerInfo } from "dxf-viewer";
+import type { DrawingRenderer, LayerInfo, ParsedDxf, ViewerCamera, ViewerControls } from "./render/types";
 
 export type Theme = "light" | "dark";
 export type ThemeMode = "theme" | "original";
@@ -14,48 +14,25 @@ export type LayerEntry = {
   swatch: HTMLSpanElement;
 };
 
-export type ViewerCamera = {
-  left: number;
-  right: number;
-  top: number;
-  bottom: number;
-  zoom?: number;
-  position: { x: number; y: number; z: number; set: (x: number, y: number, z: number) => void };
-  updateProjectionMatrix: () => void;
-};
-
-export type ViewerControls = {
-  enabled: boolean;
-  target: { x: number; y: number; z: number; set: (x: number, y: number, z: number) => void };
-  update: () => void;
-};
-
 export type DxfHeader = Record<string, unknown>;
 
-export type ParsedDxf = {
-  entities?: unknown[];
-  header?: DxfHeader;
-  headers?: DxfHeader;
-};
-
-export type ViewerWithInternals = DxfViewer & {
+export type ViewerWithInternals = DrawingRenderer & {
   camera?: ViewerCamera;
   controls?: ViewerControls;
-  parsedDxf?: ParsedDxf;
+  parsedDxf?: ParsedDxf | null;
   GetDxf?: () => ParsedDxf | null;
   GetOrigin?: () => { x: number; y: number } | null;
   scene?: unknown;
 };
 
-export function getParsedDxf(instance: DxfViewer): ParsedDxf | null {
+export function getParsedDxf(instance: DrawingRenderer): ParsedDxf | null {
   const v = instance as ViewerWithInternals;
-  if (v.parsedDxf) return v.parsedDxf;
+  if (v.parsedDxf) return v.parsedDxf ?? null;
   if (typeof v.GetDxf === "function") return v.GetDxf();
   return null;
 }
 
-export function getViewerCanvas(instance: DxfViewer): HTMLCanvasElement | null {
-  const getCanvas = (instance as unknown as { GetCanvas?: () => HTMLCanvasElement }).GetCanvas;
-  const canvas = typeof getCanvas === "function" ? getCanvas.call(instance) : null;
+export function getViewerCanvas(instance: DrawingRenderer): HTMLCanvasElement | null {
+  const canvas = instance.GetCanvas();
   return canvas instanceof HTMLCanvasElement ? canvas : null;
 }

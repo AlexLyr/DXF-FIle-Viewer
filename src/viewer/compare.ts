@@ -1,13 +1,10 @@
-import { DxfViewer } from "dxf-viewer";
-import { Color } from "three";
 import { state } from "./state";
 import { dom } from "./dom";
-import { COMPARE_BASE_PALETTE } from "./colors";
 import { getViewerCanvas, type ViewerWithInternals } from "./types";
 import { showToast } from "./toast";
 import { t } from "../lib/i18n";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
-import DxfWorkerFactory from "../worker/dxf.worker.ts?worker";
+import { createCompareRenderer } from "./render/factory";
 
 let isBaseVisible = true;
 let isCompareVisible = true;
@@ -27,16 +24,7 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
   dom.canvasHost.prepend(baseHost);
   state.compareHost = baseHost;
 
-  state.compareViewer = new DxfViewer(baseHost, {
-    autoResize: true,
-    canvasAlpha: true,
-    canvasPremultipliedAlpha: false,
-    clearColor: new Color(0x000000),
-    clearAlpha: 0,
-    colorCorrection: false,
-    blackWhiteInversion: false,
-    colorPalette: COMPARE_BASE_PALETTE,
-  });
+  state.compareViewer = createCompareRenderer(baseHost);
   baseHost.style.position = "absolute";
   baseHost.style.inset = "0";
   baseHost.style.top = "0";
@@ -52,7 +40,6 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
     await state.compareViewer.Load({
       url,
       fonts: [RobotoUrl],
-      workerFactory: () => new DxfWorkerFactory(),
     });
     const compareControls = (state.compareViewer as ViewerWithInternals).controls;
     if (compareControls) {

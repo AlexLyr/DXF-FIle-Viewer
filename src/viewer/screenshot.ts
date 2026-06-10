@@ -16,7 +16,7 @@ function formatTimestampLocal(date: Date): string {
 }
 
 function buildImageFileName(sourceName: string): string {
-  const base = (sourceName || "drawing").replace(/\.dxf$/i, "") || "drawing";
+  const base = (sourceName || "drawing").replace(/\.(dxf|dwg)$/i, "") || "drawing";
   return `${base}__view_${formatTimestampLocal(new Date())}.png`;
 }
 

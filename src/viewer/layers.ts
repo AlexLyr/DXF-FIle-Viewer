@@ -1,8 +1,8 @@
-import type { DxfViewer, LayerInfo } from "dxf-viewer";
 import { state } from "./state";
 import { dom } from "./dom";
 import { toHexColor } from "./colors";
 import type { LayerEntry } from "./types";
+import type { DrawingRenderer, LayerInfo } from "./render/types";
 import { scheduleMinimapPreviewRefresh } from "./minimapUtils";
 import { t } from "../lib/i18n";
 
@@ -15,7 +15,7 @@ function soloIconSvg(): string {
 </svg>`.trim();
 }
 
-export function renderLayers(instance: DxfViewer): void {
+export function renderLayers(instance: DrawingRenderer): void {
   dom.layers.innerHTML = "";
   state.layerEntries = [];
   state.soloLayer = null;
@@ -33,7 +33,7 @@ export function renderLayers(instance: DxfViewer): void {
   }
 }
 
-function createLayerEntry(instance: DxfViewer, info: LayerInfo): LayerEntry {
+function createLayerEntry(instance: DrawingRenderer, info: LayerInfo): LayerEntry {
   const row = document.createElement("li");
   row.className = "layer-row";
   row.dataset.layerName = info.name;
@@ -91,10 +91,16 @@ function createLayerEntry(instance: DxfViewer, info: LayerInfo): LayerEntry {
   function endPreview() {
     if (!hoverActive) return;
     hoverActive = false;
-    if (state.hoverPreviewRestore) {
-      instance.SetLayersVisibility(state.hoverPreviewRestore);
-      state.hoverPreviewRestore = null;
+    state.hoverPreviewRestore = null;
+    // Restore from the live checkbox states, not the snapshot taken when the
+    // preview began: the user may have toggled a layer during the preview, and
+    // the checkboxes are the source of truth for their intent. Using the stale
+    // snapshot would revert that toggle (and invert the next one).
+    const restore = new Map<string, boolean>();
+    for (const e of state.layerEntries) {
+      restore.set(e.info.name, e.checkbox.checked);
     }
+    instance.SetLayersVisibility(restore);
     row.classList.remove("preview-active");
   }
 
@@ -125,7 +131,7 @@ function createLayerEntry(instance: DxfViewer, info: LayerInfo): LayerEntry {
   return { info, row, checkbox, nameNode, swatch };
 }
 
-function toggleSolo(instance: DxfViewer, layerName: string): void {
+function toggleSolo(instance: DrawingRenderer, layerName: string): void {
   state.hoverPreviewRestore = null;
   if (state.soloLayer === layerName) {
     clearSolo();

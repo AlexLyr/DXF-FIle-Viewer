@@ -78,6 +78,25 @@
             </svg>
           </button>
           <button
+            id="fitAll"
+            type="button"
+            class="ghost-icon-btn"
+            aria-label="Show everything, including distant objects (Shift+F)"
+            title="Show everything (Shift+F)"
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path
+                d="M3 7V3h4M17 7V3h-4M3 13v4h4M17 13v4h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+            </svg>
+          </button>
+          <button
             id="measureToggle"
             type="button"
             class="ghost-icon-btn"
@@ -446,7 +465,7 @@
         </button>
       </div>
     </div>
-    <input id="fileInput" class="hidden-input" type="file" accept=".dxf" />
+    <input id="fileInput" class="hidden-input" type="file" accept=".dxf,.dwg" />
     <script type="module" src="./viewer.ts"></script>
   </body>
 </html>

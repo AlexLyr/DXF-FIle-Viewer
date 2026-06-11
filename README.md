@@ -1,6 +1,6 @@
-# DXF File Viewer
+# DXF & DWG File Viewer
 
-Chrome extension for opening and inspecting `.dxf` drawings locally in the browser.
+Chrome extension for opening and inspecting `.dxf` and `.dwg` drawings locally in the browser.
 
 ## Features
 
@@ -27,6 +27,14 @@ Chrome extension for opening and inspecting `.dxf` drawings locally in the brows
    - Click **Load unpacked**
    - Select the `dist/` folder
 
+## Renderer
+
+- Rendering is powered by `dxf-render`. (The legacy `dxf-viewer` renderer has been removed.)
+
 ## Privacy policy
 
 - See `PRIVACY-POLICY.md`
+
+## License
+
+This project is licensed under GPL-3.0-or-later.

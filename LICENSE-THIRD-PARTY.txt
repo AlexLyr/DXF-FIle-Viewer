@@ -1,19 +1,14 @@
 Third-Party Licenses
 ====================
 
-1) dxf-viewer
+1) dxf-render
 -------------
-Project: dxf-viewer
-Author: Artyom Lebedev (vagran)
-Repository: https://github.com/vagran/dxf-viewer
-License: Mozilla Public License Version 2.0 (MPL-2.0)
+Project: dxf-render
+Author: Timur Arbaev
+Repository: https://github.com/arbaev/dxf-kit
+License: MIT License
 
-The dxf-viewer package is used via npm as an unmodified dependency.
-
-MPL-2.0 notice:
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at https://mozilla.org/MPL/2.0/.
+The dxf-render package is used via npm as an unmodified dependency.
 
 2) three.js
 -----------

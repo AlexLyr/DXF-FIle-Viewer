@@ -1,13 +1,12 @@
-import { DxfViewer } from "dxf-viewer";
-import { Color } from "three";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
 import { MAX_BYTES } from "../lib/constants";
+import { detectCadType } from "../lib/fileType";
 import { computeFileKey } from "../lib/fileKey";
 import { applyI18n, getAvailableLocales, getLocale, initI18n, onLocaleChange, setHtmlLang, setLocale, t } from "../lib/i18n";
 import { openTabSafely } from "../lib/openTab";
 import { claimPending, purgeStalePending, savePending } from "../lib/pendingFiles";
 import { getRecentBuffer, listRecent, removeRecent, saveRecent, type RecentFile } from "../lib/recentFiles";
-import DxfWorkerFactory from "../worker/dxf.worker.ts?worker";
+import { dwgToDxfString, DwgConversionError } from "../lib/dwgLoader";
 
 import { dom } from "./dom";
 import { state } from "./state";
@@ -18,7 +17,7 @@ import {
   toHexColor,
   toggleTheme,
 } from "./colors";
-import { applyCoordsVisibility, attachCoordReadout, detachCoordReadout, fitToDrawing, getWorldFromPointer, getWorldPerPixel, worldToScreen } from "./coords";
+import { applyCoordsVisibility, attachCoordReadout, detachCoordReadout, fitToDrawing, fitToDrawingFull, getWorldFromPointer, getWorldPerPixel, worldToScreen } from "./coords";
 import { clearMeasure, handleMeasureClick, handleMeasureMove, hideSnapMarker, renderMeasureOverlay, toggleMeasureMode } from "./measure";
 import { clearFindResults, gotoFindHit, runFindQuery, toggleFindBar } from "./find";
 import { addBookmarkFromCurrentView, renderBookmarks } from "./bookmarksUi";
@@ -44,6 +43,8 @@ import { hideEntityTooltip, refreshEntityTooltipPosition, showEntityTooltip } fr
 import { buildSnapIndex } from "./snap";
 import { findNearestSnap } from "./spatialIndex";
 import { setScreenshotEnabled, takeScreenshot } from "./screenshot";
+import { createPrimaryRenderer } from "./render/factory";
+import type { DrawingRenderer } from "./render/types";
 
 const HOVER_TOOLTIP_DELAY_MS = 450;
 const HOVER_TOOLTIP_STILL_PX = 6;
@@ -112,6 +113,10 @@ function bindUi(): void {
 
   dom.fit.addEventListener("click", () => {
     if (state.viewer) fitToDrawing(state.viewer);
+  });
+
+  dom.fitAll.addEventListener("click", () => {
+    if (state.viewer) fitToDrawingFull(state.viewer);
   });
 
   dom.canvasHost.addEventListener("mousemove", handleCanvasMouseMove);
@@ -256,6 +261,11 @@ function setupDragDrop(): void {
     dom.dropOverlay.classList.add("hidden");
     const file = event.dataTransfer?.files?.[0];
     if (file) {
+      const lower = file.name.toLowerCase();
+      if (lower.endsWith(".dwg")) {
+        void openInNewTab(file);
+        return;
+      }
       if (state.viewer) {
         const shouldCompare = window.confirm(
           "Compare this file with current drawing?\nPress Cancel to open in a new tab.",
@@ -516,7 +526,7 @@ async function bootstrap(): Promise<void> {
 
 async function openInNewTab(file: File | { name: string; size: number; buffer: ArrayBuffer }): Promise<void> {
   const name = "name" in file ? file.name : "(unknown)";
-  if (name && !name.toLowerCase().endsWith(".dxf")) {
+  if (name && !name.toLowerCase().endsWith(".dxf") && !name.toLowerCase().endsWith(".dwg")) {
     showOverlay(t("viewerOverlayErrorInvalid"), { loading: false, showAction: true });
     return;
   }
@@ -526,7 +536,7 @@ async function openInNewTab(file: File | { name: string; size: number; buffer: A
     return;
   }
   const fileId = crypto.randomUUID();
-  await savePending({ id: fileId, name, size: buffer.byteLength, buffer, createdAt: Date.now() });
+  await savePending({ id: fileId, name, size: file.size, buffer, createdAt: Date.now() });
   const tabUrl = chrome.runtime.getURL(`src/viewer/viewer.html?id=${fileId}`);
   await openTabSafely(tabUrl);
 }
@@ -538,29 +548,48 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
   state.minimap?.setPreview(null);
   state.currentName = name;
   state.currentSize = size;
+  state.dwgHeaderOverride = null;
 
   setHeader(name, size);
 
-  const blob = new Blob([buffer], { type: "application/dxf" });
+  const detected = detectCadType(name, new Uint8Array(buffer, 0, Math.min(256, buffer.byteLength)));
+  if (detected === "unknown") {
+    showOverlay(t("viewerOverlayErrorInvalid"), { loading: false, showAction: true });
+    return;
+  }
+
+  let dxfBuffer = buffer;
+  let fileKeyBuffer = buffer;
+  if (detected === "dwg") {
+    try {
+      showOverlay(t("viewerConvertingTitle"), { loading: true, showAction: false });
+      const converted = await dwgToDxfString(buffer);
+      dxfBuffer = new TextEncoder().encode(converted.dxf).buffer;
+      state.dwgHeaderOverride = converted.header;
+    } catch (error) {
+      console.error(error);
+      const message =
+        error instanceof DwgConversionError && error.dwgVersion
+          ? t("errorDwgVersionUnsupported", error.dwgVersion)
+          : t("errorDwgConversionFailed");
+      showOverlay(message, { loading: false, showAction: true });
+      return;
+    }
+  } else {
+    fileKeyBuffer = dxfBuffer;
+  }
+
+  const blob = new Blob([dxfBuffer], { type: "application/dxf" });
   state.currentBlobUrl = URL.createObjectURL(blob);
 
-  const isDark = state.theme === "dark";
-  state.viewer = new DxfViewer(dom.canvasHost, {
-    clearColor: new Color(isDark ? 0x262a32 : 0xf6f7f9),
-    autoResize: true,
-    retainParsedDxf: true,
-    colorCorrection: false,
-    blackWhiteInversion: false,
-    colorPalette: null,
-  });
+  state.viewer = createPrimaryRenderer(dom.canvasHost);
 
   try {
-    state.currentFileKey = await computeFileKey(buffer);
+    state.currentFileKey = await computeFileKey(fileKeyBuffer);
     await state.viewer.Load({
       url: state.currentBlobUrl,
       fonts: [RobotoUrl],
       progressCbk: handleProgress,
-      workerFactory: () => new DxfWorkerFactory(),
     });
     // Eager preview: Load() ends with fit-to-all render, before user interaction starts.
     captureMinimapPreviewNow({ force: true });
@@ -572,7 +601,7 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
     attachViewerSubscriptions(state.viewer);
     applyColorMode();
     hideOverlay();
-    void saveRecent(name, size, buffer);
+    void saveRecent(name, size, dxfBuffer);
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -604,7 +633,7 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
   }
 }
 
-function attachViewerSubscriptions(instance: DxfViewer): void {
+function attachViewerSubscriptions(instance: DrawingRenderer): void {
   instance.Subscribe("viewChanged", () => {
     renderMeasureOverlay();
     updateMinimapFromViewer();
@@ -803,6 +832,7 @@ function cleanupViewer(): void {
   }
 
   state.currentFileKey = null;
+  state.dwgHeaderOverride = null;
   state.snapGrid = null;
   setScreenshotEnabled(false);
 }

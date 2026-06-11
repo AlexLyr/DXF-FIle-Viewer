@@ -92,7 +92,11 @@ export function handleGlobalKeydown(event: KeyboardEvent): void {
   }
   if (event.key.toLowerCase() === "f") {
     event.preventDefault();
-    dom.fit.click();
+    if (event.shiftKey) {
+      dom.fitAll.click();
+    } else {
+      dom.fit.click();
+    }
     return;
   }
 }

@@ -1,5 +1,5 @@
 import { Color } from "three";
-import type { DxfViewer } from "dxf-viewer";
+import type { DrawingRenderer } from "./render/types";
 import { state } from "./state";
 import { dom } from "./dom";
 import { scheduleMinimapPreviewRefresh } from "./minimapUtils";
@@ -110,7 +110,7 @@ export function applyColorMode(): void {
   scheduleMinimapPreviewRefresh();
 }
 
-export function refreshLayerSwatches(instance: DxfViewer): void {
+export function refreshLayerSwatches(instance: DrawingRenderer): void {
   const updated = Array.from(instance.GetLayers() ?? []);
   const byName = new Map<string, { color: number }>();
   for (const info of updated) {

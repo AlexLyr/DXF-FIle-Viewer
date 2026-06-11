@@ -10,7 +10,7 @@ submission form. Copy each section directly into the corresponding field.
 Before uploading, confirm:
 
 - [ ] `npm run build` completes with no warnings
-- [ ] `dist/manifest.json` contains the updated `version` (`1.0.0`)
+- [ ] `dist/manifest.json` contains the updated `version` (`1.1.0`)
 - [ ] `dist/manifest.json` icons are present (`16`, `48`, `96`, `128`)
 - [ ] `dist.zip` rebuilt from the latest `dist/`
 - [ ] No source maps or `.env` files inside `dist.zip`
@@ -32,7 +32,7 @@ DXF File Viewer
 ### Short description (max 132 chars)
 
 ```
-Use DXF File Viewer to open and view .dxf files online — fast AutoCAD-compatible DXF viewer in your browser.
+Use DXF File Viewer to open and view .dxf files online — fast AutoCAD-compatible DXF viewer in your browser. Now a DWG viewer too.
 ```
 
 ### Detailed description (max 16 384 chars)
@@ -67,6 +67,7 @@ The pain with CAD drawings is buying an autocad dxf viewer license or installing
 
 📂 Supported files:
 - Standard DXF — both ASCII and binary
+- DWG drawings — converted to DXF in your browser, no extra software
 - Layered drawings — every layer preserved and toggleable
 - 2D entities — lines, polylines, arcs, circles, splines, hatches, text
 - Block references, dimensions, and annotations
@@ -88,6 +89,7 @@ A DXF file (Drawing Exchange Format) is a CAD format from Autodesk for sharing d
 • Teach students how to view dxf files in class
 • Open files on a tablet or Chromebook
 • Use as a fallback dxf reader when AutoCAD is offline
+• Use it as a quick DWG viewer when AutoCAD isn't installed
 • View cad online with zero setup
 
 🧱 Built for everyday CAD workflows:
@@ -105,7 +107,7 @@ Q: Does it open 3D content in DXF files?
 A: It opens any standard 2D DXF drawing, including drawings produced from 3D models in CAD tools. Pure 3D mesh and surface entities have limited rendering support — best results come from 2D drawings and projected views.
 
 Q: Does the viewer open DWG files?
-A: No. DWG is a separate binary format from Autodesk. Most CAD tools can export DWG to DXF in one click — open the resulting .dxf here.
+A: Yes. DXF File Viewer now opens DWG files by converting them to DXF locally in your browser — no upload, no AutoCAD. DWG is Autodesk's binary format, and the viewer handles the conversion for you.
 
 Q: Did you search for online dxf viewer or dxf view online?
 A: Yes, this is the same tool. Whether you call it a dxf reader or just a way to view drawings, your file opens in the browser.
@@ -142,7 +144,7 @@ English (United States)
 ### Single purpose
 
 ```
-View AutoCAD-compatible DXF (Drawing Exchange Format) files locally in the browser, with layer controls and pan/zoom navigation, without uploading drawings to any external service.
+View AutoCAD-compatible DXF (Drawing Exchange Format) files locally in the browser, with layer controls and pan/zoom navigation, without uploading drawings to any external service. DWG files are supported by converting them to DXF locally in the browser.
 ```
 
 ### Permission justifications

@@ -891,6 +891,57 @@ html.theme-light .theme-moon {
   padding: 3px 8px;
 }
 
+/* Rate widget -------------------------------------------------- */
+
+.rate-widget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 4px;
+  border-top: 1px solid var(--border);
+  padding-top: 4px;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+}
+
+.rate-widget:hover,
+.rate-widget:focus-within {
+  opacity: 1;
+}
+
+.rate-title {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 10px;
+}
+
+.rate-stars {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.rate-star {
+  display: inline-flex;
+  padding: 0 1px;
+  line-height: 0;
+}
+
+.rate-star svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--border);
+  transition: fill 0.15s ease;
+}
+
+.rate-star:hover svg,
+.rate-star:hover ~ .rate-star svg,
+.rate-star:focus-visible svg,
+.rate-star:focus-visible ~ .rate-star svg {
+  fill: #ffb400;
+}
+
 .bookmarks-list {
   margin: 0;
   max-height: 160px;

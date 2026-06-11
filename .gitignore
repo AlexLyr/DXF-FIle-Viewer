@@ -3,3 +3,4 @@ dist/
 reference/
 
 dxf-file-viewer-cws.zip
+*.code-workspace

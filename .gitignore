@@ -1,6 +1,11 @@
 node_modules/
 dist/
 reference/
+marketing/
 
 dxf-file-viewer-cws.zip
+dist.zip
 *.code-workspace
+
+.DS_Store
+**/.DS_Store

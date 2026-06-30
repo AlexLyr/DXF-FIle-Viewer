@@ -5,6 +5,7 @@ import { worldToScreen } from "./coords";
 import { getUnitLabel } from "./units";
 import { showToast } from "./toast";
 import { t } from "../lib/i18n";
+import { track } from "../lib/analytics";
 
 function formatTimestampLocal(date: Date): string {
   const yyyy = date.getFullYear();
@@ -138,15 +139,19 @@ export async function takeScreenshot(): Promise<void> {
     const fileName = buildImageFileName(state.currentName);
     const [clipboardOk, saveOk] = await Promise.all([writePngToClipboard(blob), Promise.resolve(saveBlobToFile(blob, fileName))]);
     if (clipboardOk && saveOk) {
+      track("screenshot_taken", { result: "saved_and_copied" });
       showToast(t("viewerToastScreenshotSaved"));
       return;
     }
     if (saveOk) {
+      track("screenshot_taken", { result: "saved_only" });
       showToast(t("viewerToastScreenshotClipboardBlocked"));
       return;
     }
+    track("screenshot_taken", { result: "failed" });
     showToast(t("viewerToastScreenshotError"), { variant: "error" });
   } catch {
+    track("screenshot_taken", { result: "failed" });
     showToast(t("viewerToastScreenshotError"), { variant: "error" });
   }
 }

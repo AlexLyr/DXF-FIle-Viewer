@@ -48,6 +48,13 @@
       <p id="status" class="status hidden" data-i18n="popupStatusOpening">Opening viewer…</p>
       <p id="error" class="error" role="alert"></p>
     </main>
+    <section id="analyticsSettings" class="analytics-settings">
+      <label class="analytics-toggle">
+        <input id="analyticsToggle" type="checkbox" />
+        <span data-i18n="popupAnalyticsLabel">Help improve DXF File Viewer with anonymous analytics</span>
+      </label>
+      <p class="analytics-note" data-i18n="popupAnalyticsHint">No drawing content is collected.</p>
+    </section>
     <input id="fileInput" class="hidden-input" type="file" accept=".dxf,.dwg" />
     <script type="module" src="./popup.ts"></script>
   </body>

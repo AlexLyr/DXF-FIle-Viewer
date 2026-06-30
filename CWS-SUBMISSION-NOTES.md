@@ -72,7 +72,7 @@ The pain with CAD drawings is buying an autocad dxf viewer license or installing
 - 2D entities — lines, polylines, arcs, circles, splines, hatches, text
 - Block references, dimensions, and annotations
 
-🔒 Your privacy matters. DXF File Viewer processes drawings locally in your browser. They never leave your device. No upload, no cloud, no tracking.
+🔒 Your privacy matters. DXF File Viewer processes drawings locally in your browser. Drawings never leave your device. No upload and no cloud processing of drawings. We use anonymous product analytics to improve reliability and features, and this can be disabled in the extension popup.
 
 💡 What is a DXF file?
 A DXF file (Drawing Exchange Format) is a CAD format from Autodesk for sharing data between applications. Unlike binary formats, it is text-based and easy to share. Open drawings exported from any CAD tool that supports DXF.
@@ -164,7 +164,7 @@ All JavaScript, CSS, fonts, and assets are bundled inside the extension package.
 
 ### Data usage disclosure
 
-For every category, select **No, this extension does not collect**:
+For every category, select the values below:
 
 | Category | Answer |
 |---|---|
@@ -175,7 +175,7 @@ For every category, select **No, this extension does not collect**:
 | Personal communications | No |
 | Location | No |
 | Web history | No |
-| User activity | No |
+| User activity | Yes (anonymous product analytics events only) |
 | Website content | No |
 
 ### Three certifications (must check all three)

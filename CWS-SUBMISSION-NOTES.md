@@ -10,7 +10,7 @@ submission form. Copy each section directly into the corresponding field.
 Before uploading, confirm:
 
 - [ ] `npm run build` completes with no warnings
-- [ ] `dist/manifest.json` contains the updated `version` (`1.1.1`)
+- [ ] `dist/manifest.json` contains the updated `version` (`1.1.2`)
 - [ ] `dist/manifest.json` icons are present (`16`, `48`, `96`, `128`)
 - [ ] `dist.zip` rebuilt from the latest `dist/`
 - [ ] No source maps or `.env` files inside `dist.zip`

@@ -1,5 +1,6 @@
+import { getOrCreateDistinctId } from "./analyticsIdentity";
+
 const ANALYTICS_CONSENT_KEY = "dxf:analytics";
-const ANALYTICS_DISTINCT_ID_KEY = "dxf:anon-id";
 const ANALYTICS_SESSION_ID_KEY = "dxf:session-id";
 const ANALYTICS_SESSION_START_KEY = "dxf:session-start";
 const ANALYTICS_SESSION_LAST_SEEN_KEY = "dxf:session-last-seen";
@@ -65,14 +66,6 @@ export function track(event: string, properties: AnalyticsProps = {}): void {
     session_id: session.id,
     session_elapsed_sec: Math.max(0, Math.round((now - session.startMs) / 1000)),
   };
-  const payload = {
-    api_key: POSTHOG_API_KEY,
-    event,
-    distinct_id: getDistinctId(),
-    properties: baseProperties,
-    timestamp: new Date().toISOString(),
-  };
-
   pageEventCount += 1;
   if (event === "viewer_ready") {
     pageFilesOpened += 1;
@@ -82,7 +75,7 @@ export function track(event: string, properties: AnalyticsProps = {}): void {
     pageFeatures.add(featureName);
   }
 
-  sendPayload(payload);
+  sendCaptureWithBase(event, baseProperties);
 
   if (session.isNew && event !== "session_started") {
     sendCapture("session_started", {
@@ -127,20 +120,37 @@ export function getPageSessionStats(): {
 }
 
 function sendCapture(event: string, properties: AnalyticsProps): void {
-  const payload = {
-    api_key: POSTHOG_API_KEY,
-    event,
-    distinct_id: getDistinctId(),
-    properties: {
-      ...properties,
-      app_version: APP_VERSION,
-      locale: document.documentElement.lang || chrome.i18n.getUILanguage(),
-      timezone: TIMEZONE,
-      source: "dxf-file-viewer-extension",
-    },
-    timestamp: new Date().toISOString(),
-  };
-  sendPayload(payload);
+  sendCaptureWithBase(event, {
+    ...properties,
+    app_version: APP_VERSION,
+    locale: document.documentElement.lang || chrome.i18n.getUILanguage(),
+    timezone: TIMEZONE,
+    source: "dxf-file-viewer-extension",
+  });
+}
+
+function sendCaptureWithBase(event: string, properties: AnalyticsProps): void {
+  void getOrCreateDistinctId()
+    .then((distinctId) => {
+      const payload = {
+        api_key: POSTHOG_API_KEY,
+        event,
+        distinct_id: distinctId,
+        properties,
+        timestamp: new Date().toISOString(),
+      };
+      sendPayload(payload);
+    })
+    .catch(() => {
+      const payload = {
+        api_key: POSTHOG_API_KEY,
+        event,
+        distinct_id: `ephemeral-${crypto.randomUUID()}`,
+        properties,
+        timestamp: new Date().toISOString(),
+      };
+      sendPayload(payload);
+    });
 }
 
 function sendPayload(payload: {
@@ -219,18 +229,6 @@ function resolveTimezone(): string {
     return Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown";
   } catch {
     return "unknown";
-  }
-}
-
-function getDistinctId(): string {
-  try {
-    const existing = window.localStorage.getItem(ANALYTICS_DISTINCT_ID_KEY);
-    if (existing) return existing;
-    const generated = crypto.randomUUID();
-    window.localStorage.setItem(ANALYTICS_DISTINCT_ID_KEY, generated);
-    return generated;
-  } catch {
-    return `ephemeral-${crypto.randomUUID()}`;
   }
 }
 

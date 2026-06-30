@@ -31,6 +31,13 @@ Chrome extension for opening and inspecting `.dxf` and `.dwg` drawings locally i
 
 - Rendering is powered by `dxf-render`. (The legacy `dxf-viewer` renderer has been removed.)
 
+## Product analytics (PostHog)
+
+- Copy `.env.example` to `.env` and set:
+  - `VITE_POSTHOG_API_KEY`
+  - `VITE_POSTHOG_API_HOST` (EU default: `https://eu.i.posthog.com`)
+- Full setup and dashboard checklist: `marketing/posthog-analytics.md`
+
 ## Privacy policy
 
 - See `PRIVACY-POLICY.md`

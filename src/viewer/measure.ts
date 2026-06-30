@@ -2,6 +2,7 @@ import { state } from "./state";
 import { dom } from "./dom";
 import { worldToScreen } from "./coords";
 import { getUnitFullName, getUnitLabel } from "./units";
+import { track } from "../lib/analytics";
 
 export function toggleMeasureMode(force?: boolean): void {
   const next = force ?? !state.measureActive;
@@ -12,6 +13,7 @@ export function toggleMeasureMode(force?: boolean): void {
   dom.canvasHost.style.cursor = next ? "crosshair" : "default";
   if (next && state.viewer) {
     state.viewer.Render();
+    track("measure_used");
   }
   if (!next) {
     clearMeasure();

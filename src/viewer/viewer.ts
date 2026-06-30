@@ -1,4 +1,5 @@
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
+import { getPageSessionStats, track } from "../lib/analytics";
 import { MAX_BYTES } from "../lib/constants";
 import { detectCadType } from "../lib/fileType";
 import { computeFileKey } from "../lib/fileKey";
@@ -48,6 +49,7 @@ import type { DrawingRenderer } from "./render/types";
 
 const HOVER_TOOLTIP_DELAY_MS = 450;
 const HOVER_TOOLTIP_STILL_PX = 6;
+const VIEWER_SESSION_STARTED_AT = Date.now();
 
 void start();
 
@@ -55,6 +57,7 @@ async function start(): Promise<void> {
   await initI18n();
   setHtmlLang();
   applyI18n();
+  track("viewer_opened", { surface: "viewer" });
   bindUi();
   onLocaleChange(handleLocaleChange);
   await bootstrap();
@@ -65,20 +68,30 @@ function bindUi(): void {
   state.initMinimap();
   applyColorMode();
 
-  dom.themeToggle.addEventListener("click", () => toggleTheme());
-  dom.measureToggle.addEventListener("click", () => toggleMeasureMode());
-  dom.findToggle.addEventListener("click", () => toggleFindBar(true));
+  dom.themeToggle.addEventListener("click", () => {
+    toggleTheme();
+    track("theme_changed", { theme: state.theme });
+  });
+  dom.measureToggle.addEventListener("click", () => {
+    toggleMeasureMode();
+  });
+  dom.findToggle.addEventListener("click", () => {
+    toggleFindBar(true);
+    track("find_used", { source: "toolbar" });
+  });
   dom.printBtn.addEventListener("click", () => window.print());
   dom.screenshotBtn.addEventListener("click", () => void takeScreenshot());
   dom.minimapToggle.addEventListener("click", () => {
     state.minimapVisible = !state.minimapVisible;
     state.persistMinimapVisible(state.minimapVisible);
     applyMinimapVisibility();
+    track("minimap_toggled", { enabled: state.minimapVisible });
   });
   dom.coordsToggle.addEventListener("click", () => {
     state.coordsVisible = !state.coordsVisible;
     state.persistCoordsVisible(state.coordsVisible);
     applyCoordsVisibility();
+    track("coords_toggled", { enabled: state.coordsVisible });
   });
   dom.colorModeToggle.addEventListener("click", () => {
     state.colorMode = state.colorMode === "original" ? "theme" : "original";
@@ -108,7 +121,7 @@ function bindUi(): void {
   dom.fileInput.addEventListener("change", () => {
     const next = dom.fileInput.files?.[0];
     dom.fileInput.value = "";
-    if (next) void openInNewTab(next);
+    if (next) void openInNewTab(next, "viewer_picker");
   });
 
   dom.fit.addEventListener("click", () => {
@@ -154,6 +167,7 @@ function bindUi(): void {
   applyMinimapVisibility();
   applyCoordsVisibility();
 
+  window.addEventListener("beforeunload", flushViewerSessionSummary, { once: true });
   window.addEventListener("beforeunload", cleanupViewer);
 }
 
@@ -263,7 +277,7 @@ function setupDragDrop(): void {
     if (file) {
       const lower = file.name.toLowerCase();
       if (lower.endsWith(".dwg")) {
-        void openInNewTab(file);
+        void openInNewTab(file, "viewer_drop");
         return;
       }
       if (state.viewer) {
@@ -275,7 +289,7 @@ function setupDragDrop(): void {
           return;
         }
       }
-      void openInNewTab(file);
+      void openInNewTab(file, "viewer_drop");
     }
   });
 }
@@ -509,6 +523,7 @@ async function bootstrap(): Promise<void> {
   }
 
   if (!fileId) {
+    track("viewer_waiting_for_file");
     showOverlay(t("viewerOverlayDropHint"), { loading: false, showAction: true });
     return;
   }
@@ -517,31 +532,63 @@ async function bootstrap(): Promise<void> {
 
   const pendingFile = await claimPending(fileId);
   if (!pendingFile) {
+    track("file_open_failed", { source: "pending_link", reason: "pending_not_found" });
     showOverlay(t("viewerOverlayErrorExpired"), { loading: false, showAction: true });
     return;
   }
 
-  await loadFromBuffer(pendingFile.buffer, pendingFile.name, pendingFile.size);
+  track("file_open_started", {
+    source: "pending_link",
+    file_type: fileTypeFromName(pendingFile.name),
+    size_bucket: getSizeBucket(pendingFile.size),
+  });
+  await loadFromBuffer(pendingFile.buffer, pendingFile.name, pendingFile.size, "pending_link");
 }
 
-async function openInNewTab(file: File | { name: string; size: number; buffer: ArrayBuffer }): Promise<void> {
+async function openInNewTab(
+  file: File | { name: string; size: number; buffer: ArrayBuffer },
+  source: "viewer_picker" | "viewer_drop" | "recent",
+): Promise<void> {
   const name = "name" in file ? file.name : "(unknown)";
+  const size = file.size;
+  track("file_open_started", {
+    source,
+    file_type: fileTypeFromName(name),
+    size_bucket: getSizeBucket(size),
+  });
   if (name && !name.toLowerCase().endsWith(".dxf") && !name.toLowerCase().endsWith(".dwg")) {
+    track("file_open_failed", { source, reason: "invalid_extension" });
     showOverlay(t("viewerOverlayErrorInvalid"), { loading: false, showAction: true });
     return;
   }
   const buffer = file instanceof File ? await file.arrayBuffer() : file.buffer;
   if (buffer.byteLength > MAX_BYTES) {
+    track("file_open_failed", { source, reason: "file_too_large" });
     showOverlay(t("viewerOverlayErrorTooLarge"), { loading: false, showAction: true });
     return;
   }
   const fileId = crypto.randomUUID();
   await savePending({ id: fileId, name, size: file.size, buffer, createdAt: Date.now() });
   const tabUrl = chrome.runtime.getURL(`src/viewer/viewer.html?id=${fileId}`);
-  await openTabSafely(tabUrl);
+  try {
+    await openTabSafely(tabUrl);
+    track("file_open_succeeded", {
+      source,
+      file_type: fileTypeFromName(name),
+      size_bucket: getSizeBucket(size),
+    });
+  } catch {
+    track("file_open_failed", { source, reason: "open_tab_failed" });
+    showOverlay(t("viewerOverlayErrorExpired"), { loading: false, showAction: true });
+  }
 }
 
-async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): Promise<void> {
+async function loadFromBuffer(
+  buffer: ArrayBuffer,
+  name: string,
+  size: number,
+  source: "pending_link",
+): Promise<void> {
   cleanupViewer();
   state.minimapPreviewReady = false;
   state.minimapPreviewDirty = true;
@@ -568,6 +615,12 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
       state.dwgHeaderOverride = converted.header;
     } catch (error) {
       console.error(error);
+      track("file_open_failed", {
+        source,
+        reason: "dwg_conversion_failed",
+        file_type: "dwg",
+        size_bucket: getSizeBucket(size),
+      });
       const message =
         error instanceof DwgConversionError && error.dwgVersion
           ? t("errorDwgVersionUnsupported", error.dwgVersion)
@@ -602,6 +655,16 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
     applyColorMode();
     hideOverlay();
     void saveRecent(name, size, dxfBuffer);
+    track("file_open_succeeded", {
+      source,
+      file_type: detected,
+      size_bucket: getSizeBucket(size),
+    });
+    track("viewer_ready", {
+      source,
+      file_type: detected,
+      size_bucket: getSizeBucket(size),
+    });
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -621,6 +684,12 @@ async function loadFromBuffer(buffer: ArrayBuffer, name: string, size: number): 
     updateMinimapFromViewer();
   } catch (error) {
     console.error(error);
+    track("file_open_failed", {
+      source,
+      reason: "load_failed",
+      file_type: detected,
+      size_bucket: getSizeBucket(size),
+    });
     if (state.currentBlobUrl) {
       URL.revokeObjectURL(state.currentBlobUrl);
       state.currentBlobUrl = null;
@@ -717,9 +786,14 @@ function buildRecentRow(item: RecentFile, isCurrent: boolean): HTMLLIElement {
   li.addEventListener("click", async () => {
     const record = await getRecentBuffer(item.id);
     if (!record) return;
+    track("recent_file_reopened", {
+      source: "recent_menu",
+      file_type: fileTypeFromName(record.name),
+      size_bucket: getSizeBucket(record.size),
+    });
     dom.recentMenu.classList.add("hidden");
     dom.recentToggle.setAttribute("aria-expanded", "false");
-    await openInNewTab({ name: record.name, size: record.size, buffer: record.buffer });
+    await openInNewTab({ name: record.name, size: record.size, buffer: record.buffer }, "recent");
   });
 
   li.append(info, compare, remove);
@@ -770,6 +844,19 @@ function setHeader(name: string, size: number): void {
   dom.fileName.textContent = name;
   dom.fileName.title = name;
   dom.fileSize.textContent = `· ${formatMb(size)} MB`;
+}
+
+function getSizeBucket(size: number): string {
+  if (size < 1024 * 1024) return "lt_1mb";
+  if (size <= 10 * 1024 * 1024) return "1_to_10mb";
+  return "gt_10mb";
+}
+
+function fileTypeFromName(name: string): string {
+  const lower = name.toLowerCase();
+  if (lower.endsWith(".dwg")) return "dwg";
+  if (lower.endsWith(".dxf")) return "dxf";
+  return "unknown";
 }
 
 function showOverlay(text: string, options: { loading: boolean; showAction: boolean }): void {
@@ -835,6 +922,22 @@ function cleanupViewer(): void {
   state.dwgHeaderOverride = null;
   state.snapGrid = null;
   setScreenshotEnabled(false);
+}
+
+function flushViewerSessionSummary(): void {
+  const stats = getPageSessionStats();
+  track("session_summary", {
+    surface: "viewer",
+    session_duration_sec: Math.max(0, Math.round((Date.now() - VIEWER_SESSION_STARTED_AT) / 1000)),
+    session_events_count: stats.eventsCount,
+    files_opened_count: stats.filesOpenedCount,
+    features_used_count: stats.featuresUsedCount,
+    used_measure: stats.usedMeasure,
+    used_compare: stats.usedCompare,
+    used_bookmark: stats.usedBookmark,
+    used_screenshot: stats.usedScreenshot,
+    used_find: stats.usedFind,
+  });
 }
 
 function formatMb(bytes: number): string {

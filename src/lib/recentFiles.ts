@@ -1,3 +1,5 @@
+import { track } from "./analytics";
+
 const DB_NAME = "dxf-viewer-recent";
 const STORE = "files";
 const DB_VERSION = 1;
@@ -55,11 +57,21 @@ export async function saveRecent(
       tx.onerror = () => reject(tx.error);
     });
     await pruneOldEntries(db);
+    track("recent_file_saved", {
+      file_type: name.toLowerCase().endsWith(".dwg") ? "dwg" : "dxf",
+      size_bucket: getSizeBucket(size),
+    });
   } catch (error) {
     console.warn("Could not save recent DXF", error);
   } finally {
     db?.close();
   }
+}
+
+function getSizeBucket(size: number): string {
+  if (size < 1024 * 1024) return "lt_1mb";
+  if (size <= 10 * 1024 * 1024) return "1_to_10mb";
+  return "gt_10mb";
 }
 
 async function removeMatchingEntries(

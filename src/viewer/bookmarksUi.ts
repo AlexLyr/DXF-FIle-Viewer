@@ -5,6 +5,7 @@ import { dom } from "./dom";
 import { focusOnWorld, setViewFromDxf } from "./coords";
 import type { ViewerWithInternals, ViewState } from "./types";
 import { t } from "../lib/i18n";
+import { track } from "../lib/analytics";
 
 export function getCurrentViewState(): ViewState | null {
   if (!state.viewer) return null;
@@ -26,6 +27,7 @@ export async function addBookmarkFromCurrentView(): Promise<void> {
   const label = window.prompt(t("viewerBookmarkPromptName"));
   if (!label) return;
   await saveBookmark(state.currentFileKey, label.trim(), view.centerX, view.centerY, view.width);
+  track("bookmark_created");
   await renderBookmarks();
 }
 

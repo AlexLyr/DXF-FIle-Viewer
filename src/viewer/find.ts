@@ -3,6 +3,9 @@ import { state } from "./state";
 import { dom } from "./dom";
 import { getParsedDxf } from "./types";
 import { focusOnWorld } from "./coords";
+import { track } from "../lib/analytics";
+
+let lastFindSignature = "";
 
 export function toggleFindBar(open: boolean): void {
   dom.findBar.classList.toggle("hidden", !open);
@@ -46,6 +49,11 @@ export function runFindQuery(query: string): void {
   }
 
   dom.findCount.textContent = state.textHits.length ? `1/${state.textHits.length}` : "0/0";
+  const signature = `${needle}:${state.textHits.length}`;
+  if (signature !== lastFindSignature) {
+    lastFindSignature = signature;
+    track("find_used", { query_length: needle.length, hits: state.textHits.length });
+  }
   if (state.textHits.length) gotoFindHit(0);
 }
 

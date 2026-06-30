@@ -3,6 +3,7 @@ import { dom } from "./dom";
 import { getViewerCanvas, type ViewerWithInternals } from "./types";
 import { showToast } from "./toast";
 import { t } from "../lib/i18n";
+import { track } from "../lib/analytics";
 import RobotoUrl from "../assets/fonts/roboto.ttf?url";
 import { createCompareRenderer } from "./render/factory";
 
@@ -49,6 +50,7 @@ export async function enterCompareMode(name: string, buffer: ArrayBuffer): Promi
     dom.compareBar.classList.remove("hidden");
     refreshCompareLabel();
     syncCompareFromMain();
+    track("compare_used");
   } catch {
     showToast(t("viewerCompareError"), { variant: "error" });
     exitCompareMode();

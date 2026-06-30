@@ -6,6 +6,8 @@ body {
   margin: 0;
   width: 280px;
   height: 320px;
+  display: flex;
+  flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
   background: #0f1115;
   color: #e7e9ee;
@@ -14,7 +16,7 @@ body {
 .dropzone {
   display: flex;
   width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
   cursor: pointer;
   flex-direction: column;
   align-items: center;
@@ -82,4 +84,31 @@ body {
 .hidden-input,
 .hidden {
   display: none;
+}
+
+.analytics-settings {
+  flex: 0 0 auto;
+  border-top: 1px solid #242a35;
+  background: #10141b;
+  padding: 8px 10px 10px;
+  cursor: default;
+}
+
+.analytics-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #c6ccd7;
+}
+
+.analytics-toggle input {
+  margin-top: 2px;
+}
+
+.analytics-note {
+  margin: 5px 0 0 24px;
+  font-size: 10px;
+  color: #8c96a8;
 }

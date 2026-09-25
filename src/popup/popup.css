@@ -86,12 +86,31 @@ body {
   display: none;
 }
 
-.analytics-settings {
+.popup-meta {
   flex: 0 0 auto;
   border-top: 1px solid #242a35;
   background: #10141b;
-  padding: 8px 10px 10px;
+  padding: 6px 10px;
   cursor: default;
+}
+
+.meta-link {
+  border: 0;
+  background: transparent;
+  color: #8f99ab;
+  font-size: 10px;
+  padding: 2px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.meta-link:hover {
+  color: #b5bfd3;
+}
+
+.analytics-settings {
+  margin-top: 6px;
 }
 
 .analytics-toggle {

@@ -19,6 +19,7 @@
   "popupErrorInvalidFile": { "message": "Could not read file. Please choose a valid .dxf or .dwg file." },
   "popupErrorTooLarge": { "message": "File is too large. The viewer supports drawings up to 50 MB." },
   "popupErrorCantOpen": { "message": "Could not open the viewer. Please try again." },
+  "popupPrivacyAnalyticsLink": { "message": "Privacy & analytics" },
   "popupAnalyticsLabel": { "message": "Help improve DXF File Viewer with anonymous analytics" },
   "popupAnalyticsHint": { "message": "No drawing content is collected." },
 

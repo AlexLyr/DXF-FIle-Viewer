@@ -9,6 +9,7 @@ const dropzoneText = mustGet<HTMLParagraphElement>("#dropzoneText");
 const fileInput = mustGet<HTMLInputElement>("#fileInput");
 const statusText = mustGet<HTMLParagraphElement>("#status");
 const errorText = mustGet<HTMLParagraphElement>("#error");
+const privacyToggle = mustGet<HTMLButtonElement>("#privacyToggle");
 const analyticsSettings = mustGet<HTMLElement>("#analyticsSettings");
 const analyticsToggle = mustGet<HTMLInputElement>("#analyticsToggle");
 
@@ -26,6 +27,11 @@ async function bootstrap(): Promise<void> {
   });
 
   analyticsToggle.checked = getAnalyticsEnabled();
+  privacyToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = analyticsSettings.classList.toggle("hidden") === false;
+    privacyToggle.setAttribute("aria-expanded", String(isOpen));
+  });
   analyticsToggle.addEventListener("change", () => {
     const enabled = analyticsToggle.checked;
     if (!enabled) {
